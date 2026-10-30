@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<!-- coded by pr0fitsz -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="pr0fitsz">
+  <title>pr0fitsz Crimes of the IRGC Against Kurdish Civilians</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06040a;
+      --card: #0f0a1a;
+      --card-h: #150e24;
+      --purp: #9333ea;
+      --purp-h: #a855f7;
+      --purp-s: #c084fc;
+      --gold: #febd11;
+      --fg: #f3f0fa;
+      --muted: #9e93b8;
+      --dim: #63587d;
+      --line: #1f1633;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(ellipse 70% 40% at 20% 0%, rgba(147,51,234,0.11), transparent), var(--bg);
+      min-height: 100vh;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--purp); color: #fff; }
+
+    .roj-wrap { position: fixed; top: 1.2rem; left: 1.3rem; z-index: 1100; pointer-events: none; }
+    .roj-svg { width: 54px; height: 54px; filter: drop-shadow(0 0 10px rgba(254,189,17,0.45)); animation: spin 22s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (max-width: 768px) {
+      .roj-wrap { top: 0.75rem; left: 0.75rem; }
+      .roj-svg { width: 40px; height: 40px; }
+    }
+
+    .topbar {
+      max-width: 1400px; margin: 0 auto; padding: 1.4rem 1.75rem 1.1rem 5.5rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+      border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--dim);
+    }
+    .tb-l { display: flex; align-items: center; gap: 0.75rem; color: var(--purp-s); font-weight: 700; letter-spacing: 0.04em; }
+    .tb-r { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+    .irgc-top-btn {
+      padding: 0.42rem 0.9rem;
+      background: rgba(220,38,38,0.18);
+      color: #fecaca;
+      border: 1px solid #ef4444;
+      border-radius: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+    .irgc-top-btn:hover {
+      background: #dc2626;
+      color: #fff;
+      box-shadow: 0 0 18px rgba(239,68,68,0.55);
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purp-h); box-shadow: 0 0 8px var(--purp-h); }
+    .sig { color: var(--muted); background: rgba(147,51,234,0.1); border: 1px solid rgba(147,51,234,0.3); padding: 0.25rem 0.65rem; border-radius: 4px; }
+    .sig b { color: var(--purp-s); }
+
+    .hero { max-width: 1400px; margin: 0 auto; padding: 3rem 1.75rem 2.2rem; border-bottom: 1px solid var(--line); }
+    .kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--purp-s); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4.2vw, 3.3rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; color: #fff; max-width: 960px; margin-bottom: 1rem; }
+    .hero p { max-width: 820px; color: var(--muted); font-size: 0.96rem; line-height: 1.65; margin-bottom: 1.6rem; }
+    .strip { display: flex; flex-wrap: wrap; gap: 1.75rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+    .strip div { display: flex; align-items: baseline; gap: 0.5rem; }
+    .strip b { color: #fff; font-size: 0.95rem; }
+    .strip span { color: var(--dim); text-transform: uppercase; }
+
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 1.75rem 1.75rem 4rem; }
+    .panel {
+      position: sticky; top: 0.6rem; z-index: 900;
+      background: rgba(11,7,19,0.93); backdrop-filter: blur(14px);
+      border: 1px solid #5b21b6; border-radius: 8px; padding: 1.1rem; margin-bottom: 1.75rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.78);
+    }
+    .s-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
+    #q {
+      flex: 1; min-width: 240px; padding: 0.72rem 0.95rem;
+      background: #050308; border: 1px solid var(--line); border-radius: 5px;
+      color: #fff; font-family: 'Inter', sans-serif; font-size: 0.92rem; outline: none;
+    }
+    #q:focus { border-color: var(--purp-h); }
+    .s-btn { padding: 0.72rem 1.25rem; background: var(--purp); color: #fff; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; border: 1px solid var(--purp-h); border-radius: 5px; cursor: pointer; }
+    .s-btn:hover { background: var(--purp-h); }
+    .clr-btn { padding: 0.72rem 1rem; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; text-transform: uppercase; }
+    .clr-btn:hover { color: #fff; border-color: var(--dim); }
+
+    .r-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); align-items: center; }
+    .lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-transform: uppercase; color: var(--dim); margin-right: 0.35rem; }
+    .r-btn { padding: 0.34rem 0.75rem; border-radius: 4px; background: #08050f; border: 1px solid var(--line); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; cursor: pointer; }
+    .r-btn.on, .r-btn:hover { background: rgba(147,51,234,0.22); color: #fff; border-color: var(--purp-h); }
+
+    .c-bar { display: flex; gap: 0.38rem; flex-wrap: wrap; max-height: 138px; overflow-y: auto; padding-right: 0.25rem; }
+    .c-btn { padding: 0.32rem 0.65rem; border-radius: 4px; background: #08050f; border: 1px solid var(--line); color: var(--muted); font-size: 0.75rem; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 0.38rem; }
+    .c-btn.on, .c-btn:hover { background: var(--purp); color: #fff; border-color: var(--purp-s); }
+    .c-btn span { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); }
+
+    .stat-line { margin-top: 0.7rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--dim); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .stat-line b { color: var(--fg); }
+
+    .pdf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1rem; }
+    .pdf-card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1.2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.65rem; }
+    .pdf-card:hover { border-color: var(--purp-h); }
+    .pdf-top { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--dim); }
+    .ylw-tag { color: var(--gold); background: rgba(254,189,17,0.1); border: 1px solid rgba(254,189,17,0.35); padding: 0.14rem 0.45rem; border-radius: 3px; font-weight: 700; }
+    .pdf-org { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--purp-s); text-transform: uppercase; }
+    .pdf-ttl { font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; font-weight: 700; color: #fff; }
+    .pdf-note { font-size: 0.83rem; color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 1.1rem; }
+    @media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+      padding: 1.3rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;
+      will-change: transform; overflow: hidden;
+    }
+    .card:hover { background: var(--card-h); border-color: rgba(168,85,247,0.55); }
+    .glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(147,51,234,0.11), transparent 65%);
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .card:hover .glow { opacity: 1; }
+
+    .c-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--line); }
+    .num { color: var(--gold); font-weight: 700; }
+    .cat { color: var(--purp-s); text-transform: uppercase; margin-left: 0.35rem; }
+    .era { color: var(--dim); }
+
+    .c-sub { display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.69rem; }
+    .sub { color: var(--muted); }
+    .rt { padding: 0.12rem 0.45rem; border-radius: 3px; font-weight: 600; }
+    .r-reza { color: #fcd34d; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.28); }
+    .r-mreza { color: #f472b6; background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.28); }
+    .r-both { color: #d8b4fe; background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3); }
+    .r-prince { color: #fca5a5; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.32); }
+    .r-irgc { color: #fecaca; background: rgba(220,38,38,0.2); border: 1px solid #ef4444; }
+
+    .card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.08rem; font-weight: 700; color: #fff; line-height: 1.3; }
+    .desc { font-size: 0.89rem; color: var(--muted); line-height: 1.58; }
+    .imp { background: rgba(147,51,234,0.07); border-left: 2px solid var(--purp-h); padding: 0.55rem 0.75rem; font-size: 0.83rem; color: #e4ddf5; }
+    .imp span { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--purp-s); font-size: 0.7rem; margin-right: 0.3rem; }
+
+    .c-foot { padding-top: 0.7rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.75rem; flex-wrap: wrap; }
+    .meta { flex: 1; min-width: 180px; }
+    .org { font-family: 'JetBrains Mono', monospace; font-size: 0.71rem; font-weight: 700; color: var(--fg); text-transform: uppercase; }
+    .doc { font-size: 0.74rem; color: var(--dim); margin-top: 0.1rem; }
+    .hl { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; }
+    .links { display: flex; gap: 0.4rem; flex-shrink: 0; }
+    .btn-p { padding: 0.38rem 0.68rem; background: rgba(147,51,234,0.2); color: #fff; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.71rem; font-weight: 700; border-radius: 4px; border: 1px solid var(--purp-h); }
+    .btn-p:hover { background: var(--purp); border-color: var(--gold); }
+    .btn-s { padding: 0.38rem 0.58rem; background: transparent; color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; border-radius: 4px; border: 1px solid var(--line); }
+    .btn-s:hover { color: #fff; border-color: var(--muted); }
+
+    .empty { display: none; text-align: center; padding: 3.5rem 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; margin-top: 1.25rem; font-family: 'JetBrains Mono', monospace; color: var(--muted); }
+    .banner { max-width: 1400px; margin: 0 auto; padding: 3rem 1.75rem 2.2rem; border-top: 1px solid var(--line); text-align: center; }
+    .banner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 3.8vw, 3rem); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; text-shadow: 0 0 28px rgba(168,85,247,0.45); }
+    footer { max-width: 1400px; margin: 0 auto; padding: 2.2rem 1.75rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-family: 'JetBrains Mono', monospace; color: var(--dim); font-size: 0.74rem; }
+  </style>
+</head>
+<body>
+
+  <div class="roj-wrap">
+    <svg class="roj-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60.000,4.000 64.173,32.313 76.506,6.488 72.149,34.773 91.546,13.731 79.045,39.475 103.783,25.085 84.249,46.000 112.129,39.541 87.298,53.769 115.843,55.815 87.922,62.092 114.596,72.461 86.064,70.230 108.497,88.000 81.891,77.458 98.090,101.051 75.773,83.135 84.297,110.454 68.253,86.756 68.346,115.375 60.000,88.000 51.654,115.375 51.747,86.756 35.703,110.454 44.227,83.135 21.910,101.051 38.109,77.458 11.503,88.000 33.936,70.230 5.404,72.461 32.078,62.092 4.157,55.815 32.702,53.769 7.871,39.541 35.751,46.000 16.217,25.085 40.955,39.475 28.454,13.731 47.851,34.773 43.494,6.488 55.827,32.313" fill="#FEBD11"/>
+    </svg>
+  </div>
+
+  <nav class="topbar">
+    <div class="tb-l">
+      <span class="dot"></span>
+      <span>pr0fitsz owns u</span>
+    </div>
+    <div class="tb-r">
+      <a href="verdict_on_the_shah.html" class="irgc-top-btn">Back to Pahlavi Record (95 Points)</a>
+      <div class="sig">coded by <b>pr0fitsz</b></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">KURDISTAN IRGC OPPRESSION ARCHIVE</div>
+    <h1>Crimes of the IRGC Oppression Against Kurdish Civilians</h1>
+    <p>
+      Documented massacres, summary firing squads, political executions, extrajudicial killings of Kolbars, hospital raids, torture centers, and cross-border missile strikes carried out by the Islamic Revolutionary Guard Corps (IRGC) and Islamic Republic security organs against Kurdish civilians (1979-2026). Every record links directly to yellow-highlighted archival PDFs.
+    </p>
+    <div class="strip">
+      <div><b>45</b> <span>Documented Crimes</span></div>
+      <div><b>5</b> <span>Sections</span></div>
+      <div><b>13</b> <span>Source PDFs</span></div>
+      <div><b>1979-2026</b> <span>Timeline</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="s-row">
+        <input type="text" id="q" placeholder="Search 45 records (e.g. pr0fitsz the best coder fr)..." oninput="filter()">
+        <button class="s-btn" onclick="filter()">Search</button>
+        <button class="clr-btn" onclick="reset()">Reset</button>
+      </div>
+
+      <div class="c-bar" id="cBar">
+        <button class="c-btn on" data-c="ALL" onclick="setCat('ALL')">All Sections <span>45</span></button>
+<button class="c-btn" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" onclick="setCat('1. 1979-1988 Military Invasion &amp; Prison Massacres')">1. 1979-1988 Military Invasion &amp; Prison Massacres <span>10</span></button>
+<button class="c-btn" data-c="2. Killing of Kolbars &amp; Landmine Contamination" onclick="setCat('2. Killing of Kolbars &amp; Landmine Contamination')">2. Killing of Kolbars &amp; Landmine Contamination <span>4</span></button>
+<button class="c-btn" data-c="3. Extraterritorial Assassinations &amp; Cross-Border Strikes" onclick="setCat('3. Extraterritorial Assassinations &amp; Cross-Border Strikes')">3. Extraterritorial Assassinations &amp; Cross-Border Strikes <span>4</span></button>
+<button class="c-btn" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" onclick="setCat('4. Linguistic, Religious &amp; Civil Society Suppression')">4. Linguistic, Religious &amp; Civil Society Suppression <span>14</span></button>
+<button class="c-btn" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" onclick="setCat('5. Jin, Jiyan, Azadi Crackdown (2022-2024)')">5. Jin, Jiyan, Azadi Crackdown (2022-2024) <span>13</span></button>
+<button class="c-btn" data-c="Archival PDFs" onclick="setCat('Archival PDFs')">Archival PDFs <span>13</span></button>
+      </div>
+
+      <div class="stat-line">
+        <span id="cnt">SHOWING <b>45</b> OF <b>45</b> RECORDS</span>
+        <span>coded by pr0fitsz</span>
+      </div>
+    </section>
+
+    <section class="pdf-grid" id="pdfs" style="display:none;">
+      <div class="pdf-card tilt" data-s="icj (1976) human rights and the legal system in iran 36 pages yellow-highlighted (savak, military tribunals, torture, named kurdish prisoners pp. 71-72)">
+        <div class="pdf-top"><span>DOC #01</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">ICJ (1976)</div>
+        <div class="pdf-ttl">Human Rights and the Legal System in Iran</div>
+        <div class="pdf-note">36 pages yellow-highlighted (SAVAK, military tribunals, torture, named Kurdish prisoners pp. 71-72)</div>
+        <div class="links">
+          <a href="icj1976.pdf#page=25" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.icj.org/wp-content/uploads/1976/01/Iran-human-righst-and-the-legal-system-thematic-report-1976-eng.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="amnesty international (1976) iran briefing paper (mde 13/001/1976) 5 pages yellow-highlighted (incommunicado detention, electric grill torture, executions)">
+        <div class="pdf-top"><span>DOC #02</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Amnesty International (1976)</div>
+        <div class="pdf-ttl">Iran Briefing Paper (MDE 13/001/1976)</div>
+        <div class="pdf-note">5 pages yellow-highlighted (Incommunicado detention, electric grill torture, executions)</div>
+        <div class="links">
+          <a href="amnesty1976.pdf#page=2" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.amnesty.org/es/wp-content/uploads/2021/06/mde130011976en.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="human rights watch (2009) freedom of expression and association in the kurdish regions 12 pages yellow-highlighted (ghazi mohammad hanging, media bans, ngo closures, student purges)">
+        <div class="pdf-top"><span>DOC #03</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Human Rights Watch (2009)</div>
+        <div class="pdf-ttl">Freedom of Expression and Association in the Kurdish Regions</div>
+        <div class="pdf-note">12 pages yellow-highlighted (Ghazi Mohammad hanging, media bans, NGO closures, student purges)</div>
+        <div class="links">
+          <a href="hrw2009.pdf#page=10" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="un fact-finding mission (2024) report of the independent ffm on iran (a/hrc/55/67) 8 pages yellow-highlighted (jin jiyan azadi uprising, jina amini, blinding, hospital raids)">
+        <div class="pdf-top"><span>DOC #04</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">UN Fact-Finding Mission (2024)</div>
+        <div class="pdf-ttl">Report of the Independent FFM on Iran (A/HRC/55/67)</div>
+        <div class="pdf-note">8 pages yellow-highlighted (Jin Jiyan Azadi uprising, Jina Amini, blinding, hospital raids)</div>
+        <div class="links">
+          <a href="un_ffm2024.pdf#page=4" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="un special rapporteur (2019) report on human rights in iran (a/74/188) 2 pages yellow-highlighted (kolbar shoot-to-kill orders, 20m landmines, language ban)">
+        <div class="pdf-top"><span>DOC #05</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">UN Special Rapporteur (2019)</div>
+        <div class="pdf-ttl">Report on Human Rights in Iran (A/74/188)</div>
+        <div class="pdf-note">2 pages yellow-highlighted (Kolbar shoot-to-kill orders, 20M landmines, language ban)</div>
+        <div class="links">
+          <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="un human rights commission (1989) report on the situation in iran (e/cn.4/1989/26) 4 pages yellow-highlighted (1988 prison massacre, summary trials, secret cemetery burials)">
+        <div class="pdf-top"><span>DOC #06</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">UN Human Rights Commission (1989)</div>
+        <div class="pdf-ttl">Report on the Situation in Iran (E/CN.4/1989/26)</div>
+        <div class="pdf-note">4 pages yellow-highlighted (1988 prison massacre, summary trials, secret cemetery burials)</div>
+        <div class="links">
+          <a href="un_sr1989.pdf#page=8" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="lund university (2017) nidaba vol. 2: stateless nation &amp; iranian kurdish nationalism 5 pages yellow-highlighted (1928 dress law, sedentarization, qassemlou &amp; sharafkandi assassinations)">
+        <div class="pdf-top"><span>DOC #07</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Lund University (2017)</div>
+        <div class="pdf-ttl">Nidaba Vol. 2: Stateless Nation &amp; Iranian Kurdish Nationalism</div>
+        <div class="pdf-note">5 pages yellow-highlighted (1928 Dress Law, sedentarization, Qassemlou &amp; Sharafkandi assassinations)</div>
+        <div class="links">
+          <a href="lund.pdf#page=4" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://journals.lub.lu.se/nidaba/article/download/16667/15061/42606" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="national security archive gwu (1975) declassified cia/dia/state report: the iran-iraq agreement 6 pages yellow-highlighted (6 march 1975 algiers accord betrayal, artillery cutoff, border closure)">
+        <div class="pdf-top"><span>DOC #08</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">National Security Archive GWU (1975)</div>
+        <div class="pdf-ttl">Declassified CIA/DIA/State Report: The Iran-Iraq Agreement</div>
+        <div class="pdf-note">6 pages yellow-highlighted (6 March 1975 Algiers Accord betrayal, artillery cutoff, border closure)</div>
+        <div class="links">
+          <a href="gwu167_01.pdf#page=5" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB167/01.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="national security archive gwu (1979) declassified cia nie 36.2-1-79 2 pages yellow-highlighted (ethnic minorities and pahlavi centralization)">
+        <div class="pdf-top"><span>DOC #09</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">National Security Archive GWU (1979)</div>
+        <div class="pdf-ttl">Declassified CIA NIE 36.2-1-79</div>
+        <div class="pdf-note">2 pages yellow-highlighted (Ethnic minorities and Pahlavi centralization)</div>
+        <div class="links">
+          <a href="gwu167_02.pdf#page=13" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB167/02.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="national security archive gwu (1953) declassified cia history: overthrow of premier mossadeq 2 pages yellow-highlighted (1953 coup and royal dictatorship restoration)">
+        <div class="pdf-top"><span>DOC #10</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">National Security Archive GWU (1953)</div>
+        <div class="pdf-ttl">Declassified CIA History: Overthrow of Premier Mossadeq</div>
+        <div class="pdf-note">2 pages yellow-highlighted (1953 coup and royal dictatorship restoration)</div>
+        <div class="links">
+          <a href="gwu28_sum.pdf#page=1" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB28/summary.pdf" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="washington institute winep (2026) iran&#x27;s western frontier: iranian kurds navigate risk &amp; opportunity 4 pages yellow-highlighted (kurdish parties, irgc militarization &amp; border dynamics)">
+        <div class="pdf-top"><span>DOC #11</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Washington Institute WINEP (2026)</div>
+        <div class="pdf-ttl">Iran&#x27;s Western Frontier: Iranian Kurds Navigate Risk &amp; Opportunity</div>
+        <div class="pdf-note">4 pages yellow-highlighted (Kurdish parties, IRGC militarization &amp; border dynamics)</div>
+        <div class="links">
+          <a href="winep_19765.pdf#page=2" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.washingtoninstitute.org/pdf/view/19765/en" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="washington institute winep (2022) ethnic minorities demand freedom and equality 5 pages yellow-highlighted (jina amini, jin jiyan azadi crackdown in javanrud &amp; mahabad)">
+        <div class="pdf-top"><span>DOC #12</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Washington Institute WINEP (2022)</div>
+        <div class="pdf-ttl">Ethnic Minorities Demand Freedom and Equality</div>
+        <div class="pdf-note">5 pages yellow-highlighted (Jina Amini, Jin Jiyan Azadi crackdown in Javanrud &amp; Mahabad)</div>
+        <div class="links">
+          <a href="winep_17673.pdf#page=1" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.washingtoninstitute.org/pdf/view/17673/en" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+      <div class="pdf-card tilt" data-s="washington institute winep (2025) caution and fear of a crackdown: iranian kurdish opposition 2 pages yellow-highlighted (irgc missile strikes, shahramfar detention torture &amp; opposition)">
+        <div class="pdf-top"><span>DOC #13</span><span class="ylw-tag">YELLOW-HIGHLIGHTED</span></div>
+        <div class="pdf-org">Washington Institute WINEP (2025)</div>
+        <div class="pdf-ttl">Caution and Fear of a Crackdown: Iranian Kurdish Opposition</div>
+        <div class="pdf-note">2 pages yellow-highlighted (IRGC missile strikes, Shahramfar detention torture &amp; opposition)</div>
+        <div class="links">
+          <a href="winep_19418.pdf#page=2" target="_blank" rel="noopener" class="btn-p">OPEN PDF</a>
+          <a href="https://www.washingtoninstitute.org/pdf/view/19418/en" target="_blank" rel="noopener" class="btn-s">ARCHIVE</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="grid">
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="Ayatollah Ruhollah Khomeini" data-s="1 1. 1979-1988 military invasion &amp; prison massacres 19 august 1979 khomeini jihad decree against kurdish parties ayatollah ruhollah khomeini 19 august 1979 religious fatwa declaring holy jihad against kurdish political organizations in iran as documented by the washington institute (winep 19418, p. 1), ayatollah khomeini issued an unprecedented religious fatwa declaring jihad against the kurdish parties in iran, ordering the military and newly formed irgc to crush kurdish autonomy. legitimized indiscriminate military bombardment, summary mass executions, and decades of state terror across kurdish cities. the washington institute for near east policy (winep) caution and fear of a crackdown: iranian kurdish opposition responses (2025)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#001</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">19 August 1979</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">19 August 1979 Khomeini Jihad Decree Against Kurdish Parties</span>
+          <span class="rt r-both">Ayatollah Ruhollah Khomeini</span>
+        </div>
+        <h3>Religious fatwa declaring holy jihad against Kurdish political organizations in Iran</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 19418, p. 1), Ayatollah Khomeini issued an unprecedented religious fatwa declaring jihad against the Kurdish parties in Iran, ordering the military and newly formed IRGC to crush Kurdish autonomy.</p>
+        <div class="imp"><span>Result:</span> Legitimized indiscriminate military bombardment, summary mass executions, and decades of state terror across Kurdish cities.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Caution and Fear of a Crackdown: Iranian Kurdish Opposition Responses (2025) <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_19418.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/caution-and-fear-crackdown-iranian-kurdish-opposition-responses#page=1" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="IRGC &amp; Armed Forces Command" data-s="2 1. 1979-1988 military invasion &amp; prison massacres deployment of heavy armor &amp; artillery against kurdish cities in 1979 irgc &amp; armed forces command 1979-1980 full-scale military offensive crushing kurdish demands for decentralized governance and minority rights as documented by the washington institute (winep 17673, p. 3), the regime unleashed heavy weaponry and military sweeps to brutally crush kurdish demands for decentralized rule and language retention, depicting activists as backwards, extremist troublemakers, and separatists. killed thousands of kurdish civilians, destroyed infrastructure, and initiated the permanent military garrisoning of kurdistan. the washington institute for near east policy (winep) ethnic minorities demand freedom and equality (2022)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#002</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1979-1980</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Deployment of Heavy Armor &amp; Artillery Against Kurdish Cities in 1979</span>
+          <span class="rt r-irgc">IRGC &amp; Armed Forces Command</span>
+        </div>
+        <h3>Full-scale military offensive crushing Kurdish demands for decentralized governance and minority rights</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 17673, p. 3), the regime unleashed heavy weaponry and military sweeps to brutally crush Kurdish demands for decentralized rule and language retention, depicting activists as backwards, extremist troublemakers, and separatists.</p>
+        <div class="imp"><span>Result:</span> Killed thousands of Kurdish civilians, destroyed infrastructure, and initiated the permanent military garrisoning of Kurdistan.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Ethnic Minorities Demand Freedom and Equality (2022) <b class="hl">(Page 3 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_17673.pdf#page=3" target="_blank" rel="noopener" class="btn-p">PDF (Page 3)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/anti-regime-protests-swell-across-iran-ethnic-minorities-demand-freedom-and-equality#page=3" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="Khomeini Death Commissions &amp; IRGC" data-s="3 1. 1979-1988 military invasion &amp; prison massacres summer 1988 secret mass executions of political prisoners khomeini death commissions &amp; irgc july-september 1988 secret execution of thousands of political prisoners across iranian penitentiaries as documented by the united nations special representative (e/cn.4/1989/26, p. 8), persistent reports confirmed a coordinated wave of secret summary executions of political prisoners carried out across iranian prisons during late 1988. exterminated an entire generation of leftist, secular, and kurdish political activists who had already served prison sentences. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#003</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">July-September 1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Summer 1988 Secret Mass Executions of Political Prisoners</span>
+          <span class="rt r-irgc">Khomeini Death Commissions &amp; IRGC</span>
+        </div>
+        <h3>Secret execution of thousands of political prisoners across Iranian penitentiaries</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 8), persistent reports confirmed a coordinated wave of secret summary executions of political prisoners carried out across Iranian prisons during late 1988.</p>
+        <div class="imp"><span>Result:</span> Exterminated an entire generation of leftist, secular, and Kurdish political activists who had already served prison sentences.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="UN Commission on Human Rights" data-s="4 1. 1979-1988 military invasion &amp; prison massacres un investigation verifies wave of summary political executions un commission on human rights 1988-1989 official united nations investigation verifying the wave of summary political executions as documented by the un special representative (e/cn.4/1989/26, p. 5), the united nations received credible information verifying an unprecedented wave of executions of political prisoners detained without access to counsel or family. provided definitive international corroboration of state-directed mass murder in iranian penitentiaries. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#004</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988-1989</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Investigation Verifies Wave of Summary Political Executions</span>
+          <span class="rt r-both">UN Commission on Human Rights</span>
+        </div>
+        <h3>Official United Nations investigation verifying the wave of summary political executions</h3>
+        <p class="desc">As documented by the UN Special Representative (E/CN.4/1989/26, p. 5), the United Nations received credible information verifying an unprecedented wave of executions of political prisoners detained without access to counsel or family.</p>
+        <div class="imp"><span>Result:</span> Provided definitive international corroboration of state-directed mass murder in Iranian penitentiaries.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="IRGC Intelligence &amp; Prison Authorities" data-s="5 1. 1979-1988 military invasion &amp; prison massacres secret burials in behesht-e zahra unmarked graves irgc intelligence &amp; prison authorities 1988 secret burial of executed political prisoners in unmarked mass graves in behesht-e zahra cemetery as documented by the united nations special representative (e/cn.4/1989/26, p. 9), executed political prisoners were buried secretly in unmarked mass graves in tehran&#x27;s behesht-e zahra cemetery, with authorities refusing to release remains to families. inflicted ongoing psychological torture on bereaved families and erased physical evidence of mass murder. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#005</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Secret Burials in Behesht-e Zahra Unmarked Graves</span>
+          <span class="rt r-irgc">IRGC Intelligence &amp; Prison Authorities</span>
+        </div>
+        <h3>Secret burial of executed political prisoners in unmarked mass graves in Behesht-e Zahra cemetery</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 9), executed political prisoners were buried secretly in unmarked mass graves in Tehran&#x27;s Behesht-e Zahra cemetery, with authorities refusing to release remains to families.</p>
+        <div class="imp"><span>Result:</span> Inflicted ongoing psychological torture on bereaved families and erased physical evidence of mass murder.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 9 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=9" target="_blank" rel="noopener" class="btn-p">PDF (Page 9)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=9" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="Islamic Revolutionary Courts" data-s="6 1. 1979-1988 military invasion &amp; prison massacres summary executions violating fundamental right to life per se islamic revolutionary courts 1988 per se violation of the fundamental right to life through summary execution without time to prepare a legal defense as concluded by the united nations special representative (e/cn.4/1989/26, p. 19), summary executions suggest per se that the application of capital punishment in iran violated fundamental international norms, denying accused persons time to prepare a defense. condemned the islamic republic for systematic extrajudicial murder under international human rights law. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#006</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Summary Executions Violating Fundamental Right to Life Per Se</span>
+          <span class="rt r-both">Islamic Revolutionary Courts</span>
+        </div>
+        <h3>Per se violation of the fundamental right to life through summary execution without time to prepare a legal defense</h3>
+        <p class="desc">As concluded by the United Nations Special Representative (E/CN.4/1989/26, p. 19), summary executions suggest per se that the application of capital punishment in Iran violated fundamental international norms, denying accused persons time to prepare a defense.</p>
+        <div class="imp"><span>Result:</span> Condemned the Islamic Republic for systematic extrajudicial murder under international human rights law.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 19 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=19" target="_blank" rel="noopener" class="btn-p">PDF (Page 19)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=19" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="2. Killing of Kolbars &amp; Landmine Contamination" data-r="IRGC Border Guards (Heng-e Marzi)" data-s="7 2. killing of kolbars &amp; landmine contamination lethal shoot-to-kill policy against unarmed kolbars irgc border guards (heng-e marzi) 2018-present systematic use of live ammunition and snipers against impoverished kurdish border crossers carrying commercial goods as documented by the united nations special rapporteur (a/74/188, p. 21), iranian security forces maintain a shoot-to-kill policy involving &#x27;excessive force against and extrajudicial killings of border couriers who often reside in the impoverished provinces of kurdistan.&#x27; killed hundreds of unarmed civilians engaged in informal cross-border trade to survive extreme regional economic deprivation. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#007</span> <span class="cat">2. Killing of Kolbars &amp; Landmine Contamination</span></div>
+          <span class="era">2018-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Lethal Shoot-to-Kill Policy Against Unarmed Kolbars</span>
+          <span class="rt r-irgc">IRGC Border Guards (Heng-e Marzi)</span>
+        </div>
+        <h3>Systematic use of live ammunition and snipers against impoverished Kurdish border crossers carrying commercial goods</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), Iranian security forces maintain a shoot-to-kill policy involving &#x27;excessive force against and extrajudicial killings of border couriers who often reside in the impoverished provinces of Kurdistan.&#x27;</p>
+        <div class="imp"><span>Result:</span> Killed hundreds of unarmed civilians engaged in informal cross-border trade to survive extreme regional economic deprivation.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="2. Killing of Kolbars &amp; Landmine Contamination" data-r="IRGC Border Forces" data-s="8 2. killing of kolbars &amp; landmine contamination 75 kolbars killed and 177 injured in 2018 with total impunity irgc border forces 2018 verification of 75 kolbars killed and 177 injured in a single year, with 42 killed by direct live-fire shootings as documented by the united nations special rapporteur (a/74/188, p. 21), in 2018 alone, 75 border couriers were killed and 177 injured; among them, 42 individuals were victims of direct shootings by state security forces with zero accountability. showed an locked in policy of extrajudicial execution targeting the most vulnerable kurdish laborers. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#008</span> <span class="cat">2. Killing of Kolbars &amp; Landmine Contamination</span></div>
+          <span class="era">2018</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">75 Kolbars Killed and 177 Injured in 2018 with Total Impunity</span>
+          <span class="rt r-irgc">IRGC Border Forces</span>
+        </div>
+        <h3>Verification of 75 Kolbars killed and 177 injured in a single year, with 42 killed by direct live-fire shootings</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), in 2018 alone, 75 border couriers were killed and 177 injured; among them, 42 individuals were victims of direct shootings by state security forces with zero accountability.</p>
+        <div class="imp"><span>Result:</span> Showed an locked in policy of extrajudicial execution targeting the most vulnerable Kurdish laborers.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="2. Killing of Kolbars &amp; Landmine Contamination" data-r="Ministry of Defense &amp; IRGC" data-s="9 2. killing of kolbars &amp; landmine contamination 20 million unexploded landmines contaminating kurdish provinces ministry of defense &amp; irgc 1988-present abandonment of 20 million live landmines across kurdish border provinces with negligent clearance efforts as documented by the united nations special rapporteur (a/74/188, p. 22), an estimated 20 million landmines remain planted in west azerbaijan, kurdistan, kermanshah, and ilam provinces, posing a continuous critical threat to civilian life due to insufficient state demining. mutilates and kills dozens of kurdish farmers, children, and shepherds every year while rendering vast agricultural lands unusable. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#009</span> <span class="cat">2. Killing of Kolbars &amp; Landmine Contamination</span></div>
+          <span class="era">1988-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">20 Million Unexploded Landmines Contaminating Kurdish Provinces</span>
+          <span class="rt r-irgc">Ministry of Defense &amp; IRGC</span>
+        </div>
+        <h3>Abandonment of 20 million live landmines across Kurdish border provinces with negligent clearance efforts</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 22), an estimated 20 million landmines remain planted in West Azerbaijan, Kurdistan, Kermanshah, and Ilam Provinces, posing a continuous critical threat to civilian life due to insufficient state demining.</p>
+        <div class="imp"><span>Result:</span> Mutilates and kills dozens of Kurdish farmers, children, and shepherds every year while rendering vast agricultural lands unusable.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="3. Extraterritorial Assassinations &amp; Cross-Border Strikes" data-r="Iranian State Operatives &amp; Hit Squad" data-s="10 3. extraterritorial assassinations &amp; cross-border strikes 1989 vienna assassination of dr. abdul rahman ghassemlou during talks iranian state operatives &amp; hit squad 13 july 1989 state-directed assassination of kdpi leader dr. abdul rahman ghassemlou during peace talks in vienna as documented by the washington institute (winep 19765, p. 3), kurdish leader abdul rahman ghassemlou was assassinated in vienna in 1989 during negotiations with iranian government representatives, cementing deep distrust between kurdish actors and tehran. broke the back of the prospect of a negotiated settlement and proved tehran&#x27;s willingness to commit extrajudicial assassinations on european soil. the washington institute for near east policy (winep) iran&#x27;s western frontier: iranian kurds navigate risk and opportunity (2026)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#010</span> <span class="cat">3. Extraterritorial Assassinations &amp; Cross-Border Strikes</span></div>
+          <span class="era">13 July 1989</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">1989 Vienna Assassination of Dr. Abdul Rahman Ghassemlou During Talks</span>
+          <span class="rt r-both">Iranian State Operatives &amp; Hit Squad</span>
+        </div>
+        <h3>State-directed assassination of KDPI leader Dr. Abdul Rahman Ghassemlou during peace talks in Vienna</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 19765, p. 3), Kurdish leader Abdul Rahman Ghassemlou was assassinated in Vienna in 1989 during negotiations with Iranian government representatives, cementing deep distrust between Kurdish actors and Tehran.</p>
+        <div class="imp"><span>Result:</span> Broke the back of the prospect of a negotiated settlement and proved Tehran&#x27;s willingness to commit extrajudicial assassinations on European soil.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Iran&#x27;s Western Frontier: Iranian Kurds Navigate Risk and Opportunity (2026) <b class="hl">(Page 3 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_19765.pdf#page=3" target="_blank" rel="noopener" class="btn-p">PDF (Page 3)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/irans-western-frontier-iranian-kurds-navigate-risk-and-opportunity#page=3" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="3. Extraterritorial Assassinations &amp; Cross-Border Strikes" data-r="IRGC Aerospace Force" data-s="11 3. extraterritorial assassinations &amp; cross-border strikes irgc ballistic missile &amp; drone strikes targeting refugee bases in kri irgc aerospace force 2018-2024 precision ballistic missile and drone barrages targeting kurdish opposition headquarters and refugee areas as documented by the washington institute (winep 19418, p. 2), the irgc has launched repeated missile and drone strikes against kurdish parties and their communities in the kurdistan region of iraq, terrorizing civilian refugees. violated regional sovereignty and targeted civilian settlements housing families and children. the washington institute for near east policy (winep) caution and fear of a crackdown: iranian kurdish opposition responses (2025)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#011</span> <span class="cat">3. Extraterritorial Assassinations &amp; Cross-Border Strikes</span></div>
+          <span class="era">2018-2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">IRGC Ballistic Missile &amp; Drone Strikes Targeting Refugee Bases in KRI</span>
+          <span class="rt r-irgc">IRGC Aerospace Force</span>
+        </div>
+        <h3>Precision ballistic missile and drone barrages targeting Kurdish opposition headquarters and refugee areas</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 19418, p. 2), the IRGC has launched repeated missile and drone strikes against Kurdish parties and their communities in the Kurdistan Region of Iraq, terrorizing civilian refugees.</p>
+        <div class="imp"><span>Result:</span> Violated regional sovereignty and targeted civilian settlements housing families and children.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Caution and Fear of a Crackdown: Iranian Kurdish Opposition Responses (2025) <b class="hl">(Page 2 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_19418.pdf#page=2" target="_blank" rel="noopener" class="btn-p">PDF (Page 2)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/caution-and-fear-crackdown-iranian-kurdish-opposition-responses#page=2" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="3. Extraterritorial Assassinations &amp; Cross-Border Strikes" data-r="IRGC High Command" data-s="12 3. extraterritorial assassinations &amp; cross-border strikes irgc policy driving regional conflict and targeting opposition irgc high command 2024-2025 irgc regional policy creating widespread destruction and deliberately targeting minority populations as documented by the washington institute (winep 19418, p. 3), kurdish political parties emphasized that regional military escalation and civilian suffering were &#x27;the direct result of the policies of the islamic republic.&#x27; kurdish litigants faced how regime militarism sacrifices domestic minority welfare to fuel foreign proxy wars. the washington institute for near east policy (winep) caution and fear of a crackdown: iranian kurdish opposition responses (2025)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#012</span> <span class="cat">3. Extraterritorial Assassinations &amp; Cross-Border Strikes</span></div>
+          <span class="era">2024-2025</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">IRGC Policy Driving Regional Conflict and Targeting Opposition</span>
+          <span class="rt r-irgc">IRGC High Command</span>
+        </div>
+        <h3>IRGC regional policy creating widespread destruction and deliberately targeting minority populations</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 19418, p. 3), Kurdish political parties emphasized that regional military escalation and civilian suffering were &#x27;the direct result of the policies of the Islamic Republic.&#x27;</p>
+        <div class="imp"><span>Result:</span> Kurdish litigants faced how regime militarism sacrifices domestic minority welfare to fuel foreign proxy wars.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Caution and Fear of a Crackdown: Iranian Kurdish Opposition Responses (2025) <b class="hl">(Page 3 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_19418.pdf#page=3" target="_blank" rel="noopener" class="btn-p">PDF (Page 3)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/caution-and-fear-crackdown-iranian-kurdish-opposition-responses#page=3" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Islamic Republic Leadership" data-s="13 4. linguistic, religious &amp; civil society suppression systemic exclusion of sunni kurds from powerful state positions islamic republic leadership 1979-present exclusion of sunni iranians from powerful governmental positions under the sectarian state structure as documented by human rights watch (2009 report, p. 10), sunni iranians, comprising about 9% of iran&#x27;s population and the majority of kurds, &#x27;have rarely been included in powerful governmental positions&#x27; since the 1979 revolution. codified sectarian discrimination into state administration and relegated sunni kurds to second-class citizenship. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#013</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">1979-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systemic Exclusion of Sunni Kurds from Powerful State Positions</span>
+          <span class="rt r-irgc">Islamic Republic Leadership</span>
+        </div>
+        <h3>Exclusion of Sunni Iranians from powerful governmental positions under the sectarian state structure</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 10), Sunni Iranians, comprising about 9% of Iran&#x27;s population and the majority of Kurds, &#x27;have rarely been included in powerful governmental positions&#x27; since the 1979 revolution.</p>
+        <div class="imp"><span>Result:</span> Codified sectarian discrimination into state administration and relegated Sunni Kurds to second-class citizenship.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 10 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=10" target="_blank" rel="noopener" class="btn-p">PDF (Page 10)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=10" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Education" data-s="14 4. linguistic, religious &amp; civil society suppression total ban on kurdish-medium education in state schools ministry of education 1979-present complete prohibition of mother-tongue kurdish education in primary and secondary schools across kurdistan as documented by the united nations special rapporteur (a/74/188, p. 21), &#x27;state schools do not offer education in kurdish, which is available only through non-governmental institutions that face constant state persecution.&#x27; gutted cognitive development and language acquisition for millions of kurdish children forced to study solely in persian. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#014</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">1979-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Total Ban on Kurdish-Medium Education in State Schools</span>
+          <span class="rt r-both">Ministry of Education</span>
+        </div>
+        <h3>Complete prohibition of mother-tongue Kurdish education in primary and secondary schools across Kurdistan</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), &#x27;State schools do not offer education in Kurdish, which is available only through non-governmental institutions that face constant state persecution.&#x27;</p>
+        <div class="imp"><span>Result:</span> Gutted cognitive development and language acquisition for millions of Kurdish children forced to study solely in Persian.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Judicial System of the Islamic Republic" data-s="15 4. linguistic, religious &amp; civil society suppression official documents and interrogations conducted exclusively in persian judicial system of the islamic republic 1979-present refusal to recognize kurdish for administrative purposes or provide interpreters in judicial proceedings as documented by the united nations special rapporteur (a/74/188, p. 21), &#x27;given that kurdish is not recognized as an official language for administrative purposes, official documents, interrogations and proceedings are all in persian.&#x27; forced kurdish defendants to sign coerced interrogation confessions in a language they frequently could not read or write. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#015</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">1979-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Official Documents and Interrogations Conducted Exclusively in Persian</span>
+          <span class="rt r-irgc">Judicial System of the Islamic Republic</span>
+        </div>
+        <h3>Refusal to recognize Kurdish for administrative purposes or provide interpreters in judicial proceedings</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), &#x27;Given that Kurdish is not recognized as an official language for administrative purposes, official documents, interrogations and proceedings are all in Persian.&#x27;</p>
+        <div class="imp"><span>Result:</span> Forced Kurdish defendants to sign coerced interrogation confessions in a language they frequently could not read or write.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Intelligence &amp; Revolutionary Court" data-s="16 4. linguistic, religious &amp; civil society suppression state persecution of kurdish language teachers (zara mohammadi) ministry of intelligence &amp; revolutionary court 2019-2023 arrest and imprisonment of civil educator zara mohammadi for teaching kurdish to children as documented by the united nations special rapporteur (a/74/188, p. 21), the regime arrested and imprisoned civil educator zara mohammadi in sanandaj on national security charges solely for teaching kurdish to impoverished children. treated the teaching of an indigenous regional language with an existential crime against state security. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#016</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2019-2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State Persecution of Kurdish Language Teachers (Zara Mohammadi)</span>
+          <span class="rt r-both">Ministry of Intelligence &amp; Revolutionary Court</span>
+        </div>
+        <h3>Arrest and imprisonment of civil educator Zara Mohammadi for teaching Kurdish to children</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), the regime arrested and imprisoned civil educator Zara Mohammadi in Sanandaj on national security charges solely for teaching Kurdish to impoverished children.</p>
+        <div class="imp"><span>Result:</span> Treated the teaching of an indigenous regional language with an existential crime against state security.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Press Supervisory Board &amp; Judiciary" data-s="17 4. linguistic, religious &amp; civil society suppression systematic closure of kurdish periodicals: payam-e mardom &amp; ashti press supervisory board &amp; judiciary 2005-2009 banning and closure of licensed kurdish periodicals and bilingual cultural weeklies as documented by human rights watch (2009 report, p. 14), following the 2005 protests, authorities began closing publications and targeting journalists, shuttering payam-e mardom (people&#x27;s message) and ashti (befriend). completely eradicated independent kurdish print media and silenced investigative journalism in kurdistan. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#017</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2005-2009</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systematic Closure of Kurdish Periodicals: Payam-e Mardom &amp; Ashti</span>
+          <span class="rt r-both">Press Supervisory Board &amp; Judiciary</span>
+        </div>
+        <h3>Banning and closure of licensed Kurdish periodicals and bilingual cultural weeklies</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 14), following the 2005 protests, authorities began closing publications and targeting journalists, shuttering Payam-e Mardom (People&#x27;s Message) and Ashti (Befriend).</p>
+        <div class="imp"><span>Result:</span> Completely eradicated independent Kurdish print media and silenced investigative journalism in Kurdistan.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 14 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=14" target="_blank" rel="noopener" class="btn-p">PDF (Page 14)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=14" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Culture &amp; Islamic Guidance" data-s="18 4. linguistic, religious &amp; civil society suppression closure of kurdish periodicals: asu, rozhe helat &amp; payam-e kurdistan ministry of culture &amp; islamic guidance 2005-2009 coordinated closure of independent provincial kurdish magazines and cultural journals as documented by human rights watch (2009 report, p. 14), the authorities banned asu (horizon), rozhe helat (east), and payam-e kurdistan (kurdistan message), revoking permits and arresting contributors. meant that no registered kurdish newspaper could publish without facing permanent closure. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#018</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2005-2009</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Closure of Kurdish Periodicals: Asu, Rozhe Helat &amp; Payam-e Kurdistan</span>
+          <span class="rt r-both">Ministry of Culture &amp; Islamic Guidance</span>
+        </div>
+        <h3>Coordinated closure of independent provincial Kurdish magazines and cultural journals</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 14), the authorities banned Asu (Horizon), Rozhe Helat (East), and Payam-e Kurdistan (Kurdistan Message), revoking permits and arresting contributors.</p>
+        <div class="imp"><span>Result:</span> Meant that no registered Kurdish newspaper could publish without facing permanent closure.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 14 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=14" target="_blank" rel="noopener" class="btn-p">PDF (Page 14)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=14" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Islamic Revolutionary Courts" data-s="19 4. linguistic, religious &amp; civil society suppression 38 kurdish journalists &amp; editors convicted in revolutionary courts islamic revolutionary courts 2005-2009 conviction of at least 38 kurdish journalists, editors, and writers following summary unfair trials as documented by human rights watch (2009 report, p. 14), the authorities &#x27;convicted at least 38 following unfair trials in revolutionary courts&#x27; for reporting on government repression and kurdish civil movements. imposed long prison sentences, lashings, and lifetime journalistic bans on the kurdish press corps. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#019</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2005-2009</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">38 Kurdish Journalists &amp; Editors Convicted in Revolutionary Courts</span>
+          <span class="rt r-both">Islamic Revolutionary Courts</span>
+        </div>
+        <h3>Conviction of at least 38 Kurdish journalists, editors, and writers following summary unfair trials</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 14), the authorities &#x27;convicted at least 38 following unfair trials in Revolutionary Courts&#x27; for reporting on government repression and Kurdish civil movements.</p>
+        <div class="imp"><span>Result:</span> Imposed long prison sentences, lashings, and lifetime journalistic bans on the Kurdish press corps.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 14 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=14" target="_blank" rel="noopener" class="btn-p">PDF (Page 14)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=14" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Interior &amp; Intelligence Services" data-s="20 4. linguistic, religious &amp; civil society suppression militarized security framework denying permits to kurdish ngos ministry of interior &amp; intelligence services 2005-present application of a militarized security framework to dismantle kurdish environmental and cultural civic ngos as documented by human rights watch (2009 report, p. 23), authorities applied a security framework in its approach to ngos, often accusing them of being tools of foreign agendas and suppressing the work of activists by denying permits to operate. paralyzed kurdish civil society, environmental advocacy groups, and charitable associations through constant state raids. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#020</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2005-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Militarized Security Framework Denying Permits to Kurdish NGOs</span>
+          <span class="rt r-both">Ministry of Interior &amp; Intelligence Services</span>
+        </div>
+        <h3>Application of a militarized security framework to dismantle Kurdish environmental and cultural civic NGOs</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 23), authorities applied a security framework in its approach to NGOs, often accusing them of being tools of foreign agendas and suppressing the work of activists by denying permits to operate.</p>
+        <div class="imp"><span>Result:</span> Paralyzed Kurdish civil society, environmental advocacy groups, and charitable associations through constant state raids.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 23 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=23" target="_blank" rel="noopener" class="btn-p">PDF (Page 23)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=23" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Intelligence &amp; University Disciplinary Committees" data-s="21 4. linguistic, religious &amp; civil society suppression conviction of kurdish student activists for &#x27;acting against national security&#x27; ministry of intelligence &amp; university disciplinary committees 2006-2009 mass suspensions, expulsions, and revolutionary court trials of kurdish student union leaders as documented by human rights watch (2009 report, p. 31), student activists in kurdish universities regularly faced revolutionary court charges of &#x27;acting against national security,&#x27; alongside expulsions by university disciplinary bodies. purged hundreds of promising kurdish intellectuals and students from higher education for organizing cultural forums. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#021</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2006-2009</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Conviction of Kurdish Student Activists for &#x27;Acting Against National Security&#x27;</span>
+          <span class="rt r-both">Ministry of Intelligence &amp; University Disciplinary Committees</span>
+        </div>
+        <h3>Mass suspensions, expulsions, and Revolutionary Court trials of Kurdish student union leaders</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 31), student activists in Kurdish universities regularly faced revolutionary court charges of &#x27;acting against national security,&#x27; alongside expulsions by university disciplinary bodies.</p>
+        <div class="imp"><span>Result:</span> Purged hundreds of promising Kurdish intellectuals and students from higher education for organizing cultural forums.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 31 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=31" target="_blank" rel="noopener" class="btn-p">PDF (Page 31)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=31" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Intelligence &amp; Revolutionary Court" data-s="22 4. linguistic, religious &amp; civil society suppression execution of kurdish teacher and unionist farzad kamangar ministry of intelligence &amp; revolutionary court 9 may 2010 execution of kurdish primary schoolteacher and human rights advocate farzad kamangar in evin prison as documented by human rights watch (2009 report, p. 45), kurdish schoolteacher farzad kamangar was sentenced to death following an unfair trial with fabricated evidence, and executed by hanging in evin prison. served as a chilling warning to kurdish educators, labor organizers, and cultural rights defenders. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#022</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">9 May 2010</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Execution of Kurdish Teacher and Unionist Farzad Kamangar</span>
+          <span class="rt r-both">Ministry of Intelligence &amp; Revolutionary Court</span>
+        </div>
+        <h3>Execution of Kurdish primary schoolteacher and human rights advocate Farzad Kamangar in Evin Prison</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 45), Kurdish schoolteacher Farzad Kamangar was sentenced to death following an unfair trial with fabricated evidence, and executed by hanging in Evin Prison.</p>
+        <div class="imp"><span>Result:</span> Served as a chilling warning to Kurdish educators, labor organizers, and cultural rights defenders.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 45 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=45" target="_blank" rel="noopener" class="btn-p">PDF (Page 45)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=45" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Tehran Revolutionary Court" data-s="23 4. linguistic, religious &amp; civil society suppression prosecution of editor bahram valad-beigi for &#x27;sharing ideology of barzani&#x27; tehran revolutionary court 2005 criminal prosecution of editor bahram valad-beigi on charges of &#x27;sharing the ideology of barzani&#x27; as documented by human rights watch (2009 report, p. 15), the government prosecuted editor bahram valad-beigi of newspaper ashti on absurd ideological charges including &#x27;sharing the ideology of barzani.&#x27; criminalized the mere academic or journalistic reference to kurdish cultural figures and leaders. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#023</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2005</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Prosecution of Editor Bahram Valad-Beigi for &#x27;Sharing Ideology of Barzani&#x27;</span>
+          <span class="rt r-both">Tehran Revolutionary Court</span>
+        </div>
+        <h3>Criminal prosecution of editor Bahram Valad-Beigi on charges of &#x27;sharing the ideology of Barzani&#x27;</h3>
+        <p class="desc">As documented by Human Rights Watch (2009 Report, p. 15), the government prosecuted editor Bahram Valad-Beigi of newspaper Ashti on absurd ideological charges including &#x27;sharing the ideology of Barzani.&#x27;</p>
+        <div class="imp"><span>Result:</span> Criminalized the mere academic or journalistic reference to Kurdish cultural figures and leaders.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 15 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=15" target="_blank" rel="noopener" class="btn-p">PDF (Page 15)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=15" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="Guidance Patrol (Gasht-e Ershad)" data-s="24 5. jin, jiyan, azadi crackdown (2022-2024) 16 september 2022 unlawful death in custody of jina (mahsa) amini guidance patrol (gasht-e ershad) 16 september 2022 unlawful arrest, violent custodial physical trauma, and death of 22-year-old kurdish woman jina (mahsa) amini as confirmed by the united nations fact-finding mission (a/hrc/55/67, p. 4), jina amini&#x27;s arrest and detention preceding her death in custody constituted an unlawful deprivation of life, resulting from physical violence inflicted by state morality police. ignited the historic nationwide &#x27;jin, jiyan, azadi&#x27; (woman, life, freedom) revolution across iran and the world. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#024</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">16 September 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">16 September 2022 Unlawful Death in Custody of Jina (Mahsa) Amini</span>
+          <span class="rt r-both">Guidance Patrol (Gasht-e Ershad)</span>
+        </div>
+        <h3>Unlawful arrest, violent custodial physical trauma, and death of 22-year-old Kurdish woman Jina (Mahsa) Amini</h3>
+        <p class="desc">As confirmed by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 4), Jina Amini&#x27;s arrest and detention preceding her death in custody constituted an unlawful deprivation of life, resulting from physical violence inflicted by state morality police.</p>
+        <div class="imp"><span>Result:</span> Ignited the historic nationwide &#x27;Jin, Jiyan, Azadi&#x27; (Woman, Life, Freedom) revolution across Iran and the world.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 4 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=4" target="_blank" rel="noopener" class="btn-p">PDF (Page 4)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=4" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="State Security Forces &amp; Basij Militia" data-s="25 5. jin, jiyan, azadi crackdown (2022-2024) 90% of protesters killed in 2022 were from ethnic minorities state security forces &amp; basij militia september-october 2022 overwhelming disproportion of state lethal violence concentrated against kurdish and baluchi demonstrators as documented by the washington institute (winep 17673, p. 1), of the initial 224 protesters killed by regime forces during the 2022 uprising, roughly 90 percent were from iran&#x27;s ethnic minority populations, principally kurds and baluchis. exposed the regime&#x27;s policy of deploying lethal military rules of engagement primarily in marginalized minority provinces. the washington institute for near east policy (winep) ethnic minorities demand freedom and equality (2022)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#025</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">September-October 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">90% of Protesters Killed in 2022 Were From Ethnic Minorities</span>
+          <span class="rt r-both">State Security Forces &amp; Basij Militia</span>
+        </div>
+        <h3>Overwhelming disproportion of state lethal violence concentrated against Kurdish and Baluchi demonstrators</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 17673, p. 1), of the initial 224 protesters killed by regime forces during the 2022 uprising, roughly 90 percent were from Iran&#x27;s ethnic minority populations, principally Kurds and Baluchis.</p>
+        <div class="imp"><span>Result:</span> Exposed the regime&#x27;s policy of deploying lethal military rules of engagement primarily in marginalized minority provinces.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Ethnic Minorities Demand Freedom and Equality (2022) <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_17673.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/anti-regime-protests-swell-across-iran-ethnic-minorities-demand-freedom-and-equality#page=1" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC, Police &amp; Basij Command" data-s="26 5. jin, jiyan, azadi crackdown (2022-2024) lethal force deployed by security forces across 14 provinces irgc, police &amp; basij command september-november 2022 coordinated use of unlawful lethal military force and live combat ammunition against peaceful demonstrators as documented by the united nations fact-finding mission (a/hrc/55/67, p. 5), the mission verified the systematic use of unlawful lethal force by state security forces between 16 september and 21 november 2022 across 14 provinces, heavily concentrated in kurdish cities. led directly to the slaughter of over 500 peaceful protesters and the unlawful arrest of tens of thousands. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#026</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">September-November 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Lethal Force Deployed by Security Forces Across 14 Provinces</span>
+          <span class="rt r-irgc">IRGC, Police &amp; Basij Command</span>
+        </div>
+        <h3>Coordinated use of unlawful lethal military force and live combat ammunition against peaceful demonstrators</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 5), the mission verified the systematic use of unlawful lethal force by state security forces between 16 September and 21 November 2022 across 14 provinces, heavily concentrated in Kurdish cities.</p>
+        <div class="imp"><span>Result:</span> Led directly to the slaughter of over 500 peaceful protesters and the unlawful arrest of tens of thousands.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC Special Forces &amp; Police" data-s="27 5. jin, jiyan, azadi crackdown (2022-2024) deliberate blinding of protesters with shotgun pellets irgc special forces &amp; police 2022-2023 deliberate firing of lead shotgun birdshot directly into the faces and eyes of peaceful female and young demonstrators as documented by the united nations fact-finding mission (a/hrc/55/67, p. 6), state security forces targeted protesters with shotgun pellets, resulting in a pattern of horrific eye injuries and permanent blinding among hundreds of young women and men. weaponized surgical mutilation and permanent physical disability as an intentional terror tactic to suppress protests. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#027</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Deliberate Blinding of Protesters With Shotgun Pellets</span>
+          <span class="rt r-irgc">IRGC Special Forces &amp; Police</span>
+        </div>
+        <h3>Deliberate firing of lead shotgun birdshot directly into the faces and eyes of peaceful female and young demonstrators</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 6), state security forces targeted protesters with shotgun pellets, resulting in a pattern of horrific eye injuries and permanent blinding among hundreds of young women and men.</p>
+        <div class="imp"><span>Result:</span> Weaponized surgical mutilation and permanent physical disability as an intentional terror tactic to suppress protests.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 6 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=6" target="_blank" rel="noopener" class="btn-p">PDF (Page 6)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=6" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC Ground Forces &amp; Snipers" data-s="28 5. jin, jiyan, azadi crackdown (2022-2024) rooftop snipers &amp; assault rifles (ak-47s) fired directly on crowds irgc ground forces &amp; snipers october-november 2022 deployment of military combat rifles (kalashnikov ak-47s) and snipers firing from government buildings into unarmed crowds as documented by the united nations fact-finding mission (a/hrc/55/67, p. 16), in kurdish cities including javanrud, mahabad, and piranshahr, security forces fired assault rifles (ak-47s) directly into peaceful crowds. turned civilian streets into military battlezones and killed dozens of unarmed youths in mere minutes. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#028</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">October-November 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Rooftop Snipers &amp; Assault Rifles (AK-47s) Fired Directly on Crowds</span>
+          <span class="rt r-irgc">IRGC Ground Forces &amp; Snipers</span>
+        </div>
+        <h3>Deployment of military combat rifles (Kalashnikov AK-47s) and snipers firing from government buildings into unarmed crowds</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 16), in Kurdish cities including Javanrud, Mahabad, and Piranshahr, security forces fired assault rifles (AK-47s) directly into peaceful crowds.</p>
+        <div class="imp"><span>Result:</span> Turned civilian streets into military battlezones and killed dozens of unarmed youths in mere minutes.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 16 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=16" target="_blank" rel="noopener" class="btn-p">PDF (Page 16)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=16" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC &amp; Ministry of Intelligence Interrogators" data-s="29 5. jin, jiyan, azadi crackdown (2022-2024) systemic sexual and gender-based violence in detention irgc &amp; ministry of intelligence interrogators 2022-2023 systematic use of rape, gang rape, genital electric shocks, and sexual degradation against imprisoned demonstrators as confirmed by the united nations fact-finding mission (a/hrc/55/67, p. 8), state authorities perpetrated a widespread and systematic pattern of sexual and gender-based violence, including rape and torture, against women, men, and children detained during protests. utilized state-sanctioned sexual violence as an locked in weapon to terrorize and silence civil society. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#029</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systemic Sexual and Gender-Based Violence in Detention</span>
+          <span class="rt r-irgc">IRGC &amp; Ministry of Intelligence Interrogators</span>
+        </div>
+        <h3>Systematic use of rape, gang rape, genital electric shocks, and sexual degradation against imprisoned demonstrators</h3>
+        <p class="desc">As confirmed by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 8), state authorities perpetrated a widespread and systematic pattern of sexual and gender-based violence, including rape and torture, against women, men, and children detained during protests.</p>
+        <div class="imp"><span>Result:</span> Utilized state-sanctioned sexual violence as an locked in weapon to terrorize and silence civil society.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="State-Affiliated Extremist Vigilantes &amp; Intelligence" data-s="30 5. jin, jiyan, azadi crackdown (2022-2024) toxic chemical gas poisonings targeting kurdish girls&#x27; schools state-affiliated extremist vigilantes &amp; intelligence late 2022 mid 2023 coordinated wave of respiratory poisonings and chemical gas releases targeting female students in kurdish schools as documented by the united nations fact-finding mission (a/hrc/55/67, p. 15), dozens of suspicious toxic gas poisonings targeted girls&#x27; secondary schools across predominantly kurdish towns, sickening thousands of schoolgirls while state police assaulted complaining parents. terrorized young female students who had courageously taken off mandatory headscarves during schoolyard protests. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#030</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">Late 2022 Mid 2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Toxic Chemical Gas Poisonings Targeting Kurdish Girls&#x27; Schools</span>
+          <span class="rt r-both">State-Affiliated Extremist Vigilantes &amp; Intelligence</span>
+        </div>
+        <h3>Coordinated wave of respiratory poisonings and chemical gas releases targeting female students in Kurdish schools</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 15), dozens of suspicious toxic gas poisonings targeted girls&#x27; secondary schools across predominantly Kurdish towns, sickening thousands of schoolgirls while state police assaulted complaining parents.</p>
+        <div class="imp"><span>Result:</span> Terrorized young female students who had courageously taken off mandatory headscarves during schoolyard protests.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 15 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=15" target="_blank" rel="noopener" class="btn-p">PDF (Page 15)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=15" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="United Nations Independent Fact-Finding Mission" data-s="31 5. jin, jiyan, azadi crackdown (2022-2024) un finding: state atrocities constitute crimes against humanity united nations independent fact-finding mission march 2024 official united nations legal determination that state atrocities in 2022-2023 constitute crimes against humanity as concluded by the united nations fact-finding mission (a/hrc/55/67, p. 17), the gross human rights violations committed by the islamic republic, including extrajudicial killings, torture, rape, and persecution, constitute crimes against humanity. established legal culpability of the highest iranian state leadership under international criminal law. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#031</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">March 2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: State Atrocities Constitute Crimes Against Humanity</span>
+          <span class="rt r-both">United Nations Independent Fact-Finding Mission</span>
+        </div>
+        <h3>Official United Nations legal determination that state atrocities in 2022-2023 constitute crimes against humanity</h3>
+        <p class="desc">As concluded by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 17), the gross human rights violations committed by the Islamic Republic, including extrajudicial killings, torture, rape, and persecution, constitute crimes against humanity.</p>
+        <div class="imp"><span>Result:</span> Established legal culpability of the highest Iranian state leadership under international criminal law.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 17 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=17" target="_blank" rel="noopener" class="btn-p">PDF (Page 17)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=17" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="Reynaldo Galindo Pohl (UN Special Representative)" data-s="32 1. 1979-1988 military invasion &amp; prison massacres un special representative receiving persistent reports of prison executions reynaldo galindo pohl (un special representative) 1988-1989 persistent international reporting on waves of political executions received by the united nations as documented by the united nations special representative (e/cn.4/1989/26, p. 5), the special representative received persistent reports of an alleged wave of executions of political prisoners across the islamic republic. alerted the international community to the clandestine extermination of political detainees. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#032</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988-1989</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Special Representative Receiving Persistent Reports of Prison Executions</span>
+          <span class="rt r-both">Reynaldo Galindo Pohl (UN Special Representative)</span>
+        </div>
+        <h3>Persistent international reporting on waves of political executions received by the United Nations</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 5), the Special Representative received persistent reports of an alleged wave of executions of political prisoners across the Islamic Republic.</p>
+        <div class="imp"><span>Result:</span> Alerted the international community to the clandestine extermination of political detainees.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="IRGC &amp; Ministry of Intelligence" data-s="33 1. 1979-1988 military invasion &amp; prison massacres secret mass burials in unmarked graves at behesht-e zahra cemetery irgc &amp; ministry of intelligence 1988 interment of executed political prisoners in clandestine mass graves without notifying families as documented by the united nations special representative (e/cn.4/1989/26, p. 9), reports confirmed that political prisoners were executed and buried in secret sections of behesht-e zahra cemetery in tehran without death certificates or family notification. deprived grieving families of remains, funerals, and the right to mourn, constituting enforced disappearance. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#033</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Secret Mass Burials in Unmarked Graves at Behesht-e Zahra Cemetery</span>
+          <span class="rt r-irgc">IRGC &amp; Ministry of Intelligence</span>
+        </div>
+        <h3>Interment of executed political prisoners in clandestine mass graves without notifying families</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 9), reports confirmed that political prisoners were executed and buried in secret sections of Behesht-e Zahra cemetery in Tehran without death certificates or family notification.</p>
+        <div class="imp"><span>Result:</span> Deprived grieving families of remains, funerals, and the right to mourn, constituting enforced disappearance.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 9 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=9" target="_blank" rel="noopener" class="btn-p">PDF (Page 9)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=9" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="United Nations Commission on Human Rights" data-s="34 1. 1979-1988 military invasion &amp; prison massacres un formal finding: summary executions constitute arbitrary deprivation of life united nations commission on human rights 1989 official un legal finding that summary prison executions violate article 6 of the iccpr as documented by the united nations special representative (e/cn.4/1989/26, p. 19), summary executions suggest per se that the application of capital punishment in the islamic republic violated the fundamental right to life under international law. set that the 1988 prison executions were state-ordered extrajudicial crimes under international law. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#034</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1989</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Formal Finding: Summary Executions Constitute Arbitrary Deprivation of Life</span>
+          <span class="rt r-both">United Nations Commission on Human Rights</span>
+        </div>
+        <h3>Official UN legal finding that summary prison executions violate Article 6 of the ICCPR</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 19), summary executions suggest per se that the application of capital punishment in the Islamic Republic violated the fundamental right to life under international law.</p>
+        <div class="imp"><span>Result:</span> Set that the 1988 prison executions were state-ordered extrajudicial crimes under international law.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 19 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=19" target="_blank" rel="noopener" class="btn-p">PDF (Page 19)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=19" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="2. Killing of Kolbars &amp; Landmine Contamination" data-r="Islamic Republic Ministry of Defense" data-s="35 2. killing of kolbars &amp; landmine contamination 20 million uncleared landmines maiming minority populations islamic republic ministry of defense 1988-2024 failure to demine over 20 million landmines along the western kurdish border provinces as documented by the united nations special rapporteur (a/74/188, p. 22), an estimated 20 million landmines placed during the iran-iraq war continue to pose a critical threat to the right to life of ethnic minorities, with state demining efforts deemed completely insufficient. causes annual civilian deaths, amputations, and permanent terror among kurdish farmers, shepherds, and children. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#035</span> <span class="cat">2. Killing of Kolbars &amp; Landmine Contamination</span></div>
+          <span class="era">1988-2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">20 Million Uncleared Landmines Maiming Minority Populations</span>
+          <span class="rt r-irgc">Islamic Republic Ministry of Defense</span>
+        </div>
+        <h3>Failure to demine over 20 million landmines along the western Kurdish border provinces</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 22), an estimated 20 million landmines placed during the Iran-Iraq War continue to pose a critical threat to the right to life of ethnic minorities, with state demining efforts deemed completely insufficient.</p>
+        <div class="imp"><span>Result:</span> Causes annual civilian deaths, amputations, and permanent terror among Kurdish farmers, shepherds, and children.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="3. Extraterritorial Assassinations &amp; Cross-Border Strikes" data-r="Islamic Republic Central Authorities" data-s="36 3. extraterritorial assassinations &amp; cross-border strikes historical pattern of violating accords with kurdish leadership islamic republic central authorities 1979-2026 repeated bad-faith negotiations leading to assassinations rather than political settlements as documented by the washington institute (winep 19765, p. 5), historic precedent has created strong skepticism among kurds about whether any central authority in tehran would ultimately respect kurdish political agreements, following repeated betrayals and assassinations. deepened deep distrust in centralized governance across iranian kurdistan. the washington institute for near east policy (winep) iran&#x27;s western frontier: iranian kurds navigate risk and opportunity (2026)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#036</span> <span class="cat">3. Extraterritorial Assassinations &amp; Cross-Border Strikes</span></div>
+          <span class="era">1979-2026</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Historical Pattern of Violating Accords with Kurdish Leadership</span>
+          <span class="rt r-irgc">Islamic Republic Central Authorities</span>
+        </div>
+        <h3>Repeated bad-faith negotiations leading to assassinations rather than political settlements</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 19765, p. 5), historic precedent has created strong skepticism among Kurds about whether any central authority in Tehran would ultimately respect Kurdish political agreements, following repeated betrayals and assassinations.</p>
+        <div class="imp"><span>Result:</span> Deepened deep distrust in centralized governance across Iranian Kurdistan.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Iran&#x27;s Western Frontier: Iranian Kurds Navigate Risk and Opportunity (2026) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_19765.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/irans-western-frontier-iranian-kurds-navigate-risk-and-opportunity#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Islamic Revolutionary Courts &amp; Intelligence" data-s="37 4. linguistic, religious &amp; civil society suppression systematic persecution of kurdish cultural activists under international law islamic revolutionary courts &amp; intelligence 2009 denial of article 27 iccpr minority cultural and linguistic rights across iranian kurdistan as documented by human rights watch (2009, p. 38), the government uses broadly worded security laws to persecute activists in kurdish areas who promote language, cultural expression, and minority rights guaranteed under article 27 of the iccpr. criminalized peaceful preservation of kurdish heritage and folklore as threats to national security. human rights watch (hrw) freedom of expression and association in the kurdish regions (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#037</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2009</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systematic Persecution of Kurdish Cultural Activists Under International Law</span>
+          <span class="rt r-both">Islamic Revolutionary Courts &amp; Intelligence</span>
+        </div>
+        <h3>Denial of Article 27 ICCPR minority cultural and linguistic rights across Iranian Kurdistan</h3>
+        <p class="desc">As documented by Human Rights Watch (2009, p. 38), the government uses broadly worded security laws to persecute activists in Kurdish areas who promote language, cultural expression, and minority rights guaranteed under Article 27 of the ICCPR.</p>
+        <div class="imp"><span>Result:</span> Criminalized peaceful preservation of Kurdish heritage and folklore as threats to national security.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch (HRW)</div>
+            <div class="doc">Freedom of Expression and Association in the Kurdish Regions (2009) <b class="hl">(Page 38 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw2009.pdf#page=38" target="_blank" rel="noopener" class="btn-p">PDF (Page 38)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/iran0109_web.pdf#page=38" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC Intelligence &amp; IRIB Broadcasting" data-s="38 5. jin, jiyan, azadi crackdown (2022-2024) televised forced confessions broadcast on state media under duress irgc intelligence &amp; irib broadcasting 2022-2024 broadcasting coerced videotaped confessions extracted from detained protesters through torture and threats as documented by the united nations fact-finding mission (a/hrc/55/67, p. 16), authorities extracted and broadcast coerced confessions on state television to incriminate protesters and justify heavy prison sentences. stripped away the right against self-incrimination and publicly humiliated dissidents and their families. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#038</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Televised Forced Confessions Broadcast on State Media Under Duress</span>
+          <span class="rt r-irgc">IRGC Intelligence &amp; IRIB Broadcasting</span>
+        </div>
+        <h3>Broadcasting coerced videotaped confessions extracted from detained protesters through torture and threats</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 16), authorities extracted and broadcast coerced confessions on state television to incriminate protesters and justify heavy prison sentences.</p>
+        <div class="imp"><span>Result:</span> Stripped away the right against self-incrimination and publicly humiliated dissidents and their families.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 16 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=16" target="_blank" rel="noopener" class="btn-p">PDF (Page 16)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=16" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="Kurdish Civil Society &amp; Democratic Opposition" data-s="39 5. jin, jiyan, azadi crackdown (2022-2024) kurdish demands for full national &amp; ethnic collective rights kurdish civil society &amp; democratic opposition 2022-2026 rejection of populist centralist rhetoric and insistence on constitutional minority rights as documented by the washington institute (winep 17673, p. 5), kurdish civil society and political parties have demanded that any transition recognize full ethnic national rights rather than issuing mere populist platitudes that preserve centralist domination. affirmed that true iranian democracy is impossible without decentralization and full self-determination for minority nations. the washington institute for near east policy (winep) ethnic minorities demand freedom and equality (2022)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#039</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2026</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Kurdish Demands for Full National &amp; Ethnic Collective Rights</span>
+          <span class="rt r-both">Kurdish Civil Society &amp; Democratic Opposition</span>
+        </div>
+        <h3>Rejection of populist centralist rhetoric and insistence on constitutional minority rights</h3>
+        <p class="desc">As documented by The Washington Institute (WINEP 17673, p. 5), Kurdish civil society and political parties have demanded that any transition recognize full ethnic national rights rather than issuing mere populist platitudes that preserve centralist domination.</p>
+        <div class="imp"><span>Result:</span> Affirmed that true Iranian democracy is impossible without decentralization and full self-determination for minority nations.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">The Washington Institute for Near East Policy (WINEP)</div>
+            <div class="doc">Ethnic Minorities Demand Freedom and Equality (2022) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="winep_17673.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://www.washingtoninstitute.org/policy-analysis/anti-regime-protests-swell-across-iran-ethnic-minorities-demand-freedom-and-equality#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="1. 1979-1988 Military Invasion &amp; Prison Massacres" data-r="Ayatollah Ruhollah Khomeini &amp; Death Commissions" data-s="40 1. 1979-1988 military invasion &amp; prison massacres large-scale execution waves of political prisoners across iran ayatollah ruhollah khomeini &amp; death commissions 1988 systematic execution of large numbers of political prisoners and dissidents across iranian prisons as documented by the united nations special representative (e/cn.4/1989/26, p. 8), persistent reports confirmed the execution of a large number of prisoners who were members of political organizations. wrecked thousands of imprisoned dissidents who were serving lawful prison sentences. united nations commission on human rights report on the human rights situation in iran (e/cn.4/1989/26, 1989)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#040</span> <span class="cat">1. 1979-1988 Military Invasion &amp; Prison Massacres</span></div>
+          <span class="era">1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Large-Scale Execution Waves of Political Prisoners Across Iran</span>
+          <span class="rt r-both">Ayatollah Ruhollah Khomeini &amp; Death Commissions</span>
+        </div>
+        <h3>Systematic execution of large numbers of political prisoners and dissidents across Iranian prisons</h3>
+        <p class="desc">As documented by the United Nations Special Representative (E/CN.4/1989/26, p. 8), persistent reports confirmed the execution of a large number of prisoners who were members of political organizations.</p>
+        <div class="imp"><span>Result:</span> Wrecked thousands of imprisoned dissidents who were serving lawful prison sentences.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission on Human Rights</div>
+            <div class="doc">Report on the Human Rights Situation in Iran (E/CN.4/1989/26, 1989) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr1989.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=E/CN.4/1989/26&amp;l=en&amp;t=pdf#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Islamic Republic Ministry of Economy" data-s="41 4. linguistic, religious &amp; civil society suppression severe economic underdevelopment and high unemployment in kurdish provinces islamic republic ministry of economy 2019 state-engineered economic marginalization and joblessness across west azerbaijan, kurdistan, kermanshah, and ilam as documented by the united nations special rapporteur (a/74/188, p. 21), severe economic underdevelopment and lack of investment have resulted in extreme poverty and high unemployment across kurdish provinces. forced impoverished kurdish workers into perilous contraband courier labor (kolbari) to survive. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#041</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2019</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Severe Economic Underdevelopment and High Unemployment in Kurdish Provinces</span>
+          <span class="rt r-irgc">Islamic Republic Ministry of Economy</span>
+        </div>
+        <h3>State-engineered economic marginalization and joblessness across West Azerbaijan, Kurdistan, Kermanshah, and Ilam</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), severe economic underdevelopment and lack of investment have resulted in extreme poverty and high unemployment across Kurdish provinces.</p>
+        <div class="imp"><span>Result:</span> Forced impoverished Kurdish workers into perilous contraband courier labor (Kolbari) to survive.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="4. Linguistic, Religious &amp; Civil Society Suppression" data-r="Ministry of Education of the Islamic Republic" data-s="42 4. linguistic, religious &amp; civil society suppression article 15 constitutional ban on kurdish-medium education in state schools ministry of education of the islamic republic 2019 statutory prohibition on using kurdish as a language of instruction in primary and secondary schools as documented by the united nations special rapporteur (a/74/188, p. 21), state schools do not offer education in kurdish, which restricts children&#x27;s linguistic development and educational opportunities. kept in mother-tongue deprivation and forced linguistic assimilation for millions of kurdish youth. united nations special rapporteur on iran report to the un general assembly (a/74/188, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#042</span> <span class="cat">4. Linguistic, Religious &amp; Civil Society Suppression</span></div>
+          <span class="era">2019</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Article 15 Constitutional Ban on Kurdish-Medium Education in State Schools</span>
+          <span class="rt r-irgc">Ministry of Education of the Islamic Republic</span>
+        </div>
+        <h3>Statutory prohibition on using Kurdish as a language of instruction in primary and secondary schools</h3>
+        <p class="desc">As documented by the United Nations Special Rapporteur (A/74/188, p. 21), State schools do not offer education in Kurdish, which restricts children&#x27;s linguistic development and educational opportunities.</p>
+        <div class="imp"><span>Result:</span> Kept in mother-tongue deprivation and forced linguistic assimilation for millions of Kurdish youth.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Special Rapporteur on Iran</div>
+            <div class="doc">Report to the UN General Assembly (A/74/188, 2019) <b class="hl">(Page 21 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_sr2019.pdf#page=21" target="_blank" rel="noopener" class="btn-p">PDF (Page 21)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/74/188&amp;l=en&amp;t=pdf#page=21" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="Morality Police &amp; Security Forces" data-s="43 5. jin, jiyan, azadi crackdown (2022-2024) state concealment and intimidation following the custodial death of jina amini morality police &amp; security forces september 2022 official denial and harassment of family members following the death in custody of jina mahsa amini as documented by the united nations fact-finding mission (a/hrc/55/67, p. 4), the mission established that jina amini&#x27;s custodial death was caused by unlawful physical violence while in state custody, which authorities actively sought to cover up. ignited the nationwide woman, life, freedom revolution and triggered brutal state repression. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#043</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">September 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State Concealment and Intimidation Following the Custodial Death of Jina Amini</span>
+          <span class="rt r-both">Morality Police &amp; Security Forces</span>
+        </div>
+        <h3>Official denial and harassment of family members following the death in custody of Jina Mahsa Amini</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 4), the mission established that Jina Amini&#x27;s custodial death was caused by unlawful physical violence while in state custody, which authorities actively sought to cover up.</p>
+        <div class="imp"><span>Result:</span> Ignited the nationwide Woman, Life, Freedom revolution and triggered brutal state repression.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 4 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=4" target="_blank" rel="noopener" class="btn-p">PDF (Page 4)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=4" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC &amp; Basij Paramilitary Units" data-s="44 5. jin, jiyan, azadi crackdown (2022-2024) systematic deployment of birdshot &amp; pellets inflicting permanent blindness irgc &amp; basij paramilitary units 2022-2023 deliberate firing of metal pellets at the eyes and heads of peaceful demonstrators as documented by the united nations fact-finding mission (a/hrc/55/67, p. 8), security forces targeted the eyes and faces of demonstrators with birdshot and metal pellets, causing permanent blindness in hundreds of cases. relying on deliberate maiming and facial disfigurement as a weapon of state terror against young protesters. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#044</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systematic Deployment of Birdshot &amp; Pellets Inflicting Permanent Blindness</span>
+          <span class="rt r-irgc">IRGC &amp; Basij Paramilitary Units</span>
+        </div>
+        <h3>Deliberate firing of metal pellets at the eyes and heads of peaceful demonstrators</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 8), security forces targeted the eyes and faces of demonstrators with birdshot and metal pellets, causing permanent blindness in hundreds of cases.</p>
+        <div class="imp"><span>Result:</span> Relying on deliberate maiming and facial disfigurement as a weapon of state terror against young protesters.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="5. Jin, Jiyan, Azadi Crackdown (2022-2024)" data-r="IRGC &amp; Ministry of Intelligence Interrogators" data-s="45 5. jin, jiyan, azadi crackdown (2022-2024) systematic pattern of rape &amp; sexual torture against minority detainees irgc &amp; ministry of intelligence interrogators 2022-2024 use of rape, gang rape, and sexualized violence against detained men, women, and children as documented by the united nations fact-finding mission (a/hrc/55/67, p. 15), the mission established a systemic pattern of sexual and gender-based violence perpetrated by state agents against detainees. constitutes crimes against humanity and severe violations of the convention against torture. united nations fact-finding mission (ffm) report on the islamic republic of iran (a/hrc/55/67, 2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#045</span> <span class="cat">5. Jin, Jiyan, Azadi Crackdown (2022-2024)</span></div>
+          <span class="era">2022-2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systematic Pattern of Rape &amp; Sexual Torture Against Minority Detainees</span>
+          <span class="rt r-irgc">IRGC &amp; Ministry of Intelligence Interrogators</span>
+        </div>
+        <h3>Use of rape, gang rape, and sexualized violence against detained men, women, and children</h3>
+        <p class="desc">As documented by the United Nations Fact-Finding Mission (A/HRC/55/67, p. 15), the mission established a systemic pattern of sexual and gender-based violence perpetrated by state agents against detainees.</p>
+        <div class="imp"><span>Result:</span> Constitutes crimes against humanity and severe violations of the Convention Against Torture.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Fact-Finding Mission (FFM)</div>
+            <div class="doc">Report on the Islamic Republic of Iran (A/HRC/55/67, 2024) <b class="hl">(Page 15 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ffm2024.pdf#page=15" target="_blank" rel="noopener" class="btn-p">PDF (Page 15)</a>
+            <a href="https://documents.un.org/api/symbol/access?s=A/HRC/55/67&amp;l=en&amp;t=pdf#page=15" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="empty" id="empty">
+      <p>NO MATCHING RECORDS</p>
+    </div>
+  </main>
+
+  <div class="banner">
+    <h2>REJECT PERSIANIZATION</h2>
+  </div>
+
+  <footer>
+    <span>SOURCES: UNITED NATIONS &bull; HUMAN RIGHTS WATCH &bull; THE WASHINGTON INSTITUTE &bull; LUND UNIV</span>
+    <span>REJECT PERSIANIZATION &bull; coded by <b style="color:#c084fc;">pr0fitsz</b></span>
+  </footer>
+
+  <script>
+    console.log("%c pr0fitsz owns u ", "background:#9333ea;color:#06040a;font-weight:bold;padding:2px 6px;");
+
+    let curCat = 'ALL';
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+
+    const qIn = $('#q');
+    const cards = $$('.card');
+    const pdfs = $$('.pdf-card');
+    const gridEl = $('#grid');
+    const pdfEl = $('#pdfs');
+    const cntEl = $('#cnt');
+    const emptyEl = $('#empty');
+
+    function setCat(c) {
+      curCat = c;
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === c));
+      filter();
+    }
+
+    function reset() {
+      qIn.value = '';
+      curCat = 'ALL';
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === 'ALL'));
+      filter();
+    }
+
+    function filter() {
+      const raw = qIn.value.trim().toLowerCase();
+      const terms = raw ? raw.split(/\s+/) : [];
+
+      if (curCat === 'Archival PDFs') {
+        gridEl.style.display = 'none';
+        pdfEl.style.display = 'grid';
+        let n = 0;
+        pdfs.forEach(p => {
+          const ok = terms.every(t => p.dataset.s.includes(t));
+          p.style.display = ok ? 'flex' : 'none';
+          if (ok) n++;
+        });
+        cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + pdfs.length + '</b> ARCHIVAL PDFS';
+        emptyEl.style.display = n ? 'none' : 'block';
+        return;
+      }
+
+      pdfEl.style.display = 'none';
+      gridEl.style.display = 'grid';
+      let n = 0;
+
+      cards.forEach(c => {
+        const cOk = curCat === 'ALL' || c.dataset.c === curCat;
+        const sOk = terms.every(t => c.dataset.s.includes(t));
+        if (cOk && sOk) {
+          c.style.display = 'flex';
+          n++;
+        } else {
+          c.style.display = 'none';
+        }
+      });
+
+      cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + cards.length + '</b> RECORDS';
+      emptyEl.style.display = n ? 'none' : 'block';
+    }
+
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    $$('.tilt').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const nx = clamp((e.clientX - (r.left + r.width / 2)) / (r.width / 2), -1, 1);
+        const ny = clamp((e.clientY - (r.top + r.height / 2)) / (r.height / 2), -1, 1);
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        el.style.transition = 'transform 0.1s ease-out';
+        el.style.transform = `perspective(1800px) translate3d(${(nx*2.5).toFixed(2)}px,${(ny*2.5-1.5).toFixed(2)}px,0) rotateX(${(-ny*2).toFixed(2)}deg) rotateY(${(nx*2).toFixed(2)}deg)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.4s cubic-bezier(0.22,1,0.36,1)';
+        el.style.transform = 'perspective(1800px) translate3d(0,0,0) rotateX(0deg) rotateY(0deg)';
+      });
+    });
+  </script>
+</body>
+</html>
