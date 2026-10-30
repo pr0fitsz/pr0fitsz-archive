@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Record of Erdogan in Kurdistan | pr0fitsz archive</title>
+  <meta name="description" content="Documented record of state repression, urban destruction, Roboski airstrike, Afrin demographic engineering, and political imprisonment under Recep Tayyip Erdogan (2002-2026).">
+  <style>
+    :root {
+      --bg: #07040b;
+      --card-bg: #11091e;
+      --card-hover: #190e2b;
+      --border: #2e174d;
+      --accent: #d946ef;
+      --accent-glow: rgba(217,70,239,0.35);
+      --purp: #a855f7;
+      --gold: #febd11;
+      --text: #f5f3ff;
+      --text-dim: #cbd5e1;
+      --red: #f43f5e;
+      --green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--purp); color: #fff; }
+
+    .roj-wrap { position: fixed; top: 1.2rem; left: 1.3rem; z-index: 1100; pointer-events: none; }
+    .roj-svg { width: 52px; height: 52px; animation: roj-spin 34s linear infinite; filter: drop-shadow(0 0 12px rgba(254,189,17,0.7)); }
+    @keyframes roj-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .top-bar {
+      position: sticky; top: 0; z-index: 1000;
+      background: #0d0617;
+      border-bottom: 2px solid #9333ea;
+      padding: 0.5rem 1.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+    }
+    .top-bar .tag { font-weight: 800; color: #c084fc; text-transform: uppercase; }
+    .top-bar .mid { color: #94a3b8; font-weight: 600; text-transform: uppercase; font-size: 0.76rem; }
+    .top-bar a.switch-btn {
+      background: linear-gradient(135deg, #7e22ce, #a855f7);
+      color: #fff; padding: 0.28rem 0.75rem; border-radius: 4px;
+      text-decoration: none; font-weight: 700; font-size: 0.74rem;
+      letter-spacing: 0.05em; transition: opacity 0.2s;
+    }
+    .top-bar a.switch-btn:hover { opacity: 0.9; }
+
+    .hero {
+      text-align: center; padding: 3.5rem 1.25rem 2.2rem;
+      max-width: 980px; margin: 0 auto;
+    }
+    .hero .kicker {
+      color: var(--gold); font-size: 0.82rem; font-weight: 800;
+      letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+      font-weight: 900; line-height: 1.15; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff 25%, #f472b6 65%, #c084fc 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: var(--text-dim); font-size: clamp(0.96rem, 1.8vw, 1.1rem);
+      max-width: 820px; margin: 0 auto 1.5rem; line-height: 1.65;
+    }
+    .strip {
+      display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+      border-top: 1px solid #3b1d60; border-bottom: 1px solid #3b1d60;
+      padding: 0.85rem 0; margin-top: 1rem; font-size: 0.85rem;
+    }
+    .strip div { text-transform: uppercase; letter-spacing: 0.08em; }
+    .strip b { color: var(--gold); font-size: 1.15rem; margin-right: 0.35rem; }
+
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .panel {
+      position: relative; z-index: 10;
+      background: rgba(11,7,19,0.93); backdrop-filter: blur(14px);
+      border: 1px solid #5b21b6; border-radius: 8px; padding: 1.1rem; margin-bottom: 1.75rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.78);
+    }
+    .s-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
+    .s-row input {
+      flex: 1 1 260px; background: #080310; border: 1px solid #4c1d95;
+      border-radius: 6px; padding: 0.65rem 0.95rem; color: #fff;
+      font-size: 0.95rem; outline: none; transition: border-color 0.2s;
+    }
+    .s-row input:focus { border-color: var(--accent); }
+    .s-row button {
+      padding: 0.65rem 1.1rem; border: none; border-radius: 6px;
+      font-weight: 700; font-size: 0.84rem; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.05em; transition: 0.18s;
+    }
+    .s-btn { background: linear-gradient(135deg, #7c3aed, #a855f7); color: #fff; }
+    .s-btn:hover { filter: brightness(1.15); }
+    .clr-btn { background: #1f1430; color: #cbd5e1; border: 1px solid #3b1d60 !important; }
+    .clr-btn:hover { background: #2d1b47; color: #fff; }
+
+    .c-bar { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
+    .c-btn {
+      background: #150b24; color: #cbd5e1; border: 1px solid #3b1d60;
+      border-radius: 4px; padding: 0.35rem 0.7rem; font-size: 0.78rem;
+      cursor: pointer; transition: 0.18s; font-weight: 600;
+    }
+    .c-btn:hover { background: #241240; color: #fff; }
+    .c-btn.on {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff; border-color: #c084fc;
+    }
+    .c-btn span {
+      background: rgba(0,0,0,0.35); padding: 0.1rem 0.4rem;
+      border-radius: 10px; font-size: 0.72rem; margin-left: 0.35rem;
+    }
+
+    .stat-line {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: #94a3b8; border-top: 1px solid #231138;
+      padding-top: 0.6rem; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .stat-line b { color: var(--gold); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.35rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.3rem;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.22s, box-shadow 0.22s;
+    }
+    .card.tilt:hover {
+      transform: translateY(-5px) rotate(-1deg);
+      border-color: var(--accent);
+      box-shadow: 0 16px 36px var(--accent-glow);
+    }
+    .card.tilt:nth-child(even):hover {
+      transform: translateY(-5px) rotate(1deg);
+    }
+    .glow {
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #d946ef, #7c3aed, #febd11);
+      opacity: 0.4; transition: opacity 0.2s;
+    }
+    .card:hover .glow { opacity: 1; }
+
+    .c-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.75rem; letter-spacing: 0.06em; margin-bottom: 0.65rem;
+    }
+    .c-head .num { color: var(--gold); font-weight: 800; margin-right: 0.5rem; }
+    .c-head .cat { color: #cbd5e1; font-weight: 700; text-transform: uppercase; }
+    .c-head .era {
+      background: #241240; color: #f472b6; padding: 0.15rem 0.55rem;
+      border-radius: 3px; font-weight: 700; font-size: 0.72rem;
+    }
+
+    .c-sub { margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .c-sub .sub { font-size: 0.82rem; color: #c084fc; font-weight: 700; }
+    .rt {
+      font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.45rem;
+      border-radius: 3px; text-transform: uppercase;
+    }
+    .r-both { background: rgba(244,63,94,0.18); color: #f43f5e; border: 1px solid rgba(244,63,94,0.4); }
+
+    .card h3 {
+      font-size: 1.05rem; font-weight: 800; color: #fff;
+      line-height: 1.35; margin-bottom: 0.7rem;
+    }
+    .card p.desc {
+      color: var(--text-dim); font-size: 0.9rem; line-height: 1.55;
+      margin-bottom: 0.85rem; flex-grow: 1;
+    }
+    .imp {
+      background: rgba(16,185,129,0.08); border-left: 3px solid #10b981;
+      padding: 0.55rem 0.75rem; font-size: 0.82rem; color: #e2e8f0;
+      margin-bottom: 0.95rem; border-radius: 0 4px 4px 0;
+    }
+    .imp span { color: #10b981; font-weight: 800; text-transform: uppercase; margin-right: 0.35rem; }
+
+    .c-foot {
+      border-top: 1px solid #231138; padding-top: 0.75rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 0.6rem;
+    }
+    .meta { font-size: 0.74rem; color: #94a3b8; max-width: 60%; }
+    .meta .org { color: #cbd5e1; font-weight: 700; }
+    .meta .doc { margin-top: 0.15rem; }
+    .meta b.hl { color: var(--gold); }
+
+    .links { display: flex; gap: 0.4rem; }
+    .btn-p, .btn-s {
+      font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.65rem;
+      border-radius: 4px; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.05em; transition: 0.18s; display: inline-block;
+    }
+    .btn-p { background: #271442; color: #f5f3ff; border: 1px solid #4c1d95; }
+    .btn-p:hover { background: #3b1d60; color: #fff; }
+    .btn-s { background: linear-gradient(135deg, #7c3aed, #a855f7); color: #fff; }
+    .btn-s:hover { filter: brightness(1.2); }
+
+    .pdf-grid {
+      display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem; margin-bottom: 2rem;
+    }
+    .pdf-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column;
+      justify-content: space-between;
+    }
+    .p-tag {
+      display: inline-block; background: #241240; color: var(--gold);
+      font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem;
+      border-radius: 3px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+    .pdf-card h4 { font-size: 1rem; color: #fff; margin-bottom: 0.4rem; }
+    .pdf-card p { font-size: 0.84rem; color: var(--text-dim); margin-bottom: 1rem; }
+    .p-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #231138; padding-top: 0.6rem; }
+    .p-meta { font-size: 0.72rem; color: #94a3b8; }
+    .p-btn {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff; padding: 0.35rem 0.75rem; border-radius: 4px;
+      text-decoration: none; font-size: 0.74rem; font-weight: 700;
+    }
+
+    .banner {
+      background: linear-gradient(90deg, #4c1d95, #701a75, #4c1d95);
+      border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      padding: 1.5rem 1.25rem; text-align: center; margin: 3rem 0;
+    }
+    .banner h2 {
+      color: #fff; font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+      font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase;
+    }
+
+    footer {
+      background: #080310; border-top: 1px solid #241240;
+      padding: 2rem 1.25rem; text-align: center; font-size: 0.8rem;
+      color: #94a3b8; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+
+    .empty {
+      display: none; text-align: center; padding: 4rem 1rem;
+      color: #94a3b8; font-weight: 700; font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="roj-wrap">
+    <svg class="roj-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60.000,4.000 64.173,32.313 76.506,6.488 72.149,34.773 91.546,13.731 79.045,39.475 103.783,25.085 84.249,46.000 112.129,39.541 87.298,53.769 115.843,55.815 87.922,62.092 114.596,72.461 86.064,70.230 108.497,88.000 81.891,77.458 98.090,101.051 75.773,83.135 84.297,110.454 68.253,86.756 68.346,115.375 60.000,88.000 51.654,115.375 51.747,86.756 35.703,110.454 44.227,83.135 21.910,101.051 38.109,77.458 11.503,88.000 33.936,70.230 5.404,72.461 32.078,62.092 4.157,55.815 32.702,53.769 7.871,39.541 35.751,46.000 16.217,25.085 40.955,39.475 28.454,13.731 47.851,34.773 43.494,6.488 55.827,32.313" fill="#febd11"/>
+      <circle cx="60" cy="60" r="28" fill="#febd11"/>
+    </svg>
+  </div>
+
+  <div class="top-bar">
+    <span class="tag">pr0fitsz owns u</span>
+    <span class="mid">THE ERDOGAN RECORD IN KURDISTAN (2002-2026)</span>
+    <div style="display:flex;gap:0.5rem;">
+      <a href="verdict_on_the_shah.html" class="switch-btn">The Shah Record</a>
+      <a href="verdict_on_the_irgc.html" class="switch-btn">The IRGC Record</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">BAKUR & ROJAVA ARCHIVE</div>
+    <h1>The Record of Erdogan in Kurdistan</h1>
+    <p>
+      Documented record of state repression, urban sieges, the Roboski airstrike, Afrin demographic engineering, and political imprisonment under Recep Tayyip Erdogan (2002-2026). Every record links directly to highlighted international legal reports.
+    </p>
+    <div class="strip">
+      <div><b>16</b> <span>Records</span></div>
+      <div><b>6</b> <span>Sections</span></div>
+      <div><b>5</b> <span>Source PDFs</span></div>
+      <div><b>2002-2026</b> <span>Timeline</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="s-row">
+        <input type="text" id="q" placeholder="Search 16 records (e.g. Roboski, Demirtas, Cizre, Afrin)..." oninput="filter()">
+        <button class="s-btn" onclick="filter()">Search</button>
+        <button class="clr-btn" onclick="reset()">Reset</button>
+      </div>
+
+      <div class="c-bar" id="cBar">
+        <button class="c-btn on" data-c="ALL" onclick="setCat('ALL')">All Sections <span>16</span></button>
+<button class="c-btn" data-c="The Roboski Airstrike &amp; Military Impunity (2011-2012)" onclick="setCat('The Roboski Airstrike &amp; Military Impunity (2011-2012)')">The Roboski Airstrike &amp; Military Impunity (2011-2012) <span>2</span></button>
+<button class="c-btn" data-c="The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)" onclick="setCat('The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)')">The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015) <span>2</span></button>
+<button class="c-btn" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" onclick="setCat('Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)')">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016) <span>5</span></button>
+<button class="c-btn" data-c="The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)" onclick="setCat('The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)')">The Imprisonment of Demirtas &amp; Political Stifling (2016-Present) <span>2</span></button>
+<button class="c-btn" data-c="The Kayyim (Trustee) System: Disenfranchising Voters (2016-Present)" onclick="setCat('The Kayyim (Trustee) System: Disenfranchising Voters (2016-Present)')">The Kayyim (Trustee) System: Disenfranchising Voters (2016-Present) <span>1</span></button>
+<button class="c-btn" data-c="Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)" onclick="setCat('Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)')">Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present) <span>4</span></button>
+<button class="c-btn" data-c="Archival PDFs" onclick="setCat('Archival PDFs')">Archival PDFs <span>5</span></button>
+      </div>
+
+      <div class="stat-line">
+        <span id="cnt">SHOWING <b>16</b> OF <b>16</b> RECORDS</span>
+        <span>coded by pr0fitsz</span>
+      </div>
+    </section>
+
+    <section class="pdf-grid" id="pdfs">
+            <div class="pdf-card" data-s="amnesty international turkey: uludere bombing investigation lacks credibility (2012) official amnesty documentation on the roboski airstrike that killed 34 kurdish civilians.">
+        <div>
+          <span class="p-tag">AMNESTY INTERNATIONAL</span>
+          <h4>Turkey: Uludere Bombing Investigation Lacks Credibility (2012)</h4>
+          <p>Official Amnesty documentation on the Roboski airstrike that killed 34 Kurdish civilians.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">Amnesty International</span>
+          <a href="amnesty_roboski_2012.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="united nations (ohchr) report on the human rights situation in south-east turkey (2017) un high commissioner report on urban sieges, cizre basements, and 500,000 displaced kurds.">
+        <div>
+          <span class="p-tag">UNITED NATIONS</span>
+          <h4>Report on the Human Rights Situation in South-East Turkey (2017)</h4>
+          <p>UN High Commissioner report on urban sieges, Cizre basements, and 500,000 displaced Kurds.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">United Nations (OHCHR)</span>
+          <a href="un_ohchr_turkey_2017.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="european court of human rights case of selahattin demirtas v. turkey (no. 2) [grand chamber] (2020) landmark binding ruling finding article 18 violation (ulterior purpose of stifling pluralism).">
+        <div>
+          <span class="p-tag">COUNCIL OF EUROPE</span>
+          <h4>Case of Selahattin Demirtas v. Turkey (No. 2) [Grand Chamber] (2020)</h4>
+          <p>Landmark binding ruling finding Article 18 violation (ulterior purpose of stifling pluralism).</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">European Court of Human Rights</span>
+          <a href="ecthr_demirtas_2020.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="human rights watch everything is by the power of the weapon: abuses in northern syria (2024) hrw investigation on demographic engineering, looting, and displacement in afrin.">
+        <div>
+          <span class="p-tag">HUMAN RIGHTS WATCH</span>
+          <h4>Everything is by the Power of the Weapon: Abuses in Northern Syria (2024)</h4>
+          <p>HRW investigation on demographic engineering, looting, and displacement in Afrin.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">Human Rights Watch</span>
+          <a href="hrw_afrin_2024.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="united nations (coi syria) report of the commission of inquiry on the syrian arab republic (2019) un findings on arbitrary detention, property seizures, and extortion following operation olive branch.">
+        <div>
+          <span class="p-tag">UNITED NATIONS</span>
+          <h4>Report of the Commission of Inquiry on the Syrian Arab Republic (2019)</h4>
+          <p>UN findings on arbitrary detention, property seizures, and extortion following Operation Olive Branch.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">United Nations (COI Syria)</span>
+          <a href="un_coi_syria_2019_afrin.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="grid">
+            <article class="card tilt" data-c="The Roboski Airstrike &amp; Military Impunity (2011-2012)" data-r="Turkish Air Force &amp; General Staff" data-s="1 the roboski airstrike &amp; military impunity (2011-2012) f-16 aerial bombardment killing 34 kurdish border crossers turkish air force &amp; general staff 28 december 2011 aerial strike targeting an unarmed convoy of kurdish villagers transporting cross-border goods on mules as documented by amnesty international (eur 44/001/2012, p. 1), on the night of 28 december 2011, turkish fighter jets struck a group of villagers near the village of ortasu in the uludere district of sirnak province, killing 34 civilians, all males and 19 of them children. represented one of the deadliest civilian massacres of the erdogan era, carried out with zero ground verification. amnesty international turkey: uludere bombing investigation lacks credibility (eur 44/001/2012)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#001</span> <span class="cat">The Roboski Airstrike &amp; Military Impunity (2011-2012)</span></div>
+          <span class="era">28 December 2011</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">F-16 Aerial Bombardment Killing 34 Kurdish Border Crossers</span>
+          <span class="rt r-both">Turkish Air Force &amp; General Staff</span>
+        </div>
+        <h3>Aerial strike targeting an unarmed convoy of Kurdish villagers transporting cross-border goods on mules</h3>
+        <p class="desc">As documented by Amnesty International (EUR 44/001/2012, p. 1), on the night of 28 December 2011, Turkish fighter jets struck a group of villagers near the village of Ortasu in the Uludere district of Sirnak province, killing 34 civilians, all males and 19 of them children.</p>
+        <div class="imp"><span>Result:</span> Represented one of the deadliest civilian massacres of the Erdogan era, carried out with zero ground verification.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Amnesty International</div>
+            <div class="doc">Turkey: Uludere Bombing Investigation Lacks Credibility (EUR 44/001/2012) <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="amnesty_roboski_2012.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://www.amnesty.org/en/documents/eur44/001/2012/en/" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Roboski Airstrike &amp; Military Impunity (2011-2012)" data-r="Recep Tayyip Erdogan (Prime Minister)" data-s="2 the roboski airstrike &amp; military impunity (2011-2012) prime ministerial praise for military leadership following massacre recep tayyip erdogan (prime minister) january 2012 state refusal to initiate transparent independent investigations and shielding commanders from prosecution as documented by amnesty international (eur 44/001/2012, p. 2), prime minister recep tayyip erdogan publicly thanked the military leadership following the operation, while state authorities demonstrated persistent reluctance to bring military perpetrators to justice. institutionalized absolute executive impunity for state forces killing kurdish civilians under the guise of counter-terrorism. amnesty international turkey: uludere bombing investigation lacks credibility (eur 44/001/2012)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#002</span> <span class="cat">The Roboski Airstrike &amp; Military Impunity (2011-2012)</span></div>
+          <span class="era">January 2012</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Prime Ministerial Praise for Military Leadership Following Massacre</span>
+          <span class="rt r-both">Recep Tayyip Erdogan (Prime Minister)</span>
+        </div>
+        <h3>State refusal to initiate transparent independent investigations and shielding commanders from prosecution</h3>
+        <p class="desc">As documented by Amnesty International (EUR 44/001/2012, p. 2), Prime Minister Recep Tayyip Erdogan publicly thanked the military leadership following the operation, while state authorities demonstrated persistent reluctance to bring military perpetrators to justice.</p>
+        <div class="imp"><span>Result:</span> Institutionalized absolute executive impunity for state forces killing Kurdish civilians under the guise of counter-terrorism.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Amnesty International</div>
+            <div class="doc">Turkey: Uludere Bombing Investigation Lacks Credibility (EUR 44/001/2012) <b class="hl">(Page 2 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="amnesty_roboski_2012.pdf#page=2" target="_blank" rel="noopener" class="btn-p">PDF (Page 2)</a>
+            <a href="https://www.amnesty.org/en/documents/eur44/001/2012/en/" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)" data-r="Selahattin Demirtas (HDP Co-Chair)" data-s="3 the collapse of peace &amp; &#x27;seni baskan yaptirmayacagiz&#x27; (2015) selahattin demirtas parliamentary challenge to erdogan&#x27;s executive presidency selahattin demirtas (hdp co-chair) 17 march 2015 parliamentary declaration refusing to endorse erdogan&#x27;s bid for an unchecked executive presidential system as documented by the grand chamber of the european court of human rights (application no. 14305/17, p. 116), demirtas delivered his famous address to the hdp parliamentary group stating: &#x27;dear recep tayyip erdogan, we will not make you president, we will not make you president, we will not make you president.&#x27; marked the definitive turning point where erdogan abandoned the peace process to pursue nationalist alliances. european court of human rights (grand chamber) case of selahattin demirtas v. turkey (no. 2) - application no. 14305/17">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#003</span> <span class="cat">The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)</span></div>
+          <span class="era">17 March 2015</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Selahattin Demirtas Parliamentary Challenge to Erdogan&#x27;s Executive Presidency</span>
+          <span class="rt r-both">Selahattin Demirtas (HDP Co-Chair)</span>
+        </div>
+        <h3>Parliamentary declaration refusing to endorse Erdogan&#x27;s bid for an unchecked executive presidential system</h3>
+        <p class="desc">As documented by the Grand Chamber of the European Court of Human Rights (Application no. 14305/17, p. 116), Demirtas delivered his famous address to the HDP parliamentary group stating: &#x27;Dear Recep Tayyip Erdogan, we will not make you President, we will not make you President, we will not make you President.&#x27;</p>
+        <div class="imp"><span>Result:</span> Marked the definitive turning point where Erdogan abandoned the peace process to pursue nationalist alliances.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">European Court of Human Rights (Grand Chamber)</div>
+            <div class="doc">Case of Selahattin Demirtas v. Turkey (No. 2) - Application no. 14305/17 <b class="hl">(Page 116 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="ecthr_demirtas_2020.pdf#page=116" target="_blank" rel="noopener" class="btn-p">PDF (Page 116)</a>
+            <a href="https://hudoc.echr.coe.int/?i=001-207173#page=116" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)" data-r="Recep Tayyip Erdogan &amp; AKP Leadership" data-s="4 the collapse of peace &amp; &#x27;seni baskan yaptirmayacagiz&#x27; (2015) state retaliation for hdp&#x27;s democratic electoral breakthrough recep tayyip erdogan &amp; akp leadership june-november 2015 repudiation of the dolmabahce consensus and resumption of hostilities following hdp winning 80 seats as documented by the grand chamber of the european court of human rights (application no. 14305/17, p. 114), demirtas&#x27;s pre-trial detention and prosecution pursued the ulterior purpose of silencing him and penalizing the hdp for blocking the president&#x27;s political ambitions. demonstrated that erdogan viewed the kurdish peace process solely as a transactional vehicle for personal power. european court of human rights (grand chamber) case of selahattin demirtas v. turkey (no. 2) - application no. 14305/17">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#004</span> <span class="cat">The Collapse of Peace &amp; &#x27;Seni Baskan Yaptirmayacagiz&#x27; (2015)</span></div>
+          <span class="era">June-November 2015</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State Retaliation for HDP&#x27;s Democratic Electoral Breakthrough</span>
+          <span class="rt r-both">Recep Tayyip Erdogan &amp; AKP Leadership</span>
+        </div>
+        <h3>Repudiation of the Dolmabahce Consensus and resumption of hostilities following HDP winning 80 seats</h3>
+        <p class="desc">As documented by the Grand Chamber of the European Court of Human Rights (Application no. 14305/17, p. 114), Demirtas&#x27;s pre-trial detention and prosecution pursued the ulterior purpose of silencing him and penalizing the HDP for blocking the president&#x27;s political ambitions.</p>
+        <div class="imp"><span>Result:</span> Demonstrated that Erdogan viewed the Kurdish peace process solely as a transactional vehicle for personal power.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">European Court of Human Rights (Grand Chamber)</div>
+            <div class="doc">Case of Selahattin Demirtas v. Turkey (No. 2) - Application no. 14305/17 <b class="hl">(Page 114 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="ecthr_demirtas_2020.pdf#page=114" target="_blank" rel="noopener" class="btn-p">PDF (Page 114)</a>
+            <a href="https://hudoc.echr.coe.int/?i=001-207173#page=114" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" data-r="Ministry of Interior &amp; Turkish Armed Forces" data-s="5 scorched urban warfare &amp; the cizre basements (2015-2016) imposition of round-the-clock indefinite military curfews across 30 towns ministry of interior &amp; turkish armed forces 2015-2016 round-the-clock military sieges trapping hundreds of thousands of civilians without water, power, or food as documented by the united nations high commissioner for human rights (ohchr, p. 6), authorities imposed extended around-the-clock curfews on over 30 towns and neighbourhoods, effectively placing entire kurdish urban populations under military lockdown. paralyzed civilian life, prevented medical evacuations, and resulted in catastrophic humanitarian crises. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#005</span> <span class="cat">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)</span></div>
+          <span class="era">2015-2016</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Imposition of Round-the-Clock Indefinite Military Curfews Across 30 Towns</span>
+          <span class="rt r-both">Ministry of Interior &amp; Turkish Armed Forces</span>
+        </div>
+        <h3>Round-the-clock military sieges trapping hundreds of thousands of civilians without water, power, or food</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 6), authorities imposed extended around-the-clock curfews on over 30 towns and neighbourhoods, effectively placing entire Kurdish urban populations under military lockdown.</p>
+        <div class="imp"><span>Result:</span> Paralyzed civilian life, prevented medical evacuations, and resulted in catastrophic humanitarian crises.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 6 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=6" target="_blank" rel="noopener" class="btn-p">PDF (Page 6)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=6" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" data-r="Turkish Armed Forces &amp; Special Police Units" data-s="6 scorched urban warfare &amp; the cizre basements (2015-2016) killing of 2,000 people &amp; displacement of up to 500,000 kurds turkish armed forces &amp; special police units july 2015 - december 2016 massive civilian toll and forced displacement during urban combat operations across southeastern provinces as documented by the united nations high commissioner for human rights (ohchr, p. 5, 6), some 2,000 people were killed in security operations, and the number of displaced persons is estimated between 355,000 and half a million people, predominantly of kurdish origin. represented the largest forced demographic displacement of kurds in turkey since the 1990s village burnings. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#006</span> <span class="cat">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)</span></div>
+          <span class="era">July 2015 - December 2016</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Killing of 2,000 People &amp; Displacement of up to 500,000 Kurds</span>
+          <span class="rt r-both">Turkish Armed Forces &amp; Special Police Units</span>
+        </div>
+        <h3>Massive civilian toll and forced displacement during urban combat operations across southeastern provinces</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 5, 6), some 2,000 people were killed in security operations, and the number of displaced persons is estimated between 355,000 and half a million people, predominantly of Kurdish origin.</p>
+        <div class="imp"><span>Result:</span> Represented the largest forced demographic displacement of Kurds in Turkey since the 1990s village burnings.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 5 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=5" target="_blank" rel="noopener" class="btn-p">PDF (Page 5)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=5" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" data-r="Turkish Armed Forces Heavy Artillery &amp; Special Units" data-s="7 scorched urban warfare &amp; the cizre basements (2015-2016) the cizre basements massacre &amp; incineration of trapped civilians turkish armed forces heavy artillery &amp; special units february 2016 shelling, burning, and toxic gassing of over 100 wounded civilians and youths trapped in residential basements as documented by the united nations high commissioner for human rights (ohchr, p. 8), civilians trapped in basements of buildings in cizre were subjected to heavy shelling, fire, and toxic fumes, with families unable to retrieve remains before authorities bulldozed the site. stands as one of the most horrifying atrocities committed against kurdish civilians in modern turkish history. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#007</span> <span class="cat">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)</span></div>
+          <span class="era">February 2016</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">The Cizre Basements Massacre &amp; Incineration of Trapped Civilians</span>
+          <span class="rt r-both">Turkish Armed Forces Heavy Artillery &amp; Special Units</span>
+        </div>
+        <h3>Shelling, burning, and toxic gassing of over 100 wounded civilians and youths trapped in residential basements</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 8), civilians trapped in basements of buildings in Cizre were subjected to heavy shelling, fire, and toxic fumes, with families unable to retrieve remains before authorities bulldozed the site.</p>
+        <div class="imp"><span>Result:</span> Stands as one of the most horrifying atrocities committed against Kurdish civilians in modern Turkish history.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" data-r="Cabinet Decrees &amp; Ministry of Environment" data-s="8 scorched urban warfare &amp; the cizre basements (2015-2016) complete physical obliteration of historic sur district in diyarbakir cabinet decrees &amp; ministry of environment 2015-2016 demolition and expropriation of unesco world heritage urban quarters following military sieges as documented by the united nations high commissioner for human rights (ohchr, p. 11), security operations in sur resulted in the destruction of historical, cultural, and religious heritage, followed by state expropriation of centuries-old kurdish residential quarters. erased historic architectural memory and prevented displaced kurdish families from ever returning home. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#008</span> <span class="cat">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)</span></div>
+          <span class="era">2015-2016</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Complete Physical Obliteration of Historic Sur District in Diyarbakir</span>
+          <span class="rt r-both">Cabinet Decrees &amp; Ministry of Environment</span>
+        </div>
+        <h3>Demolition and expropriation of UNESCO World Heritage urban quarters following military sieges</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 11), security operations in Sur resulted in the destruction of historical, cultural, and religious heritage, followed by state expropriation of centuries-old Kurdish residential quarters.</p>
+        <div class="imp"><span>Result:</span> Erased historic architectural memory and prevented displaced Kurdish families from ever returning home.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 11 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=11" target="_blank" rel="noopener" class="btn-p">PDF (Page 11)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=11" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)" data-r="State Officials &amp; Security Forces" data-s="9 scorched urban warfare &amp; the cizre basements (2015-2016) state-sanctioned ultra-nationalist hate speech against minorities state officials &amp; security forces 2015-2016 proliferation of racist graffiti and xenophobic hate incitement left inside ransacked civilian homes as documented by the united nations high commissioner for human rights (ohchr, p. 22), high-ranking state officials engaged in hate speech against minorities, while security forces left nationalist graffiti and threats across vandalized kurdish homes. legitimized vigilante attacks and normalized ethnic dehumanization across turkish public discourse. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#009</span> <span class="cat">Scorched Urban Warfare &amp; The Cizre Basements (2015-2016)</span></div>
+          <span class="era">2015-2016</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State-Sanctioned Ultra-Nationalist Hate Speech Against Minorities</span>
+          <span class="rt r-both">State Officials &amp; Security Forces</span>
+        </div>
+        <h3>Proliferation of racist graffiti and xenophobic hate incitement left inside ransacked civilian homes</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 22), high-ranking state officials engaged in hate speech against minorities, while security forces left nationalist graffiti and threats across vandalized Kurdish homes.</p>
+        <div class="imp"><span>Result:</span> Legitimized vigilante attacks and normalized ethnic dehumanization across Turkish public discourse.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)" data-r="Recep Tayyip Erdogan &amp; Turkish Judiciary" data-s="10 the imprisonment of demirtas &amp; political stifling (2016-present) ecthr grand chamber finding: detention pursued ulterior motive to stifle pluralism recep tayyip erdogan &amp; turkish judiciary 22 december 2020 binding international legal finding that the imprisonment of selahattin demirtas violated article 18 of the echr as documented by the grand chamber of the european court of human rights (application no. 14305/17, p. 1), the court ruled that the pre-trial detention of demirtas pursued the ulterior motive of stifling pluralism and limiting freedom of political debate. proved under international law that erdogan used the judiciary as a political weapon to crush democratic opposition. european court of human rights (grand chamber) case of selahattin demirtas v. turkey (no. 2) - application no. 14305/17">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#010</span> <span class="cat">The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)</span></div>
+          <span class="era">22 December 2020</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">ECtHR Grand Chamber Finding: Detention Pursued Ulterior Motive to Stifle Pluralism</span>
+          <span class="rt r-both">Recep Tayyip Erdogan &amp; Turkish Judiciary</span>
+        </div>
+        <h3>Binding international legal finding that the imprisonment of Selahattin Demirtas violated Article 18 of the ECHR</h3>
+        <p class="desc">As documented by the Grand Chamber of the European Court of Human Rights (Application no. 14305/17, p. 1), the Court ruled that the pre-trial detention of Demirtas pursued the ulterior motive of stifling pluralism and limiting freedom of political debate.</p>
+        <div class="imp"><span>Result:</span> Proved under international law that Erdogan used the judiciary as a political weapon to crush democratic opposition.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">European Court of Human Rights (Grand Chamber)</div>
+            <div class="doc">Case of Selahattin Demirtas v. Turkey (No. 2) - Application no. 14305/17 <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="ecthr_demirtas_2020.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://hudoc.echr.coe.int/?i=001-207173#page=1" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)" data-r="Recep Tayyip Erdogan &amp; Ministry of Justice" data-s="11 the imprisonment of demirtas &amp; political stifling (2016-present) turkish state defiance of international order for demirtas&#x27;s immediate release recep tayyip erdogan &amp; ministry of justice 2020-2026 explicit refusal by the turkish presidency to implement binding rulings of the council of europe as documented by the grand chamber of the european court of human rights (application no. 14305/17, p. 133), the court ordered that the respondent state is to take all necessary measures to secure demirtas&#x27;s immediate release, a ruling erdogan openly repudiated. shattered the constitutional rule of law in turkey and demonstrated the authoritarian nature of the executive regime. european court of human rights (grand chamber) case of selahattin demirtas v. turkey (no. 2) - application no. 14305/17">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#011</span> <span class="cat">The Imprisonment of Demirtas &amp; Political Stifling (2016-Present)</span></div>
+          <span class="era">2020-2026</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Turkish State Defiance of International Order for Demirtas&#x27;s Immediate Release</span>
+          <span class="rt r-both">Recep Tayyip Erdogan &amp; Ministry of Justice</span>
+        </div>
+        <h3>Explicit refusal by the Turkish presidency to implement binding rulings of the Council of Europe</h3>
+        <p class="desc">As documented by the Grand Chamber of the European Court of Human Rights (Application no. 14305/17, p. 133), the Court ordered that the respondent State is to take all necessary measures to secure Demirtas&#x27;s immediate release, a ruling Erdogan openly repudiated.</p>
+        <div class="imp"><span>Result:</span> Shattered the constitutional rule of law in Turkey and demonstrated the authoritarian nature of the executive regime.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">European Court of Human Rights (Grand Chamber)</div>
+            <div class="doc">Case of Selahattin Demirtas v. Turkey (No. 2) - Application no. 14305/17 <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="ecthr_demirtas_2020.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://hudoc.echr.coe.int/?i=001-207173#page=1" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The Kayyim (Trustee) System: Disenfranchising Voters (2016-Present)" data-r="Ministry of Interior by Presidential Decree" data-s="12 the kayyim (trustee) system: disenfranchising voters (2016-present) systematic dismissal and arrest of elected kurdish mayors ministry of interior by presidential decree 2016-2026 nullification of democratic election results across dozens of kurdish municipalities by appointing state trustees as documented by the united nations high commissioner for human rights (ohchr, p. 3), local democratic governance was systematically suspended through emergency decrees, removing elected mayors and replacing them with appointed state governors. disenfranchised millions of kurdish voters and ended legitimate municipal self-governance across bakur. united nations high commissioner for human rights (ohchr) report on the human rights situation in south-east turkey (july 2015-dec 2016)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#012</span> <span class="cat">The Kayyim (Trustee) System: Disenfranchising Voters (2016-Present)</span></div>
+          <span class="era">2016-2026</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Systematic Dismissal and Arrest of Elected Kurdish Mayors</span>
+          <span class="rt r-both">Ministry of Interior by Presidential Decree</span>
+        </div>
+        <h3>Nullification of democratic election results across dozens of Kurdish municipalities by appointing state trustees</h3>
+        <p class="desc">As documented by the United Nations High Commissioner for Human Rights (OHCHR, p. 3), local democratic governance was systematically suspended through emergency decrees, removing elected mayors and replacing them with appointed state governors.</p>
+        <div class="imp"><span>Result:</span> Disenfranchised millions of Kurdish voters and ended legitimate municipal self-governance across Bakur.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations High Commissioner for Human Rights (OHCHR)</div>
+            <div class="doc">Report on the Human Rights Situation in South-East Turkey (July 2015-Dec 2016) <b class="hl">(Page 3 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_ohchr_turkey_2017.pdf#page=3" target="_blank" rel="noopener" class="btn-p">PDF (Page 3)</a>
+            <a href="https://www.ohchr.org/Documents/Countries/TR/OHCHR_South-East_TurkeyReport_10March2017.pdf#page=3" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)" data-r="Turkish Armed Forces &amp; Syrian National Army (SNA)" data-s="13 cross-border invasions &amp; demographic engineering in rojava (2018-present) operation olive branch &amp; invasion of kurdish-majority afrin turkish armed forces &amp; syrian national army (sna) january-march 2018 cross-border military offensive capturing the peaceful kurdish enclave of afrin in northern syria as documented by human rights watch (2024, p. 8, 18), in january 2018 turkiye launched operation olive branch to take control of majority-kurdish afrin, forcing thousands of indigenous kurdish residents to flee their ancestral homes. dismantled peaceful autonomous local governance and turned the region into an occupied military zone. human rights watch everything is by the power of the weapon: abuses and impunity in turkish-occupied northern syria (2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#013</span> <span class="cat">Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)</span></div>
+          <span class="era">January-March 2018</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Operation Olive Branch &amp; Invasion of Kurdish-Majority Afrin</span>
+          <span class="rt r-both">Turkish Armed Forces &amp; Syrian National Army (SNA)</span>
+        </div>
+        <h3>Cross-border military offensive capturing the peaceful Kurdish enclave of Afrin in northern Syria</h3>
+        <p class="desc">As documented by Human Rights Watch (2024, p. 8, 18), in January 2018 Turkiye launched Operation Olive Branch to take control of majority-Kurdish Afrin, forcing thousands of indigenous Kurdish residents to flee their ancestral homes.</p>
+        <div class="imp"><span>Result:</span> Dismantled peaceful autonomous local governance and turned the region into an occupied military zone.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Everything is by the Power of the Weapon: Abuses and Impunity in Turkish-Occupied Northern Syria (2024) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_afrin_2024.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://www.hrw.org/report/2024/02/29/everything-power-weapon/abuses-and-impunity-turkish-occupied-northern-syria#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)" data-r="Turkish Military Administration &amp; Allied Factions" data-s="14 cross-border invasions &amp; demographic engineering in rojava (2018-present) forced demographic shifts &amp; resettlement of displaced non-kurds turkish military administration &amp; allied factions 2018-2024 state-engineered demographic alteration by preventing kurdish return while settling non-local families as documented by human rights watch (2024, p. 10), afrin experienced forced demographic shifts as turkish authorities and allied syrian factions barred displaced kurds from returning while resettling non-local arab and turkmen families into kurdish homes. radically reduced the indigenous kurdish demographic presence in afrin from over 90% to a marginalized minority. human rights watch everything is by the power of the weapon: abuses and impunity in turkish-occupied northern syria (2024)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#014</span> <span class="cat">Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)</span></div>
+          <span class="era">2018-2024</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Forced Demographic Shifts &amp; Resettlement of Displaced Non-Kurds</span>
+          <span class="rt r-both">Turkish Military Administration &amp; Allied Factions</span>
+        </div>
+        <h3>State-engineered demographic alteration by preventing Kurdish return while settling non-local families</h3>
+        <p class="desc">As documented by Human Rights Watch (2024, p. 10), Afrin experienced forced demographic shifts as Turkish authorities and allied Syrian factions barred displaced Kurds from returning while resettling non-local Arab and Turkmen families into Kurdish homes.</p>
+        <div class="imp"><span>Result:</span> Radically reduced the indigenous Kurdish demographic presence in Afrin from over 90% to a marginalized minority.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Everything is by the Power of the Weapon: Abuses and Impunity in Turkish-Occupied Northern Syria (2024) <b class="hl">(Page 10 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_afrin_2024.pdf#page=10" target="_blank" rel="noopener" class="btn-p">PDF (Page 10)</a>
+            <a href="https://www.hrw.org/report/2024/02/29/everything-power-weapon/abuses-and-impunity-turkish-occupied-northern-syria#page=10" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)" data-r="Turkish-Backed Armed Groups (SNA)" data-s="15 cross-border invasions &amp; demographic engineering in rojava (2018-present) un finding: pervasive arbitrary detentions &amp; torture in occupied afrin turkish-backed armed groups (sna) 2018-2019 systematic campaign of arbitrary abductions, secret detention, and torture targeting remaining kurdish civilians as documented by the united nations independent international commission of inquiry on syria (a/hrc/40/70, p. 1), following operation olive branch, arbitrary arrests and detentions became pervasive throughout afrin district. created a permanent climate of fear designed to coerce remaining kurdish families into abandoning their properties. united nations independent international commission of inquiry on the syrian arab republic report of the independent international commission of inquiry on the syrian arab republic (a/hrc/40/70, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#015</span> <span class="cat">Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)</span></div>
+          <span class="era">2018-2019</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: Pervasive Arbitrary Detentions &amp; Torture in Occupied Afrin</span>
+          <span class="rt r-both">Turkish-Backed Armed Groups (SNA)</span>
+        </div>
+        <h3>Systematic campaign of arbitrary abductions, secret detention, and torture targeting remaining Kurdish civilians</h3>
+        <p class="desc">As documented by the United Nations Independent International Commission of Inquiry on Syria (A/HRC/40/70, p. 1), following Operation Olive Branch, arbitrary arrests and detentions became pervasive throughout Afrin District.</p>
+        <div class="imp"><span>Result:</span> Created a permanent climate of fear designed to coerce remaining Kurdish families into abandoning their properties.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Independent International Commission of Inquiry on the Syrian Arab Republic</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry on the Syrian Arab Republic (A/HRC/40/70, 2019) <b class="hl">(Page 1 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2019_afrin.pdf#page=1" target="_blank" rel="noopener" class="btn-p">PDF (Page 1)</a>
+            <a href="https://reliefweb.int/sites/default/files/resources/G1902320.pdf#page=1" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)" data-r="Turkish Forces &amp; Allied Mercenary Groups" data-s="16 cross-border invasions &amp; demographic engineering in rojava (2018-present) un finding: systemic looting, property seizures &amp; extortion turkish forces &amp; allied mercenary groups 2018-2019 widespread confiscation of kurdish agricultural land, olive groves, homes, and businesses as documented by the united nations independent international commission of inquiry on syria (a/hrc/40/70, p. 4), the commission established systemic property seizures, extortion, looting, and kidnapping for ransom targeting kurdish civilians in afrin. systematically pillaged kurdish economic wealth, olive production, and ancestral inheritance. united nations independent international commission of inquiry on the syrian arab republic report of the independent international commission of inquiry on the syrian arab republic (a/hrc/40/70, 2019)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#016</span> <span class="cat">Cross-Border Invasions &amp; Demographic Engineering in Rojava (2018-Present)</span></div>
+          <span class="era">2018-2019</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: Systemic Looting, Property Seizures &amp; Extortion</span>
+          <span class="rt r-both">Turkish Forces &amp; Allied Mercenary Groups</span>
+        </div>
+        <h3>Widespread confiscation of Kurdish agricultural land, olive groves, homes, and businesses</h3>
+        <p class="desc">As documented by the United Nations Independent International Commission of Inquiry on Syria (A/HRC/40/70, p. 4), the Commission established systemic property seizures, extortion, looting, and kidnapping for ransom targeting Kurdish civilians in Afrin.</p>
+        <div class="imp"><span>Result:</span> Systematically pillaged Kurdish economic wealth, olive production, and ancestral inheritance.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Independent International Commission of Inquiry on the Syrian Arab Republic</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry on the Syrian Arab Republic (A/HRC/40/70, 2019) <b class="hl">(Page 4 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2019_afrin.pdf#page=4" target="_blank" rel="noopener" class="btn-p">PDF (Page 4)</a>
+            <a href="https://reliefweb.int/sites/default/files/resources/G1902320.pdf#page=4" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="empty" id="empty">
+      <p>NO MATCHING RECORDS</p>
+    </div>
+  </main>
+
+  <div class="banner">
+    <h2>REJECT FASCISM & BULLDOZER DEMOCRACY</h2>
+  </div>
+
+  <footer>
+    <span>SOURCES: UNITED NATIONS OHCHR &bull; COUNCIL OF EUROPE (ECTHR) &bull; AMNESTY INTERNATIONAL &bull; HUMAN RIGHTS WATCH &bull; UN COI SYRIA</span>
+    <span>REJECT PERSIANIZATION & TURKIFICATION &bull; coded by <b style="color:#c084fc;">pr0fitsz</b></span>
+  </footer>
+
+  <script>
+    console.log("%c pr0fitsz owns u ", "background:#9333ea;color:#06040a;font-weight:bold;padding:2px 6px;");
+
+    let curCat = 'ALL';
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+
+    const qIn = $('#q');
+    const cards = $$('.card');
+    const pdfs = $$('.pdf-card');
+    const gridEl = $('#grid');
+    const pdfEl = $('#pdfs');
+    const cntEl = $('#cnt');
+    const emptyEl = $('#empty');
+
+    function setCat(c) {
+      curCat = c;
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === c));
+      filter();
+    }
+
+    function reset() {
+      qIn.value = '';
+      curCat = 'ALL';
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === 'ALL'));
+      filter();
+    }
+
+    function filter() {
+      const raw = qIn.value.trim().toLowerCase();
+      const terms = raw ? raw.split(/\s+/) : [];
+
+      if (curCat === 'Archival PDFs') {
+        gridEl.style.display = 'none';
+        pdfEl.style.display = 'grid';
+        let n = 0;
+        pdfs.forEach(p => {
+          const ok = terms.every(t => p.dataset.s.includes(t));
+          p.style.display = ok ? 'flex' : 'none';
+          if (ok) n++;
+        });
+        cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + pdfs.length + '</b> ARCHIVAL PDFS';
+        emptyEl.style.display = (n === 0) ? 'block' : 'none';
+        return;
+      }
+
+      gridEl.style.display = 'grid';
+      pdfEl.style.display = 'none';
+
+      let n = 0;
+      cards.forEach(c => {
+        const cMatch = (curCat === 'ALL' || c.dataset.c === curCat);
+        const tMatch = terms.every(t => c.dataset.s.includes(t));
+        const ok = cMatch && tMatch;
+        c.style.display = ok ? 'flex' : 'none';
+        if (ok) n++;
+      });
+
+      cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + cards.length + '</b> RECORDS';
+      emptyEl.style.display = (n === 0) ? 'block' : 'none';
+    }
+
+    filter();
+  </script>
+</body>
+</html>
