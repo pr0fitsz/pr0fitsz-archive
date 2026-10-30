@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Record of the Syrian Regime & Jihadists in Rojava | pr0fitsz archive</title>
+  <meta name="description" content="Documented record of Ba'athist apartheid, the 1962 census denationalization, the Arab Belt, the 2004 Qamishli massacre under Bashar al-Assad, and jihadist war crimes under Abu Mohammad al-Jolani / HTS (1962-2026).">
+  <style>
+    :root {
+      --bg: #07040b;
+      --card-bg: #11091e;
+      --card-hover: #190e2b;
+      --border: #2e174d;
+      --accent: #d946ef;
+      --accent-glow: rgba(217,70,239,0.35);
+      --purp: #a855f7;
+      --gold: #febd11;
+      --text: #f5f3ff;
+      --text-dim: #cbd5e1;
+      --red: #f43f5e;
+      --green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--purp); color: #fff; }
+
+    .roj-wrap { position: fixed; top: 1.2rem; left: 1.3rem; z-index: 1100; pointer-events: none; }
+    .roj-svg { width: 52px; height: 52px; animation: roj-spin 34s linear infinite; filter: drop-shadow(0 0 12px rgba(254,189,17,0.7)); }
+    @keyframes roj-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .top-bar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(7, 4, 11, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.65rem 1.25rem 0.65rem 5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; font-size: 0.8rem;
+    }
+    .top-bar .tag {
+      background: linear-gradient(135deg, var(--accent), var(--purp));
+      color: #fff; font-weight: 800; padding: 0.2rem 0.55rem;
+      border-radius: 4px; letter-spacing: 0.04em; text-transform: uppercase;
+      font-size: 0.72rem; box-shadow: 0 0 10px var(--accent-glow);
+    }
+    .top-bar .mid {
+      color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0.08em;
+      text-transform: uppercase; display: none;
+    }
+    @media(min-width: 680px) { .top-bar .mid { display: inline; } }
+    .switch-btn {
+      background: #1b1029; border: 1px solid var(--border);
+      color: var(--text-dim); text-decoration: none; padding: 0.3rem 0.7rem;
+      border-radius: 4px; font-weight: 700; font-size: 0.72rem;
+      transition: all 0.2s ease;
+    }
+    .switch-btn:hover {
+      border-color: var(--accent); color: #fff; box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .hero {
+      max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.25rem 2rem;
+      text-align: center;
+    }
+    .hero .kicker {
+      display: inline-block; font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5.2vw, 3.8rem);
+      font-weight: 900; line-height: 1.1; margin-bottom: 1.1rem;
+      background: linear-gradient(135deg, #fff 40%, var(--purp) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 780px; margin: 0 auto 1.8rem;
+      color: var(--text-dim); font-size: 1.02rem; line-height: 1.6;
+    }
+
+    .strip {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem 2rem;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0; margin-bottom: 2.2rem;
+    }
+    .strip div { text-align: center; }
+    .strip b { display: block; font-size: 1.45rem; color: #fff; font-weight: 800; }
+    .strip span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+
+    .ctrls {
+      max-width: 1200px; margin: 0 auto 2.5rem; padding: 0 1.25rem;
+      position: relative; z-index: 10;
+    }
+    .search-box {
+      width: 100%; max-width: 640px; margin: 0 auto 1.4rem;
+      display: flex; gap: 0.5rem;
+    }
+    .search-box input {
+      flex: 1; background: var(--card-bg); border: 1px solid var(--border);
+      color: #fff; padding: 0.75rem 1rem; border-radius: 6px;
+      font-size: 0.95rem; outline: none; transition: all 0.2s;
+    }
+    .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
+    .search-box button {
+      background: #231238; border: 1px solid var(--border); color: #fff;
+      padding: 0 1.2rem; border-radius: 6px; font-weight: 700; cursor: pointer;
+      font-size: 0.85rem; transition: all 0.2s;
+    }
+    .search-box button:hover { border-color: var(--accent); color: var(--accent); }
+
+    .cats {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .c-btn {
+      background: var(--card-bg); border: 1px solid var(--border);
+      color: var(--text-dim); padding: 0.45rem 0.85rem; border-radius: 6px;
+      font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+    }
+    .c-btn span {
+      background: rgba(255,255,255,0.08); padding: 0.1rem 0.4rem;
+      border-radius: 10px; font-size: 0.7rem; color: #fff;
+    }
+    .c-btn:hover { border-color: var(--purp); color: #fff; }
+    .c-btn.on {
+      background: linear-gradient(135deg, var(--accent), var(--purp));
+      border-color: var(--accent); color: #fff;
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+    .c-btn.on span { background: rgba(0,0,0,0.3); }
+
+    .count-bar {
+      text-align: center; font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .count-bar b { color: #fff; }
+
+    .grid {
+      max-width: 1300px; margin: 0 auto 4rem; padding: 0 1.25rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem; position: relative;
+      display: flex; flex-direction: column; justify-content: space-between;
+      overflow: hidden; transition: transform 0.15s ease-out, border-color 0.25s, box-shadow 0.25s;
+      transform-style: preserve-3d; will-change: transform;
+    }
+    .card:hover {
+      border-color: var(--purp);
+      box-shadow: 0 10px 30px rgba(168,85,247,0.22);
+    }
+    .card .glow {
+      position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle at center, rgba(217,70,239,0.08) 0%, transparent 60%);
+      pointer-events: none; opacity: 0; transition: opacity 0.3s;
+    }
+    .card:hover .glow { opacity: 1; }
+
+    .c-head {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.75rem; font-size: 0.72rem; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .c-head .num {
+      font-weight: 800; color: var(--accent); margin-right: 0.4rem;
+    }
+    .c-head .cat { color: var(--text-dim); }
+    .c-head .era {
+      background: #1e1132; color: #e9d5ff; padding: 0.15rem 0.5rem;
+      border-radius: 4px; font-weight: 700; border: 1px solid #3b1d61;
+    }
+
+    .c-sub {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 0.6rem; margin-bottom: 0.65rem;
+    }
+    .c-sub .sub {
+      font-size: 0.82rem; font-weight: 800; color: #fff;
+      letter-spacing: 0.03em;
+    }
+    .c-sub .rt {
+      font-size: 0.68rem; padding: 0.15rem 0.45rem; border-radius: 3px;
+      font-weight: 700; white-space: nowrap; text-transform: uppercase;
+    }
+    .r-both { background: #3b1432; color: #f472b6; border: 1px solid #831843; }
+
+    .card h3 {
+      font-size: 1.05rem; font-weight: 800; line-height: 1.35;
+      margin-bottom: 0.65rem; color: #fff;
+    }
+    .card .desc {
+      font-size: 0.88rem; color: var(--text-dim); line-height: 1.55;
+      margin-bottom: 0.85rem; flex-grow: 1;
+    }
+    .card .imp {
+      background: #0d0617; border-left: 3px solid var(--accent);
+      padding: 0.55rem 0.75rem; font-size: 0.82rem; color: #e2e8f0;
+      border-radius: 0 4px 4px 0; margin-bottom: 1.1rem;
+    }
+    .card .imp span { color: var(--accent); font-weight: 800; }
+
+    .c-foot {
+      border-top: 1px solid #23123b; padding-top: 0.85rem;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 0.6rem; flex-wrap: wrap;
+    }
+    .c-foot .meta { font-size: 0.72rem; color: var(--text-dim); max-width: 62%; }
+    .c-foot .org { font-weight: 700; color: #e2e8f0; }
+    .c-foot .doc {
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 210px;
+    }
+    .c-foot .hl { color: var(--gold); }
+
+    .links { display: flex; gap: 0.4rem; }
+    .btn-p, .btn-s {
+      text-decoration: none; font-size: 0.7rem; font-weight: 800;
+      padding: 0.35rem 0.65rem; border-radius: 4px; transition: all 0.2s;
+      letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .btn-p {
+      background: linear-gradient(135deg, var(--accent), var(--purp));
+      color: #fff; box-shadow: 0 0 8px var(--accent-glow);
+    }
+    .btn-p:hover { filter: brightness(1.15); box-shadow: 0 0 14px var(--accent-glow); }
+    .btn-s {
+      background: #1f1235; border: 1px solid var(--border); color: #cbd5e1;
+    }
+    .btn-s:hover { border-color: var(--accent); color: #fff; }
+
+    /* PDF View */
+    .pdf-grid {
+      max-width: 1200px; margin: 0 auto 4rem; padding: 0 1.25rem;
+      display: none; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.4rem;
+    }
+    .pdf-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column;
+      justify-content: space-between; transition: all 0.2s;
+    }
+    .pdf-card:hover { border-color: var(--accent); box-shadow: 0 8px 25px rgba(217,70,239,0.2); }
+    .pdf-card .p-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 800;
+      padding: 0.15rem 0.5rem; border-radius: 3px; background: #271442;
+      color: var(--accent); margin-bottom: 0.7rem;
+    }
+    .pdf-card h4 { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
+    .pdf-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 1.2rem; }
+    .pdf-card .p-foot {
+      border-top: 1px solid #23123b; padding-top: 0.85rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .pdf-card .p-meta { font-size: 0.72rem; color: #94a3b8; font-weight: 700; }
+    .pdf-card .p-btn {
+      background: linear-gradient(135deg, var(--accent), var(--purp));
+      color: #fff; padding: 0.4rem 0.85rem; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 800; text-decoration: none;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .banner {
+      background: linear-gradient(135deg, rgba(217,70,239,0.15), rgba(168,85,247,0.15));
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 1.5rem 1.25rem; text-align: center; margin: 3rem 0;
+    }
+    .banner h2 {
+      color: #fff; font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+      font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase;
+    }
+
+    footer {
+      background: #080310; border-top: 1px solid #241240;
+      padding: 2rem 1.25rem; text-align: center; font-size: 0.8rem;
+      color: #94a3b8; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+
+    .empty {
+      display: none; text-align: center; padding: 4rem 1rem;
+      color: #94a3b8; font-weight: 700; font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="roj-wrap">
+    <svg class="roj-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60.000,4.000 64.173,32.313 76.506,6.488 72.149,34.773 91.546,13.731 79.045,39.475 103.783,25.085 84.249,46.000 112.129,39.541 87.298,53.769 115.843,55.815 87.922,62.092 114.596,72.461 86.064,70.230 108.497,88.000 81.891,77.458 98.090,101.051 75.773,83.135 84.297,110.454 68.253,86.756 68.346,115.375 60.000,88.000 51.654,115.375 51.747,86.756 35.703,110.454 44.227,83.135 21.910,101.051 38.109,77.458 11.503,88.000 33.936,70.230 5.404,72.461 32.078,62.092 4.157,55.815 32.702,53.769 7.871,39.541 35.751,46.000 16.217,25.085 40.955,39.475 28.454,13.731 47.851,34.773 43.494,6.488 55.827,32.313" fill="#febd11"/>
+      <circle cx="60" cy="60" r="28" fill="#febd11"/>
+    </svg>
+  </div>
+
+  <div class="top-bar">
+    <span class="tag">pr0fitsz owns u</span>
+    <span class="mid">THE BASHAR AL-ASSAD & ABU MOHAMMAD AL-JOLANI RECORD (1962-2026)</span>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+      <a href="verdict_on_the_shah.html" class="switch-btn">The Shah Record</a>
+      <a href="verdict_on_the_irgc.html" class="switch-btn">The IRGC Record</a>
+      <a href="verdict_on_erdogan.html" class="switch-btn">The Erdogan Record</a>
+      <a href="verdict_on_syria.html" class="switch-btn">The Syria Record</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">ROJAVA (WESTERN KURDISTAN) ARCHIVE</div>
+    <h1>The Syrian Regime & Jihadist Record in Rojava</h1>
+    <p>
+      Documented record of Ba'athist apartheid, the 1962 census denationalization, the Arab Belt land dispossession, the 2004 Qamishli massacre under Bashar al-Assad, and jihadist war crimes under Abu Mohammad al-Jolani / Jabhat al-Nusra / HTS (1962-2026). Every record links directly to highlighted international legal reports.
+    </p>
+    <div class="strip">
+      <div><b>20</b> <span>Records</span></div>
+      <div><b>4</b> <span>Sections</span></div>
+      <div><b>4</b> <span>Source PDFs</span></div>
+      <div><b>1962-2026</b> <span>Timeline</span></div>
+    </div>
+  </header>
+
+  <div class="ctrls">
+    <div class="search-box">
+      <input type="text" id="q" placeholder="Search by number, city (Qamishli, Afrin, Hasakah), perpetrator (Assad, Jolani), or topic..." oninput="filter()">
+      <button onclick="reset()">Reset</button>
+    </div>
+    <div class="cats">
+      <button class="c-btn on" data-c="ALL" onclick="setCat('ALL')">All Sections <span>20</span></button>
+<button class="c-btn" data-c="The 1962 Census &amp; The Arab Belt (1962-1976)" onclick="setCat('The 1962 Census &amp; The Arab Belt (1962-1976)')">The 1962 Census &amp; The Arab Belt (1962-1976) <span>4</span></button>
+<button class="c-btn" data-c="Cultural Erasure &amp; Language Bans (1977-2003)" onclick="setCat('Cultural Erasure &amp; Language Bans (1977-2003)')">Cultural Erasure &amp; Language Bans (1977-2003) <span>4</span></button>
+<button class="c-btn" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" onclick="setCat('The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)')">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011) <span>5</span></button>
+<button class="c-btn" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" onclick="setCat('Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)')">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026) <span>7</span></button>
+<button class="c-btn" data-c="Archival PDFs" onclick="setCat('Archival PDFs')">Archival PDFs <span>4</span></button>
+    </div>
+    <div class="count-bar" id="cnt">
+      SHOWING <b>20</b> OF <b>20</b> RECORDS
+    </div>
+  </div>
+
+  <main class="grid" id="grid">
+      <article class="card tilt" data-c="The 1962 Census &amp; The Arab Belt (1962-1976)" data-r="Syrian Ba&#x27;athist State &amp; President Nazim al-Qudsi" data-s="1 the 1962 census &amp; the arab belt (1962-1976) 1962 census: 120,000 kurds stripped of citizenship syrian ba&#x27;athist state &amp; president nazim al-qudsi 5 october 1962 a one-day special census stripped 120,000 syrian-born kurds of their citizenship overnight. human rights watch documented that decree no. 93 stripped 20% of the syrian kurdish population of their citizenship, turning them into &#x27;foreigners&#x27; (ajanib) and stateless people (maktumin) in the country of their birth. created a permanent underclass of over 300,000 stateless kurds denied basic human and civil rights. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#001</span> <span class="cat">The 1962 Census &amp; The Arab Belt (1962-1976)</span></div>
+          <span class="era">5 October 1962</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">1962 Census: 120,000 Kurds Stripped of Citizenship</span>
+          <span class="rt r-both">Syrian Ba&#x27;athist State &amp; President Nazim al-Qudsi</span>
+        </div>
+        <h3>A one-day special census stripped 120,000 Syrian-born Kurds of their citizenship overnight.</h3>
+        <p class="desc">Human Rights Watch documented that Decree No. 93 stripped 20% of the Syrian Kurdish population of their citizenship, turning them into &#x27;foreigners&#x27; (ajanib) and stateless people (maktumin) in the country of their birth.</p>
+        <div class="imp"><span>Result:</span> Created a permanent underclass of over 300,000 stateless Kurds denied basic human and civil rights.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 3 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=3" target="_blank" rel="noopener" class="btn-p">PDF (Page 3)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=3" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 1962 Census &amp; The Arab Belt (1962-1976)" data-r="Syrian Civil Registry &amp; Ministry of Interior" data-s="2 the 1962 census &amp; the arab belt (1962-1976) stateless kurds banned from owning homes or land syrian civil registry &amp; ministry of interior 1962-present stateless kurds were legally barred from owning land, houses, businesses, or state jobs. human rights watch documented that kurds classified as &#x27;foreigners&#x27; or maktumin are barred from owning property or obtaining passports, leaving them literally trapped inside syria without travel documents. denied basic economic survival and generational property inheritance to hundreds of thousands of kurds. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#002</span> <span class="cat">The 1962 Census &amp; The Arab Belt (1962-1976)</span></div>
+          <span class="era">1962-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Stateless Kurds Banned from Owning Homes or Land</span>
+          <span class="rt r-both">Syrian Civil Registry &amp; Ministry of Interior</span>
+        </div>
+        <h3>Stateless Kurds were legally barred from owning land, houses, businesses, or state jobs.</h3>
+        <p class="desc">Human Rights Watch documented that Kurds classified as &#x27;foreigners&#x27; or maktumin are barred from owning property or obtaining passports, leaving them literally trapped inside Syria without travel documents.</p>
+        <div class="imp"><span>Result:</span> Denied basic economic survival and generational property inheritance to hundreds of thousands of Kurds.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 4 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=4" target="_blank" rel="noopener" class="btn-p">PDF (Page 4)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=4" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 1962 Census &amp; The Arab Belt (1962-1976)" data-r="Hafez al-Assad Regime &amp; Ba&#x27;ath Party" data-s="3 the 1962 census &amp; the arab belt (1962-1976) the arab belt: stealing prime kurdish farmland hafez al-assad regime &amp; ba&#x27;ath party 1965-1976 the regime seized a 280-kilometer border strip of prime kurdish fertile farmland. human rights watch documented that the state executed the &#x27;arab belt&#x27; (al-hizam al-arabi) initiative along the northern border, expropriating kurdish land under agrarian reform to displace the indigenous population. dispossessed kurdish farmers of their ancestral fertile lands along the syrian-turkish frontier. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#003</span> <span class="cat">The 1962 Census &amp; The Arab Belt (1962-1976)</span></div>
+          <span class="era">1965-1976</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">The Arab Belt: Stealing Prime Kurdish Farmland</span>
+          <span class="rt r-both">Hafez al-Assad Regime &amp; Ba&#x27;ath Party</span>
+        </div>
+        <h3>The regime seized a 280-kilometer border strip of prime Kurdish fertile farmland.</h3>
+        <p class="desc">Human Rights Watch documented that the state executed the &#x27;Arab Belt&#x27; (al-Hizam al-Arabi) initiative along the northern border, expropriating Kurdish land under agrarian reform to displace the indigenous population.</p>
+        <div class="imp"><span>Result:</span> Dispossessed Kurdish farmers of their ancestral fertile lands along the Syrian-Turkish frontier.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 13 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=13" target="_blank" rel="noopener" class="btn-p">PDF (Page 13)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=13" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 1962 Census &amp; The Arab Belt (1962-1976)" data-r="Hafez al-Assad &amp; Ba&#x27;ath Military Regime" data-s="4 the 1962 census &amp; the arab belt (1962-1976) resettling 4,000 arab families in kurdish lands hafez al-assad &amp; ba&#x27;ath military regime 1975 the state built 41 model arab farming colonies directly on expropriated kurdish land. human rights watch documented that in 1975, the government resettled 4,000 arab families (ghamir) in 41 state-built &#x27;model farms&#x27; in the heart of the kurdish region, never returning the land to displaced kurds. engineered demographic replacement by planting state-subsidized arab settlements across rojava. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#004</span> <span class="cat">The 1962 Census &amp; The Arab Belt (1962-1976)</span></div>
+          <span class="era">1975</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Resettling 4,000 Arab Families in Kurdish Lands</span>
+          <span class="rt r-both">Hafez al-Assad &amp; Ba&#x27;ath Military Regime</span>
+        </div>
+        <h3>The state built 41 model Arab farming colonies directly on expropriated Kurdish land.</h3>
+        <p class="desc">Human Rights Watch documented that in 1975, the government resettled 4,000 Arab families (Ghamir) in 41 state-built &#x27;model farms&#x27; in the heart of the Kurdish region, never returning the land to displaced Kurds.</p>
+        <div class="imp"><span>Result:</span> Engineered demographic replacement by planting state-subsidized Arab settlements across Rojava.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 16 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=16" target="_blank" rel="noopener" class="btn-p">PDF (Page 16)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=16" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cultural Erasure &amp; Language Bans (1977-2003)" data-r="Ministry of Local Administration" data-s="5 cultural erasure &amp; language bans (1977-2003) arabization of kurdish village names in afrin ministry of local administration 18 may 1977 directive 15801 erased kurdish geographical names across scores of towns and villages. human rights watch obtained directive no. 15801, which officially ordered the erasure of historical kurdish names for dozens of towns and villages in afrin and aleppo, replacing them with manufactured arabic names. erased indigenous kurdish historical memory from official state maps and road signage. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#005</span> <span class="cat">Cultural Erasure &amp; Language Bans (1977-2003)</span></div>
+          <span class="era">18 May 1977</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Arabization of Kurdish Village Names in Afrin</span>
+          <span class="rt r-both">Ministry of Local Administration</span>
+        </div>
+        <h3>Directive 15801 erased Kurdish geographical names across scores of towns and villages.</h3>
+        <p class="desc">Human Rights Watch obtained Directive No. 15801, which officially ordered the erasure of historical Kurdish names for dozens of towns and villages in Afrin and Aleppo, replacing them with manufactured Arabic names.</p>
+        <div class="imp"><span>Result:</span> Erased indigenous Kurdish historical memory from official state maps and road signage.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 28 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=28" target="_blank" rel="noopener" class="btn-p">PDF (Page 28)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=28" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cultural Erasure &amp; Language Bans (1977-2003)" data-r="Governors of Hasakah &amp; State Security" data-s="6 cultural erasure &amp; language bans (1977-2003) ban on kurdish language and kurdish songs governors of hasakah &amp; state security 1986-1988 state decrees banned speaking kurdish in workplaces and outlawed singing kurdish songs. human rights watch documented official decrees prohibiting the use of the kurdish language in workplaces and banning non-arabic songs at weddings and festivals, enforced through police raids and arrests. criminalized the kurdish mother tongue in everyday public life and social celebrations. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#006</span> <span class="cat">Cultural Erasure &amp; Language Bans (1977-2003)</span></div>
+          <span class="era">1986-1988</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Ban on Kurdish Language and Kurdish Songs</span>
+          <span class="rt r-both">Governors of Hasakah &amp; State Security</span>
+        </div>
+        <h3>State decrees banned speaking Kurdish in workplaces and outlawed singing Kurdish songs.</h3>
+        <p class="desc">Human Rights Watch documented official decrees prohibiting the use of the Kurdish language in workplaces and banning non-Arabic songs at weddings and festivals, enforced through police raids and arrests.</p>
+        <div class="imp"><span>Result:</span> Criminalized the Kurdish mother tongue in everyday public life and social celebrations.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 28 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=28" target="_blank" rel="noopener" class="btn-p">PDF (Page 28)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=28" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cultural Erasure &amp; Language Bans (1977-2003)" data-r="Civil Registry Directorate" data-s="7 cultural erasure &amp; language bans (1977-2003) state refusal to register kurdish baby names civil registry directorate 1992-present syrian civil authorities officially refused to register newborn kurdish children with kurdish names. human rights watch documented that beginning in 1992, civil registries strictly rejected kurdish birth names for infants, forcing kurdish parents to select state-approved arabic names or leave children unregistered. forced assimilation from birth by legally barring kurdish families from naming their own children. human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#007</span> <span class="cat">Cultural Erasure &amp; Language Bans (1977-2003)</span></div>
+          <span class="era">1992-Present</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State Refusal to Register Kurdish Baby Names</span>
+          <span class="rt r-both">Civil Registry Directorate</span>
+        </div>
+        <h3>Syrian civil authorities officially refused to register newborn Kurdish children with Kurdish names.</h3>
+        <p class="desc">Human Rights Watch documented that beginning in 1992, civil registries strictly rejected Kurdish birth names for infants, forcing Kurdish parents to select state-approved Arabic names or leave children unregistered.</p>
+        <div class="imp"><span>Result:</span> Forced assimilation from birth by legally barring Kurdish families from naming their own children.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996) <b class="hl">(Page 28 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_silenced_kurds_1996.pdf#page=28" target="_blank" rel="noopener" class="btn-p">PDF (Page 28)</a>
+            <a href="https://www.hrw.org/sites/default/files/reports/SYRIA96.pdf#page=28" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Cultural Erasure &amp; Language Bans (1977-2003)" data-r="Bashar al-Assad Presidential Decree" data-s="8 cultural erasure &amp; language bans (1977-2003) decree 49: banning kurdish property transfers bashar al-assad presidential decree september 2008 decree no. 49 blocked property sales and construction across kurdish-majority border regions. human rights watch documented that decree no. 49 placed severe security restrictions on buying, selling, or inheriting real estate in border zones, disproportionately freezing kurdish property rights and economic development. strangled kurdish municipal growth and forced young kurds to migrate away from ancestral border lands. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#008</span> <span class="cat">Cultural Erasure &amp; Language Bans (1977-2003)</span></div>
+          <span class="era">September 2008</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Decree 49: Banning Kurdish Property Transfers</span>
+          <span class="rt r-both">Bashar al-Assad Presidential Decree</span>
+        </div>
+        <h3>Decree No. 49 blocked property sales and construction across Kurdish-majority border regions.</h3>
+        <p class="desc">Human Rights Watch documented that Decree No. 49 placed severe security restrictions on buying, selling, or inheriting real estate in border zones, disproportionately freezing Kurdish property rights and economic development.</p>
+        <div class="imp"><span>Result:</span> Strangled Kurdish municipal growth and forced young Kurds to migrate away from ancestral border lands.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 7 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=7" target="_blank" rel="noopener" class="btn-p">PDF (Page 7)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=7" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" data-r="Syrian Security Forces &amp; Police" data-s="9 the 2004 qamishli massacre &amp; assad terror (2004-2011) march 2004: police fire into kurdish soccer fans syrian security forces &amp; police 12 march 2004 security forces fired live ammunition into kurdish spectators at qamishli stadium, killing at least 7. human rights watch documented that during a soccer match in qamishli, security forces opened fire with live bullets specifically into the kurdish stands, killing at least 7 kurdish fans and shooting at mourners the next day. triggered the 2004 kurdish uprising (serhildan) against ba&#x27;athist state apartheid. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#009</span> <span class="cat">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)</span></div>
+          <span class="era">12 March 2004</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">March 2004: Police Fire into Kurdish Soccer Fans</span>
+          <span class="rt r-both">Syrian Security Forces &amp; Police</span>
+        </div>
+        <h3>Security forces fired live ammunition into Kurdish spectators at Qamishli stadium, killing at least 7.</h3>
+        <p class="desc">Human Rights Watch documented that during a soccer match in Qamishli, security forces opened fire with live bullets specifically into the Kurdish stands, killing at least 7 Kurdish fans and shooting at mourners the next day.</p>
+        <div class="imp"><span>Result:</span> Triggered the 2004 Kurdish Uprising (Serhildan) against Ba&#x27;athist state apartheid.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 20 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=20" target="_blank" rel="noopener" class="btn-p">PDF (Page 20)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=20" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" data-r="Syrian Armed Forces &amp; Military Tanks" data-s="10 the 2004 qamishli massacre &amp; assad terror (2004-2011) army crushes uprising: 36 killed, 160 injured syrian armed forces &amp; military tanks march 2004 syrian military tanks and security forces surrounded kurdish cities, killing at least 36 people. human rights watch documented that the syrian army encircled qamishli and major kurdish towns, firing on demonstrations, killing at least 36 people (mostly kurds), and wounding more than 160 civilians. the deadliest state military crackdown on syrian kurds in modern pre-civil war history. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#010</span> <span class="cat">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)</span></div>
+          <span class="era">March 2004</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Army Crushes Uprising: 36 Killed, 160 Injured</span>
+          <span class="rt r-both">Syrian Armed Forces &amp; Military Tanks</span>
+        </div>
+        <h3>Syrian military tanks and security forces surrounded Kurdish cities, killing at least 36 people.</h3>
+        <p class="desc">Human Rights Watch documented that the Syrian army encircled Qamishli and major Kurdish towns, firing on demonstrations, killing at least 36 people (mostly Kurds), and wounding more than 160 civilians.</p>
+        <div class="imp"><span>Result:</span> The deadliest state military crackdown on Syrian Kurds in modern pre-civil war history.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 20 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=20" target="_blank" rel="noopener" class="btn-p">PDF (Page 20)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=20" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" data-r="Military Intelligence &amp; Political Security" data-s="11 the 2004 qamishli massacre &amp; assad terror (2004-2011) over 2,000 kurds jailed and systematically tortured military intelligence &amp; political security march-april 2004 security forces rounded up over 2,000 kurds, subjecting detainees including children to brutal torture. human rights watch documented that state security services detained more than 2,000 kurds, with widespread documented torture, beatings, and electrocutions of activists, students, women, and the elderly. terrorized the kurdish civilian population to suppress calls for democratic rights and citizenship. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#011</span> <span class="cat">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)</span></div>
+          <span class="era">March-April 2004</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Over 2,000 Kurds Jailed and Systematically Tortured</span>
+          <span class="rt r-both">Military Intelligence &amp; Political Security</span>
+        </div>
+        <h3>Security forces rounded up over 2,000 Kurds, subjecting detainees including children to brutal torture.</h3>
+        <p class="desc">Human Rights Watch documented that state security services detained more than 2,000 Kurds, with widespread documented torture, beatings, and electrocutions of activists, students, women, and the elderly.</p>
+        <div class="imp"><span>Result:</span> Terrorized the Kurdish civilian population to suppress calls for democratic rights and citizenship.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 20 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=20" target="_blank" rel="noopener" class="btn-p">PDF (Page 20)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=20" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" data-r="Syrian Police &amp; State Security Services" data-s="12 the 2004 qamishli massacre &amp; assad terror (2004-2011) police open fire on newroz celebrations syrian police &amp; state security services 20 march 2008 police fired live bullets into a peaceful newroz bonfire celebration in qamishli, killing civilians. human rights watch documented that police and security forces violently attacked a peaceful crowd celebrating the kurdish new year in qamishli, firing live ammunition into the dancers with deadly consequences. demonstrated zero state tolerance for even peaceful, traditional kurdish cultural gatherings. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#012</span> <span class="cat">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)</span></div>
+          <span class="era">20 March 2008</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Police Open Fire on Newroz Celebrations</span>
+          <span class="rt r-both">Syrian Police &amp; State Security Services</span>
+        </div>
+        <h3>Police fired live bullets into a peaceful Newroz bonfire celebration in Qamishli, killing civilians.</h3>
+        <p class="desc">Human Rights Watch documented that police and security forces violently attacked a peaceful crowd celebrating the Kurdish New Year in Qamishli, firing live ammunition into the dancers with deadly consequences.</p>
+        <div class="imp"><span>Result:</span> Demonstrated zero state tolerance for even peaceful, traditional Kurdish cultural gatherings.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 28 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=28" target="_blank" rel="noopener" class="btn-p">PDF (Page 28)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=28" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)" data-r="Syrian Military Intelligence (Mukhabarat)" data-s="13 the 2004 qamishli massacre &amp; assad terror (2004-2011) state kidnap &amp; torture of sheikh ma&#x27;shooq al-khaznawi syrian military intelligence (mukhabarat) may-june 2005 state agents abducted prominent kurdish religious leader sheikh khaznawi, torturing him to death. human rights watch and amnesty international documented that after sheikh khaznawi delivered speeches demanding kurdish rights, he was kidnapped in damascus, tortured to death, and his body dumped in deir ez-zor. assassinated one of the most respected spiritual and political voices advocating kurdish rights. human rights watch group denial: repression of kurdish rights in syria (2009)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#013</span> <span class="cat">The 2004 Qamishli Massacre &amp; Assad Terror (2004-2011)</span></div>
+          <span class="era">May-June 2005</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">State Kidnap &amp; Torture of Sheikh Ma&#x27;shooq al-Khaznawi</span>
+          <span class="rt r-both">Syrian Military Intelligence (Mukhabarat)</span>
+        </div>
+        <h3>State agents abducted prominent Kurdish religious leader Sheikh Khaznawi, torturing him to death.</h3>
+        <p class="desc">Human Rights Watch and Amnesty International documented that after Sheikh Khaznawi delivered speeches demanding Kurdish rights, he was kidnapped in Damascus, tortured to death, and his body dumped in Deir ez-Zor.</p>
+        <div class="imp"><span>Result:</span> Assassinated one of the most respected spiritual and political voices advocating Kurdish rights.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">Human Rights Watch</div>
+            <div class="doc">Group Denial: Repression of Kurdish Rights in Syria (2009) <b class="hl">(Page 8 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="hrw_group_denial_2009.pdf#page=8" target="_blank" rel="noopener" class="btn-p">PDF (Page 8)</a>
+            <a href="https://www.hrw.org/report/2009/11/26/group-denial/repression-kurdish-political-and-cultural-rights-syria#page=8" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Jabhat al-Nusra &amp; Extremist Factions" data-s="14 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) un finding: indiscriminate shelling of kurdish cities jabhat al-nusra &amp; extremist factions 2013-2014 jolani&#x27;s jabhat al-nusra heavily shelled kurdish civilian neighborhoods in qamishli and ras al-ayn. the un independent commission of inquiry on syria documented that extremist groups used artillery and mortars without distinction against kurdish civilian populations in qamishli, ras al-ayn, and al-malikiyah. killed and wounded kurdish civilians and destroyed residential neighborhoods across the border. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/25/65)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#014</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">2013-2014</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: Indiscriminate Shelling of Kurdish Cities</span>
+          <span class="rt r-both">Jabhat al-Nusra &amp; Extremist Factions</span>
+        </div>
+        <h3>Jolani&#x27;s Jabhat al-Nusra heavily shelled Kurdish civilian neighborhoods in Qamishli and Ras al-Ayn.</h3>
+        <p class="desc">The UN Independent Commission of Inquiry on Syria documented that extremist groups used artillery and mortars without distinction against Kurdish civilian populations in Qamishli, Ras al-Ayn, and Al-Malikiyah.</p>
+        <div class="imp"><span>Result:</span> Killed and wounded Kurdish civilians and destroyed residential neighborhoods across the border.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/25/65) <b class="hl">(Page 16 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2014_hrc25_65.pdf#page=16" target="_blank" rel="noopener" class="btn-p">PDF (Page 16)</a>
+            <a href="https://digitallibrary.un.org/record/767058#page=16" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Jabhat al-Nusra &amp; Associated Extremists" data-s="15 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) bombing kurdish red crescent ambulances &amp; clinics jabhat al-nusra &amp; associated extremists 2013 jihadist groups deliberately targeted medical clinics and ambulances of the kurdish red crescent. the un commission of inquiry documented car bomb attacks outside a kurdish red crescent clinic in ayn al-arab (kobani) and a direct targeted attack on a kurdish red crescent ambulance in ras al-ayn. violated geneva conventions by deliberately targeting medical responders treating wounded kurds. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/25/65)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#015</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">2013</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Bombing Kurdish Red Crescent Ambulances &amp; Clinics</span>
+          <span class="rt r-both">Jabhat al-Nusra &amp; Associated Extremists</span>
+        </div>
+        <h3>Jihadist groups deliberately targeted medical clinics and ambulances of the Kurdish Red Crescent.</h3>
+        <p class="desc">The UN Commission of Inquiry documented car bomb attacks outside a Kurdish Red Crescent clinic in Ayn al-Arab (Kobani) and a direct targeted attack on a Kurdish Red Crescent ambulance in Ras al-Ayn.</p>
+        <div class="imp"><span>Result:</span> Violated Geneva Conventions by deliberately targeting medical responders treating wounded Kurds.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/25/65) <b class="hl">(Page 17 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2014_hrc25_65.pdf#page=17" target="_blank" rel="noopener" class="btn-p">PDF (Page 17)</a>
+            <a href="https://digitallibrary.un.org/record/767058#page=17" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Jabhat al-Nusra, ISIS &amp; Allied Groups" data-s="16 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) attacking tal abyad &amp; threatening kurds with death jabhat al-nusra, isis &amp; allied groups july 2013 nusra and allied factions ordered all kurdish civilians in tal abyad to flee or face immediate death. the un commission of inquiry documented that jabhat al-nusra and allied groups broadcast ultimatums from mosque loudspeakers instructing kurds to abandon their homes, subsequently looting and burning their property. forced thousands of kurdish families to flee in terror under threat of armed extermination. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/25/65)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#016</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">July 2013</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Attacking Tal Abyad &amp; Threatening Kurds with Death</span>
+          <span class="rt r-both">Jabhat al-Nusra, ISIS &amp; Allied Groups</span>
+        </div>
+        <h3>Nusra and allied factions ordered all Kurdish civilians in Tal Abyad to flee or face immediate death.</h3>
+        <p class="desc">The UN Commission of Inquiry documented that Jabhat al-Nusra and allied groups broadcast ultimatums from mosque loudspeakers instructing Kurds to abandon their homes, subsequently looting and burning their property.</p>
+        <div class="imp"><span>Result:</span> Forced thousands of Kurdish families to flee in terror under threat of armed extermination.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/25/65) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2014_hrc25_65.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://digitallibrary.un.org/record/767058#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Jabhat al-Nusra &amp; Extremist Militias" data-s="17 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) tal hasel: declaring kurds &#x27;unbelievers&#x27; and &#x27;halal&#x27; jabhat al-nusra &amp; extremist militias july-august 2013 jolani&#x27;s fighters called kurds &#x27;unbelievers&#x27; from mosques, declaring women &#x27;halal for mujahideen&#x27;. the un commission of inquiry documented that in tal hasel, armed groups raided kurdish houses, abducted fighting-age men, and broadcast over mosque speakers that kurds were &#x27;unbelievers&#x27; and their women &#x27;halal&#x27;. incited religious extremist slaughter and sexual violence against kurdish civilians. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/25/65)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#017</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">July-August 2013</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">Tal Hasel: Declaring Kurds &#x27;Unbelievers&#x27; and &#x27;Halal&#x27;</span>
+          <span class="rt r-both">Jabhat al-Nusra &amp; Extremist Militias</span>
+        </div>
+        <h3>Jolani&#x27;s fighters called Kurds &#x27;unbelievers&#x27; from mosques, declaring women &#x27;halal for mujahideen&#x27;.</h3>
+        <p class="desc">The UN Commission of Inquiry documented that in Tal Hasel, armed groups raided Kurdish houses, abducted fighting-age men, and broadcast over mosque speakers that Kurds were &#x27;unbelievers&#x27; and their women &#x27;halal&#x27;.</p>
+        <div class="imp"><span>Result:</span> Incited religious extremist slaughter and sexual violence against Kurdish civilians.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/25/65) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2014_hrc25_65.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://digitallibrary.un.org/record/767058#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Jabhat al-Nusra &amp; Extremist Coalitions" data-s="18 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) un finding: nusra committed war crimes of displacement jabhat al-nusra &amp; extremist coalitions july 2013 the un commission ruled that nusra conducted a planned campaign to ethnically cleanse kurdish towns. the un commission of inquiry concluded that the pattern of attacks, ultimatums, and abductions across northern syria constituted deliberate displacement based on ethnic identity, amounting to war crimes. official un legal ruling that jolani&#x27;s forces committed international war crimes against kurds. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/25/65)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#018</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">July 2013</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: Nusra Committed War Crimes of Displacement</span>
+          <span class="rt r-both">Jabhat al-Nusra &amp; Extremist Coalitions</span>
+        </div>
+        <h3>The UN Commission ruled that Nusra conducted a planned campaign to ethnically cleanse Kurdish towns.</h3>
+        <p class="desc">The UN Commission of Inquiry concluded that the pattern of attacks, ultimatums, and abductions across northern Syria constituted deliberate displacement based on ethnic identity, amounting to war crimes.</p>
+        <div class="imp"><span>Result:</span> Official UN legal ruling that Jolani&#x27;s forces committed international war crimes against Kurds.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/25/65) <b class="hl">(Page 22 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2014_hrc25_65.pdf#page=22" target="_blank" rel="noopener" class="btn-p">PDF (Page 22)</a>
+            <a href="https://digitallibrary.un.org/record/767058#page=22" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Hay&#x27;at Tahrir al-Sham (HTS under Jolani)" data-s="19 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) 2022 hts incursion into afrin: expanding jolani&#x27;s reach hay&#x27;at tahrir al-sham (hts under jolani) october 2022 jolani deployed hts shock forces into afrin, capturing checkpoints and administrative control. the un commission of inquiry documented that hts capitalized on factional infighting to make significant armed advances into afrin in northern aleppo, establishing control over major revenue checkpoints. expanded jolani&#x27;s extremist authoritarian apparatus into occupied kurdish regions of northern syria. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/52/69)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#019</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">October 2022</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">2022 HTS Incursion into Afrin: Expanding Jolani&#x27;s Reach</span>
+          <span class="rt r-both">Hay&#x27;at Tahrir al-Sham (HTS under Jolani)</span>
+        </div>
+        <h3>Jolani deployed HTS shock forces into Afrin, capturing checkpoints and administrative control.</h3>
+        <p class="desc">The UN Commission of Inquiry documented that HTS capitalized on factional infighting to make significant armed advances into Afrin in northern Aleppo, establishing control over major revenue checkpoints.</p>
+        <div class="imp"><span>Result:</span> Expanded Jolani&#x27;s extremist authoritarian apparatus into occupied Kurdish regions of northern Syria.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/52/69) <b class="hl">(Page 4 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2023_hrc52_69.pdf#page=4" target="_blank" rel="noopener" class="btn-p">PDF (Page 4)</a>
+            <a href="https://digitallibrary.un.org/record/4005953#page=4" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+      <article class="card tilt" data-c="Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)" data-r="Hay&#x27;at Tahrir al-Sham Security Apparatus" data-s="20 jolani, jabhat al-nusra &amp; hts war crimes (2012-2026) un finding: hts secret prisons, torture &amp; executions hay&#x27;at tahrir al-sham security apparatus 2022-2023 the un found reasonable grounds that hts committed war crimes of torture, disappearances, and killings. the un commission of inquiry documented credible reports of executions by firing squad, secret detention tantamount to enforced disappearances, denial of food and medical care, and war crimes of torture by hts. exposed jolani&#x27;s security apparatus as a brutal police state running torture chambers across northwest syria. united nations commission of inquiry on syria report of the independent international commission of inquiry (a/hrc/52/69)">
+        <div class="glow"></div>
+        <div class="c-head">
+          <div><span class="num">#020</span> <span class="cat">Jolani, Jabhat al-Nusra &amp; HTS War Crimes (2012-2026)</span></div>
+          <span class="era">2022-2023</span>
+        </div>
+        <div class="c-sub">
+          <span class="sub">UN Finding: HTS Secret Prisons, Torture &amp; Executions</span>
+          <span class="rt r-both">Hay&#x27;at Tahrir al-Sham Security Apparatus</span>
+        </div>
+        <h3>The UN found reasonable grounds that HTS committed war crimes of torture, disappearances, and killings.</h3>
+        <p class="desc">The UN Commission of Inquiry documented credible reports of executions by firing squad, secret detention tantamount to enforced disappearances, denial of food and medical care, and war crimes of torture by HTS.</p>
+        <div class="imp"><span>Result:</span> Exposed Jolani&#x27;s security apparatus as a brutal police state running torture chambers across northwest Syria.</div>
+        <div class="c-foot">
+          <div class="meta">
+            <div class="org">United Nations Commission of Inquiry on Syria</div>
+            <div class="doc">Report of the Independent International Commission of Inquiry (A/HRC/52/69) <b class="hl">(Page 13 [Highlighted])</b></div>
+          </div>
+          <div class="links">
+            <a href="un_coi_syria_2023_hrc52_69.pdf#page=13" target="_blank" rel="noopener" class="btn-p">PDF (Page 13)</a>
+            <a href="https://digitallibrary.un.org/record/4005953#page=13" target="_blank" rel="noopener" class="btn-s">SOURCE</a>
+          </div>
+        </div>
+      </article>
+  </main>
+
+  <div class="pdf-grid" id="pdfs">
+      <div class="pdf-card" data-s="human rights watch syria: the silenced kurds (vol. 8, no. 4 [e], 1996) landmark documentation on the 1962 hasakah census, stateless kurds (ajanib/maktumin), and the arab belt.">
+        <div>
+          <span class="p-tag">HUMAN RIGHTS WATCH</span>
+          <h4>Syria: The Silenced Kurds (Vol. 8, No. 4 [E], 1996)</h4>
+          <p>Landmark documentation on the 1962 Hasakah census, stateless Kurds (ajanib/maktumin), and the Arab Belt.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">Human Rights Watch</span>
+          <a href="hrw_silenced_kurds_1996.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="human rights watch group denial: repression of kurdish political and cultural rights in syria (2009) detailed report on the 2004 qamishli massacre, mass torture of kurds, and the assassination of sheikh khaznawi.">
+        <div>
+          <span class="p-tag">HUMAN RIGHTS WATCH</span>
+          <h4>Group Denial: Repression of Kurdish Political and Cultural Rights in Syria (2009)</h4>
+          <p>Detailed report on the 2004 Qamishli massacre, mass torture of Kurds, and the assassination of Sheikh Khaznawi.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">Human Rights Watch</span>
+          <a href="hrw_group_denial_2009.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="united nations (coi syria) report of the commission of inquiry on the syrian arab republic (a/hrc/25/65, 2014) official un findings on jabhat al-nusra (under jolani) war crimes: targeting kurds, mosque threats, and ethnic displacement.">
+        <div>
+          <span class="p-tag">UNITED NATIONS</span>
+          <h4>Report of the Commission of Inquiry on the Syrian Arab Republic (A/HRC/25/65, 2014)</h4>
+          <p>Official UN findings on Jabhat al-Nusra (under Jolani) war crimes: targeting Kurds, mosque threats, and ethnic displacement.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">United Nations (COI Syria)</span>
+          <a href="un_coi_syria_2014_hrc25_65.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+      <div class="pdf-card" data-s="united nations (coi syria) report of the commission of inquiry on the syrian arab republic (a/hrc/52/69, 2023) un findings on hts (under jolani) incursions into afrin, secret prisons, enforced disappearances, and torture.">
+        <div>
+          <span class="p-tag">UNITED NATIONS</span>
+          <h4>Report of the Commission of Inquiry on the Syrian Arab Republic (A/HRC/52/69, 2023)</h4>
+          <p>UN findings on HTS (under Jolani) incursions into Afrin, secret prisons, enforced disappearances, and torture.</p>
+        </div>
+        <div class="p-foot">
+          <span class="p-meta">United Nations (COI Syria)</span>
+          <a href="un_coi_syria_2023_hrc52_69.pdf#page=1" target="_blank" rel="noopener" class="p-btn">Open PDF</a>
+        </div>
+      </div>
+  </div>
+
+  <div class="empty" id="empty">
+    NO ARCHIVAL RECORDS MATCH YOUR FILTER CRITERIA
+  </div>
+
+  <section class="banner">
+    <h2>BIJI KURDISTAN &bull; HER BEJI ROJAVA</h2>
+  </section>
+
+  <footer>
+    <div>The Rojava Archival Dossier &bull; Compiled from Human Rights Watch and UN Commission of Inquiry primary sources.</div>
+    <div>Strict 1:1 verification &bull; Yellow highlights mark exact paragraphs in every original PDF.</div>
+  </footer>
+
+  <script>
+    // 3D Card Hover Tilt
+    const maxTilt = 7;
+    document.querySelectorAll('.tilt').forEach(c => {
+      c.addEventListener('mousemove', e => {
+        const r = c.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx = r.width / 2;
+        const cy = r.height / 2;
+        const dx = (x - cx) / cx;
+        const dy = (y - cy) / cy;
+        const rx = -dy * maxTilt;
+        const ry = dx * maxTilt;
+        c.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateZ(4px)`;
+      });
+      c.addEventListener('mouseleave', () => {
+        c.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+      });
+    });
+
+    // Category and Search Filtering
+    let curCat = 'ALL';
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+
+    const qIn = $('#q');
+    const cards = $$('.card');
+    const pdfs = $$('.pdf-card');
+    const gridEl = $('#grid');
+    const pdfEl = $('#pdfs');
+    const cntEl = $('#cnt');
+    const emptyEl = $('#empty');
+
+    function setCat(c) {
+      curCat = c;
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === c));
+      filter();
+    }
+
+    function reset() {
+      qIn.value = '';
+      curCat = 'ALL';
+      $$('.c-btn').forEach(b => b.classList.toggle('on', b.dataset.c === 'ALL'));
+      filter();
+    }
+
+    function filter() {
+      const raw = qIn.value.trim().toLowerCase();
+      const terms = raw ? raw.split(/\s+/) : [];
+
+      if (curCat === 'Archival PDFs') {
+        gridEl.style.display = 'none';
+        pdfEl.style.display = 'grid';
+        let n = 0;
+        pdfs.forEach(p => {
+          const ok = terms.every(t => p.dataset.s.includes(t));
+          p.style.display = ok ? 'flex' : 'none';
+          if (ok) n++;
+        });
+        cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + pdfs.length + '</b> ARCHIVAL PDFS';
+        emptyEl.style.display = (n === 0) ? 'block' : 'none';
+        return;
+      }
+
+      gridEl.style.display = 'grid';
+      pdfEl.style.display = 'none';
+
+      let n = 0;
+      cards.forEach(c => {
+        const cMatch = (curCat === 'ALL' || c.dataset.c === curCat);
+        const tMatch = terms.every(t => c.dataset.s.includes(t));
+        const ok = cMatch && tMatch;
+        c.style.display = ok ? 'flex' : 'none';
+        if (ok) n++;
+      });
+
+      cntEl.innerHTML = 'SHOWING <b>' + n + '</b> OF <b>' + cards.length + '</b> RECORDS';
+      emptyEl.style.display = (n === 0) ? 'block' : 'none';
+    }
+
+    filter();
+  </script>
+</body>
+</html>
