@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Report: Mohammad Reza Shah & Kurdish Oppression in Iran (1941–1979)</title>
+  <title>Special Dossier: The Human Toll of Pahlavi Rule on Kurdish Civilians (1941–1979)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -95,9 +95,9 @@
     }
     h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 2.85rem);
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 18px;
       background: linear-gradient(135deg, #fff 40%, var(--purp-s) 100%);
       -webkit-background-clip: text;
@@ -106,7 +106,7 @@
     .hero-sub {
       font-size: 1.15rem;
       color: var(--muted);
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 25px;
       line-height: 1.6;
     }
@@ -127,7 +127,7 @@
     }
     .prose h2 {
       font-family: 'Cinzel', serif;
-      font-size: 1.65rem;
+      font-size: 1.55rem;
       color: #fff;
       margin: 45px 0 18px;
       padding-bottom: 8px;
@@ -138,7 +138,7 @@
     }
     .prose h2 span.num {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--purp-s);
       background: rgba(147, 51, 234, 0.15);
       border: 1px solid var(--purp-s);
@@ -146,9 +146,9 @@
       border-radius: 4px;
     }
     .prose h3 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #fff;
-      margin: 28px 0 12px;
+      margin: 26px 0 12px;
     }
     .prose p {
       margin-bottom: 20px;
@@ -163,7 +163,7 @@
       margin-bottom: 10px;
     }
 
-    /* ALERT CALLOUTS */
+    /* CALLOUTS */
     .callout {
       background: rgba(15, 10, 26, 0.8);
       border-left: 4px solid var(--purp);
@@ -177,7 +177,7 @@
     .callout.danger { border-left-color: var(--red); background: rgba(239, 68, 68, 0.05); }
     .callout.gold { border-left-color: var(--gold); background: rgba(254, 189, 17, 0.05); }
     .callout h4 {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-family: 'JetBrains Mono', monospace;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -222,27 +222,33 @@
       border-color: var(--purp-s);
     }
 
-    /* TABLE */
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    /* STAT GRID */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
       margin: 30px 0;
-      font-size: 0.9rem;
     }
-    th, td {
-      padding: 12px 16px;
-      text-align: left;
-      border-bottom: 1px solid var(--line);
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      text-align: center;
     }
-    th {
-      background: rgba(147, 51, 234, 0.1);
-      color: #fff;
-      font-family: 'JetBrains Mono', monospace;
+    .stat-card b {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .stat-card span {
       font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      color: var(--muted);
+      line-height: 1.3;
+      display: block;
     }
-    tr:hover td { background: rgba(255, 255, 255, 0.02); }
 
     /* CTA BUTTONS */
     .cta-row {
@@ -276,152 +282,165 @@
   <nav class="topbar">
     <div class="tb-l">
       <span class="dot"></span>
-      <span>pr0fitsz archival dossier</span>
+      <span>pr0fitsz civilian archive</span>
     </div>
     <div class="tb-r">
       <a href="index.html" class="tb-btn">The Shah Record</a>
       <a href="verdict_on_the_irgc.html" class="tb-btn">The IRGC Record</a>
       <a href="verdict_on_erdogan.html" class="tb-btn">The Erdoğan Record</a>
       <a href="verdict_on_syria.html" class="tb-btn">The Syria Record</a>
-      <a href="the_shah_and_kurdish_oppression.html" class="tb-btn active">Special Report</a>
+      <a href="the_shah_and_kurdish_oppression.html" class="tb-btn active">Civilian Dossier</a>
     </div>
   </nav>
 
   <div class="wrap">
     <header class="hero">
-      <div class="kicker">Peer-Reviewed Historical Dossier</div>
-      <h1>The Architecture of Pahlavi Oppression</h1>
+      <div class="kicker">Primary-Source Archival Dossier</div>
+      <h1>The Human Toll of Pahlavi Rule</h1>
       <p class="hero-sub">
-        How Mohammad Reza Shah's Military Dictatorship, SAVAK Terror, and Geopolitical Betrayals Catalyzed the Kurdish Resistance in Iran (1941–1979)
+        How Mohammad Reza Shah's Military Occupation, Cultural Suppression, Healthcare Starvation, and Rural Impoverishment Ravaged Everyday Kurdish Civilian Life in Iran (1941–1979)
       </p>
       <div class="meta-bar">
-        <span>AUTHOR: PR0FITSZ ARCHIVES</span>
+        <span>FOCUS: KURDISH CIVILIANS, FAMILIES & PEASANTS</span>
         <span>•</span>
-        <span>PRIMARY SOURCES: 26 VERIFIED PDFS</span>
+        <span>26 VERIFIED ARCHIVAL DOCUMENTS</span>
         <span>•</span>
-        <span>STATUS: 100% FACT-CHECKED</span>
+        <span>ICJ & AMNESTY HISTORICAL RECORD</span>
       </div>
     </header>
 
     <article class="prose">
       <div class="callout gold">
-        <h4>Historical Thesis</h4>
+        <h4>Core Investigation: The Civilian Experience</h4>
         <p>
-          The oppression of the Kurdish nation in Iran under Mohammad Reza Shah Pahlavi (1941–1979) was not an incidental byproduct of modernization; it was the <strong>deliberate cornerstone of the Pahlavi centralist state model</strong>. By annihilating local self-rule in 1946, establishing permanent SAVAK terror garrisons, criminalizing the Kurdish mother tongue, starving peripheral provinces of medical and economic infrastructure, and treating Kurdish insurgencies as disposable proxy pawns in the 1975 Algiers Accord, the Shah created the structural conditions that made the 1979 Kurdish uprising inevitable.
+          While official histories often focus on monarchs, generals, and party leaders, the true impact of Mohammad Reza Shah's thirty-eight-year reign was borne by <strong>ordinary Kurdish civilians</strong>. Across the rural villages and provincial towns of Iranian Kurdistan (Rojhelat), everyday families faced state-engineered poverty, the violent criminalization of their native language, near-total absence of healthcare, systematic illiteracy, and constant secret police terror in daily life.
         </p>
       </div>
 
-      <div class="diagram-box">
-┌─────────────────────────────────────────────────────────────────────────────┐
-│             THE FIVE PILLARS OF PAHLAVI OPPRESSION IN ROJHELAT              │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 1. MILITARY CRUSHING OF AUTONOMY    │ 1946 Mahabad Reconquest & Gallows     │
-│ 2. SAVAK POLICE TERROR & TORTURE     │ Heated Bed, Nail-Plucking, Falaka     │
-│ 3. FORCED CULTURAL ASSIMILATION      │ Statutory Ban on Kurdish Language     │
-│ 4. SOCIOECONOMIC COLONIALISM         │ >90% Illiteracy, 50%+ Healthcare Depr.│
-│ 5. GEOPOLITICAL PROXY BETRAYAL       │ 1975 Algiers Accord Border Trap       │
-└──────────────────────────────────────┴───────────────────────────────────────┘
+      <div class="stat-grid">
+        <div class="stat-card">
+          <b>&gt;90%</b>
+          <span>Rural Illiteracy Maintained Across Small Kurdish Villages</span>
+        </div>
+        <div class="stat-card">
+          <b>&gt;50%</b>
+          <span>Of Rural Population Completely Denied Healthcare or Clinics</span>
+        </div>
+        <div class="stat-card">
+          <b>1 : 3,750</b>
+          <span>Doctor-to-Citizen Ratio (Over Half Concentrated in Tehran Alone)</span>
+        </div>
+        <div class="stat-card">
+          <b>100,000+</b>
+          <span>Civilian Families Trapped at Sealed Borders During 1975 Betrayal</span>
+        </div>
       </div>
 
-      <h2><span class="num">01</span> The Annihilation of the Republic of Mahabad (1946–1947)</h2>
+      <h2><span class="num">01</span> The Trauma of Military Occupation in Village Life</h2>
       <p>
-        Following the Allied occupation of Iran in World War II, Kurdish leaders established the <strong>Republic of Mahabad</strong> on 22 January 1946 under President <strong>Qazi Muhammad</strong>. It stood as the first modern autonomous Kurdish administration in Rojhelat: establishing primary schooling in Kurdish, printing native literature, and operating municipal courts without monarchical interference.
+        Following the 1946 military reconquest of northwestern Iran, Mohammad Reza Shah instituted a permanent military and secret-police occupation over civilian life in Iranian Kurdistan. Small agricultural villages and market towns were placed under martial jurisdiction.
       </p>
       <p>
-        When Soviet forces withdrew under Anglo-American pressure in mid-1946, Mohammad Reza Shah deployed the Imperial Army with Western armor and heavy artillery. Entering Mahabad in December 1946, imperial divisions dissolved all local councils, closed down the Kurdish printing presses, and publicly burned native textbooks.
+        Ordinary farming families faced daily harassment from Imperial Gendarmerie outposts:
+      </p>
+      <ul>
+        <li><strong>Checkpoints and Travel Restrictions:</strong> Kurdish peasants required military permits simply to transport grain, wool, or livestock between neighboring market towns like Mahabad, Saqqez, Baneh, and Sardasht.</li>
+        <li><strong>Home Raids and Weapons Searches:</strong> Imperial soldiers routinely conducted nocturnal searches of civilian residences, destroying household goods, confiscating family heirlooms, and summarily arresting village elders suspected of lacking loyalty to the Crown (<a href="pdfs/hrw2009.pdf#page=11" target="_blank" class="src-pill">HRW 2009, p. 11</a>).</li>
+        <li><strong>Public Psychological Humiliation:</strong> When dissidents were captured, the state deliberately targeted the civilian psyche. In May 1968, the bullet-riddled body of an executed dissident was affixed to a wooden ladder and paraded through the crowded public bazaars of Mahabad and Sardasht to terrorize ordinary shopkeepers, women, and school children into total subservience.</li>
+      </ul>
+
+      <h2><span class="num">02</span> Daily Linguistic Humiliation & Childhood Trauma</h2>
+      <p>
+        The Pahlavi monarchy enforced a strict policy of cultural and linguistic homogenization. For ordinary Kurdish children and parents, this meant constant daily humiliation at the hands of state institutions:
+      </p>
+      <ul>
+        <li><strong>Beating Children for Speaking Mother Tongue:</strong> In elementary schools across Kurdistan, teachers—mostly non-Kurdish conscripts sent from central provinces—physically punished and shamed young children caught uttering a single Kurdish word in the classroom or playground.</li>
+        <li><strong>Complete Ban on Native Books and Music:</strong> Kurdish books, magazines, and musical records were outlawed. Possessing a handwritten collection of Kurdish poetry or cassette tapes of traditional folklore was treated as contraband, resulting in SAVAK interrogation (<a href="pdfs/icj1976.pdf#page=23" target="_blank" class="src-pill">ICJ 1976, p. 23</a>).</li>
+        <li><strong>Banning of Kurdish Baby Names:</strong> Civil status offices (*Sabt-e Ahval*) maintained lists of approved Persian names, strictly refusing to issue birth certificates to newborn infants if parents gave them traditional Kurdish names. Without birth certificates, children could not access ration cards or register for schooling.</li>
+        <li><strong>Suppression of Indigenous Attire:</strong> Continuing the dress edicts of Reza Shah, imperial gendarmes in town squares harassed and mocked Kurdish villagers wearing traditional baggy trousers (*ranik u chogha*) or traditional headwraps (*klaw u jamana*), pressuring them to wear European clothing (<a href="pdfs/iranica_1928_dress_law.pdf#page=1" target="_blank" class="src-pill">Encyclopaedia Iranica, p. 1</a>).</li>
+      </ul>
+
+      <h2><span class="num">03</span> Healthcare Starvation & Rampant Infant Mortality</h2>
+      <p>
+        While imperial propaganda boasted of billions of dollars in oil revenue spent on lavish celebrations and Western arms, the International Commission of Jurists (1976) documented catastrophic medical neglect across rural minority provinces:
       </p>
       <div class="callout danger">
-        <h4>The Gallows of Chahar Cheragh Square (31 March 1947)</h4>
+        <h4>ICJ Formal Finding: Over 50% Denied Healthcare</h4>
         <p>
-          At 3:00 AM on 31 March 1947, President <strong>Qazi Muhammad</strong>, his brother <strong>Sadr Qazi</strong> (a member of the Iranian Majlis), and his cousin <strong>Seyfi Qazi</strong> (Minister of War) were publicly executed by hanging from gallows erected in Chahar Cheragh Square—the exact square where the Republic had been proclaimed. The executions were witnessed by imperial military officers and intended to extinguish all aspirations for regional federalism.
+          "In contrast to the impressive achievements in the large urban centers, medical care in the rural areas is severely limited. Over 50% of the rural population receives no medical aid of any kind... In 1972, there was only one doctor for every 3,750 people in Iran, and over 50% of these doctors were concentrated in Tehran."
+          <br>
+          <a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ Report (1976), p. 44 [Highlighted]</a>
         </p>
       </div>
       <p>
-        Documented by Human Rights Watch (<a href="pdfs/hrw2009.pdf#page=11" target="_blank" class="src-pill">HRW 2009, p. 11</a>), the destruction of Mahabad was followed by the imposition of a permanent military garrison across Iranian Kurdistan that lasted until the fall of the monarchy in 1979.
-      </p>
-
-      <h2><span class="num">02</span> The SAVAK Reign of Terror in Rojhelat (1957–1979)</h2>
-      <p>
-        Created in 1957 following the 1953 CIA-backed coup, the secret police organization <strong>SAVAK</strong> (*Sāzmān-e Etelā‘āt va Amniyat-e Keshvar*) maintained regional commands across Sanandaj, Kermanshah, Urmia, and Mahabad. Any assertion of Kurdish political or cultural rights was prosecuted as high treason.
-      </p>
-      <p>
-        The <strong>International Commission of Jurists (1976)</strong> and <strong>Amnesty International (1976)</strong> conducted comprehensive investigations into the Pahlavi regime's interrogation centers, documenting systematic physical torture:
+        For Kurdish civilian families, this geographic disparity had devastating human consequences:
       </p>
       <ul>
-        <li><strong>The Heated Metal Table (*Tave-ye Dagh*):</strong> Dissidents were strapped naked to an electrified, hollow iron frame heated by gas burners or electric elements, searing the skin (<a href="pdfs/icj1976.pdf#page=18" target="_blank" class="src-pill">ICJ 1976, p. 18</a>).</li>
-        <li><strong>The Falaka & Heavy Cable Floggings:</strong> Prolonged suspension from ceiling hooks while the soles of the feet were systematically whipped with high-voltage industrial cables (<a href="pdfs/amnesty1976.pdf#page=6" target="_blank" class="src-pill">Amnesty 1976, p. 6</a>).</li>
-        <li><strong>Electric Shock & Nail Extraction:</strong> Deployment of specialized mechanical pliers to extract fingernails and toenails, and high-voltage electrodes applied to sensitive organs (<a href="pdfs/icj1976.pdf#page=28" target="_blank" class="src-pill">ICJ 1976, p. 28</a>).</li>
-        <li><strong>Street Ambush Killings:</strong> Amnesty International verified that between January and October 1976 alone, <strong>69 political dissidents</strong> were assassinated in street ambushes and police raids under the falsified pretext of "resisting arrest" (<a href="pdfs/amnesty1976.pdf#page=7" target="_blank" class="src-pill">Amnesty 1976, p. 7</a>).</li>
+        <li><strong>Preventable Infant Deaths:</strong> Remote Kurdish villages had zero maternity clinics, zero resident nurses, and zero clean drinking water infrastructure. Treatable respiratory infections, dysentery, measles, and tuberculosis claimed the lives of thousands of infants every winter.</li>
+        <li><strong>Transporting Sick Relatives on Pack Animals:</strong> Families in mountainous areas had to carry critically ill relatives, pregnant women in labor, or injured farmers on mules for days through snowbound mountain passes to reach the nearest provincial clinic.</li>
+        <li><strong>Medical Brain Drain Driven by Dictatorship:</strong> The ICJ documented that over <strong>8,000 Iranian-trained doctors fled the country to live in the United States alone</strong>, refusing to return because of royal political repression (<a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ 1976, p. 44</a>), leaving peripheral hospitals completely unstaffed.</li>
       </ul>
-      <p>
-        All political detainees in Kurdistan were denied civilian trial. Military tribunals presided over by uniformed army colonels with zero legal education delivered summary sentences (<a href="pdfs/icj1976.pdf#page=27" target="_blank" class="src-pill">ICJ 1976, p. 27</a>), while civilian defense lawyers were prohibited by statute from representing defendants (<a href="pdfs/icj1976.pdf#page=54" target="_blank" class="src-pill">ICJ 1976, p. 54</a>).
-      </p>
 
-      <h2><span class="num">03</span> The 1967–1968 Kurdish Insurgency & State Terror</h2>
+      <h2><span class="num">04</span> Enforced Illiteracy & The Punitive Schooling System</h2>
       <p>
-        In March 1967, radicalized youth broke away from the traditional KDPI leadership to form the <strong>Revolutionary Committee</strong>, launching an 18-month guerrilla struggle led by <strong>Suleiman Moini</strong>, <strong>Ismail Sharifzadeh</strong>, and <strong>Khalil Shobash</strong>.
-      </p>
-      <p>
-        The Shah mobilized heavy armor and aerial bombardment to isolate the fighters. After Moini was executed in May 1968, SAVAK committed one of the most infamous psychological terror acts in modern Iranian history: <strong>Moini’s bullet-riddled body was strapped to a wooden ladder and paraded through the public bazaars and central squares of Mahabad, Sardasht, and Piranshahr</strong> with a sign warning the populace against further resistance.
-      </p>
-
-      <h2><span class="num">04</span> Cultural Erasure: The "Mountain Persian" Myth</h2>
-      <p>
-        Mohammad Reza Shah continued and intensified Reza Shah's compulsory assimilation policies. Kurdish was entirely banned from schools, courts, and civil registries.
-      </p>
-      <p>
-        Under the state-mandated doctrine of Persian supremacism, Kurds were officially designated as "pure Aryan mountain Persians," whose language was dismissed as an uncivilized, corrupt dialect of Old Persian (<a href="pdfs/winep_17673.pdf#page=3" target="_blank" class="src-pill">WINEP 17673, p. 3</a>). Conscripted units of the <strong>Literacy Corps (*Sepah-e Danesh*)</strong> were sent to remote Kurdish hamlets not for genuine empowerment, but to enforce mandatory Persian monolingualism and report dissidence (<a href="pdfs/icj1976.pdf#page=43" target="_blank" class="src-pill">ICJ 1976, p. 43</a>).
-      </p>
-
-      <h2><span class="num">05</span> Peripheral Colonialism & Healthcare Deprivation</h2>
-      <p>
-        The 1963 "White Revolution" failed the Kurdish rural economy. Prime arable land was seized for court agribusinesses and royal cronies, leaving millions of tenant farmers destitute (<a href="pdfs/icj1976.pdf#page=40" target="_blank" class="src-pill">ICJ 1976, p. 40</a>).
-      </p>
-      <p>
-        While billions in oil revenues flooded Tehran, peripheral minority provinces were deliberately starved:
+        Rather than building permanent, quality schools with native teachers, Mohammad Reza Shah’s regime deployed the military **Literacy Corps (*Sepah-e Danesh*)** into rural Kurdistan as an instrument of centralized ideological control:
       </p>
       <ul>
-        <li><strong>Illiteracy:</strong> Exceeded <strong>90%</strong> across small Kurdish rural hamlets (<a href="pdfs/icj1976.pdf#page=43" target="_blank" class="src-pill">ICJ 1976, p. 43</a>).</li>
-        <li><strong>Healthcare Deprivation:</strong> Over <strong>50% of the rural population received zero medical care of any kind</strong> (<a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ 1976, p. 44</a>).</li>
-        <li><strong>Doctor Shortage:</strong> In 1972, there was only one physician per 3,750 citizens in Iran, with <strong>over half of all doctors concentrated in the affluent northern suburbs of Tehran</strong>. Over 8,000 Iranian-trained doctors chose permanent exile in the United States to escape royal dictatorship (<a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ 1976, p. 44</a>).</li>
+        <li><strong>Over 90% Rural Illiteracy:</strong> International monitors documented that in small peripheral villages across Iran, adult illiteracy consistently exceeded <strong>90%</strong> throughout the 1960s and 1970s (<a href="pdfs/icj1976.pdf#page=43" target="_blank" class="src-pill">ICJ 1976, p. 43</a>).</li>
+        <li><strong>Punishing Impoverished Parents with Jail:</strong> Instead of building adequate schools or supplying winter fuel, imperial decrees punished impoverished rural parents with fines and up to <strong>3 years in prison</strong> for child truancy, even when local classrooms were non-existent or inaccessible (<a href="pdfs/icj1976.pdf#page=42" target="_blank" class="src-pill">ICJ 1976, p. 42</a>).</li>
+        <li><strong>Conscripts as Informants:</strong> Conscripted literacy corps soldiers functioned as state eyes and ears in remote villages, monitoring community conversations and reporting local grievances directly to the Imperial Gendarmerie.</li>
       </ul>
 
-      <h2><span class="num">06</span> The March 1975 Algiers Accord Betrayal</h2>
+      <h2><span class="num">05</span> The Failure of Land Reform & The Creation of Urban Shantytowns</h2>
       <p>
-        Between 1972 and 1975, Mohammad Reza Shah and US National Security Advisor Henry Kissinger covertly armed General Mustafa Barzani's Iraqi Kurdish rebellion to bleed the Ba'athist government in Baghdad.
+        Mohammad Reza Shah promoted the 1963 "White Revolution" as an agrarian liberation for the peasantry. In reality, as verified by independent legal scholars, it devastated the rural Kurdish peasant economy:
       </p>
+      <ul>
+        <li><strong>Enriching Agribusiness and Court Elites:</strong> Prime fertile valleys in West Azerbaijan and Kurdistan were expropriated and granted to royal foundations, agribusiness corporations, and monarchist loyalists (<a href="pdfs/icj1976.pdf#page=40" target="_blank" class="src-pill">ICJ 1976, p. 40</a>).</li>
+        <li><strong>Skyrocketing Peasant Debt:</strong> Small subsistence plots given to peasant families were economically non-viable. Impoverished farmers were forced to borrow from government credit banks at exorbitant interest rates, sinking into permanent generational debt.</li>
+        <li><strong>Mass Displacement into Slums (*Halabi-Abad*):</strong> Displaced from their ancestral lands, hundreds of thousands of destitute Kurdish peasants were forced to migrate to the margins of Tehran, Tabriz, and Kermanshah. They lived in tin-shack slums without electricity, running water, or paved roads, working as vulnerable, underpaid day laborers.</li>
+      </ul>
+
+      <h2><span class="num">06</span> SAVAK Infiltration in Daily Civilian Life</h2>
       <p>
-        As exposed in the 1976 <strong>US Congressional Pike Committee Report</strong>:
+        The terror of SAVAK did not stop at armed rebels or political party figures; it permeated the daily existence of ordinary Kurdish citizens:
       </p>
-      <blockquote style="border-left: 3px solid var(--gold); padding-left: 18px; margin: 20px 0; font-style: italic; color: #ddd;">
-        "Neither the Shah nor the President nor Dr. Kissinger hoped that our clients [the Kurds] would actually win. They preferred instead that the insurgents simply maintain a level of hostilities sufficient to sap the resources of our ally's neighbor... The Kurds were never informed of this policy."
-      </blockquote>
+      <ul>
+        <li><strong>Teahouses and Bazaars Under Surveillance:</strong> Secret police informants were planted in neighborhood teahouses, mosques, and bazaar guilds. Ordinary citizens feared discussing food prices, government corruption, or village hardships in public.</li>
+        <li><strong>Banning Independent Labor Strikes:</strong> When Kurdish construction workers, bricklayers, or taxi drivers organized wildcat strikes over poverty wages, SAVAK intervened with immediate arrests and military tribunal trials, classifying striking workers as subversive saboteurs (<a href="pdfs/icj1976.pdf#page=27" target="_blank" class="src-pill">ICJ 1976, p. 27</a>).</li>
+        <li><strong>Threats Against Families:</strong> When university students participated in peaceful campus demonstrations in Tehran or abroad, SAVAK agents in Kurdistan paid intimidating visits to their elderly parents, threatening to confiscate family farms or imprison relatives unless the student supplied intelligence on peers (<a href="pdfs/amnesty1976.pdf#page=3" target="_blank" class="src-pill">Amnesty 1976, p. 3</a>).</li>
+        <li><strong>Civilian Shootings in the Streets:</strong> Amnesty International documented that unarmed civilians and youths were repeatedly gunned down in street ambushes by SAVAK and police units, with 69 killings officially recorded in a single 10-month period in 1976 under the routine coverup of "shot while resisting arrest" (<a href="pdfs/amnesty1976.pdf#page=7" target="_blank" class="src-pill">Amnesty 1976, p. 7</a>).</li>
+      </ul>
+
+      <h2><span class="num">07</span> The 1975 Algiers Betrayal: Tragedy of Refugee Families</h2>
       <p>
-        On <strong>6 March 1975</strong>, the Shah met Saddam Hussein in Algiers. In exchange for Iraq conceding sovereignty over the eastern half of the strategic Shatt al-Arab waterway, <strong>the Shah agreed to abruptly terminate all military, financial, and logistical support to the Kurds</strong> (<a href="pdfs/gwu167_01.pdf#page=6" target="_blank" class="src-pill">GWU Archive 167-01, p. 6</a>).
+        The most harrowing civilian catastrophe under Mohammad Reza Shah occurred in March 1975, when the Shah signed the **Algiers Accord** with Saddam Hussein, abruptly abandoning the Kurdish resistance in exchange for border rights over the Shatt al-Arab waterway:
       </p>
+      <div class="callout danger">
+        <h4>100,000+ Civilians Trapped in the Mountains</h4>
+        <p>
+          Within 24 hours of signing the agreement on 6 March 1975, the Shah ordered Iranian border posts to seal the frontier with barbed wire and machine-gun nests. Over <strong>100,000 civilian refugees</strong>—including elderly villagers, mothers carrying infants, and wounded civilians—were trapped in freezing snowbound mountain passes without food, fuel, or shelter as the Iraqi military launched punitive artillery bombardments.
+        </p>
+      </div>
       <p>
-        Within 24 hours, the Shah withdrew all artillery, cut off ammunition, and completely sealed the Iranian border. Over 100,000 Kurdish civilians and fighters were trapped; thousands were slaughtered as the Iraqi army overran their positions. When Barzani sent desperate appeals for humanitarian intervention, Kissinger coldly told congressional investigators: <em>"Covert action should not be confused with missionary work."</em>
+        Thousands of Kurdish civilians who managed to cross into Iran were disarmed, separated from their families, and interned in fenced, squalid refugee camps in the arid southern plains under round-the-clock SAVAK surveillance. They were treated as security risks rather than humanitarian victims.
       </p>
 
-      <h2><span class="num">07</span> Direct Catalyst for the 1979 Revolution in Kurdistan</h2>
+      <h2><span class="num">08</span> The Grassroots Awakening: Why Civilians Revolted in 1979</h2>
       <p>
-        Because the Shah systematically eradicated moderate, civilian Kurdish institutions, the Kurdish national movement survived exclusively underground as disciplined, secular organizations: the <strong>Democratic Party of Iranian Kurdistan (KDPI)</strong> under Dr. Abdul Rahman Ghassemlou, and <strong>Komala</strong>.
-      </p>
-      <p>
-        When the monarchy collapsed on 11 February 1979:
+        The revolution of 1979 in Iranian Kurdistan was not born out of religious zeal or geopolitical intrigue; it was a **grassroots, bottom-up explosion of civilian outrage against four decades of Pahlavi deprivation**:
       </p>
       <ol>
-        <li>Kurdistan was the <strong>only region in Iran that immediately expelled all imperial military officers and secret police</strong>, creating self-governing local people's councils (*Shuras*).</li>
-        <li>The Kurdish movement articulated the historic demand: <strong>"Democracy for Iran, Autonomy for Kurdistan."</strong></li>
-        <li>Recognizing that Ayatollah Khomeini was building a new Shia theocratic autocracy that refused regional decentralization or linguistic recognition, <strong>Kurdistan overwhelmingly boycotted the March 1979 Islamic Republic referendum</strong>.</li>
-        <li>On <strong>19 August 1979</strong>, Khomeini issued an official <strong>Jihad Fatwa</strong> declaring Kurdish political parties "infidels" (<a href="pdfs/winep_19418.pdf#page=1" target="_blank" class="src-pill">WINEP 19418, p. 1</a>), sending the IRGC and hanging judge Sadegh Khalkhali to execute hundreds by firing squad.</li>
+        <li><strong>Reclaiming Land and Dignity:</strong> Kurdish peasant farmers immediately formed agrarian committees to reclaim ancestral lands seized by royal agribusinesses.</li>
+        <li><strong>Opening Kurdish Schools:</strong> Within weeks of the Shah's flight, local civilian teachers published mother-tongue primers and opened the first Kurdish-language elementary classes in over thirty years.</li>
+        <li><strong>Establishing Popular City Councils (*Shuras*):</strong> In Sanandaj, Mahabad, and Saqqez, ordinary citizens, trade unionists, and women formed democratic neighborhood councils to organize food distribution, sanitation, and municipal security.</li>
       </ol>
       <p>
-        The post-1979 tragedy was not an isolated development—it was the direct continuation and escalation of the centralist military dictatorship founded by the Pahlavi dynasty.
+        When Ayatollah Khomeini demanded unquestioning submission to a new Shia theocratic state in Tehran and refused to grant civilian minority rights, the Kurdish civilian populace overwhelmingly refused. The subsequent August 1979 invasion by the IRGC, the indiscriminate bombardment of civilian neighborhoods in Sanandaj, and summary executions by firing squad were the direct tragic continuation of the centralist violence established by Mohammad Reza Shah.
       </p>
 
       <div class="cta-row">
-        <a href="index.html" class="btn-main">← Return to The Shah Record (100 Cards)</a>
+        <a href="index.html" class="btn-main">← View The Shah Record (100 Cards)</a>
         <a href="verdict_on_the_irgc.html" class="btn-main" style="background:#701a75;border-color:#d946ef;">View The IRGC Record (55 Cards) →</a>
       </div>
 
