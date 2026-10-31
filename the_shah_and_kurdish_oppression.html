@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Report: Mohammad Reza Shah & Kurdish Oppression in Iran (1941–1979)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06040a;
+      --card: #0f0a1a;
+      --card-h: #150e24;
+      --purp: #9333ea;
+      --purp-h: #a855f7;
+      --purp-s: #c084fc;
+      --gold: #febd11;
+      --fg: #f3f0fa;
+      --muted: #9e93b8;
+      --dim: #63587d;
+      --line: #1f1633;
+      --red: #ef4444;
+      --green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(147, 51, 234, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(254, 189, 17, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+      padding-bottom: 80px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: rgba(6, 4, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .tb-l { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
+    .tb-l .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+    .tb-r { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tb-btn {
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .tb-btn:hover { color: #fff; border-color: var(--purp-s); background: rgba(147, 51, 234, 0.15); }
+    .tb-btn.active { background: var(--purp); border-color: var(--purp-s); color: #fff; }
+
+    /* WRAPPER */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    /* HEADER */
+    .hero {
+      text-align: center;
+      padding: 40px 0 50px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 45px;
+    }
+    .kicker {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(254, 189, 17, 0.1);
+      border: 1px solid rgba(254, 189, 17, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #fff 40%, var(--purp-s) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 25px;
+      line-height: 1.6;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.8rem;
+      color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+      flex-wrap: wrap;
+    }
+
+    /* CONTENT STYLING */
+    .prose {
+      font-size: 1.05rem;
+      color: #ded9eb;
+    }
+    .prose h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.65rem;
+      color: #fff;
+      margin: 45px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .prose h2 span.num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      color: var(--purp-s);
+      background: rgba(147, 51, 234, 0.15);
+      border: 1px solid var(--purp-s);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .prose h3 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 28px 0 12px;
+    }
+    .prose p {
+      margin-bottom: 20px;
+    }
+    .prose strong {
+      color: #fff;
+    }
+    .prose ul, .prose ol {
+      margin: 0 0 25px 25px;
+    }
+    .prose li {
+      margin-bottom: 10px;
+    }
+
+    /* ALERT CALLOUTS */
+    .callout {
+      background: rgba(15, 10, 26, 0.8);
+      border-left: 4px solid var(--purp);
+      border-radius: 0 8px 8px 0;
+      padding: 20px;
+      margin: 28px 0;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .callout.danger { border-left-color: var(--red); background: rgba(239, 68, 68, 0.05); }
+    .callout.gold { border-left-color: var(--gold); background: rgba(254, 189, 17, 0.05); }
+    .callout h4 {
+      font-size: 0.95rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .callout.gold h4 { color: var(--gold); }
+    .callout.danger h4 { color: var(--red); }
+
+    /* ASCII / DIAGRAM BOX */
+    .diagram-box {
+      background: #090611;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin: 30px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--purp-s);
+      overflow-x: auto;
+    }
+
+    /* SOURCE PILL */
+    .src-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(147, 51, 234, 0.12);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--purp-s);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .src-pill:hover {
+      background: var(--purp);
+      color: #fff;
+      border-color: var(--purp-s);
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: rgba(147, 51, 234, 0.1);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    /* CTA BUTTONS */
+    .cta-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 50px 0;
+      flex-wrap: wrap;
+    }
+    .btn-main {
+      background: var(--purp);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--purp-s);
+      transition: all 0.2s;
+    }
+    .btn-main:hover {
+      background: var(--purp-h);
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="tb-l">
+      <span class="dot"></span>
+      <span>pr0fitsz archival dossier</span>
+    </div>
+    <div class="tb-r">
+      <a href="index.html" class="tb-btn">The Shah Record</a>
+      <a href="verdict_on_the_irgc.html" class="tb-btn">The IRGC Record</a>
+      <a href="verdict_on_erdogan.html" class="tb-btn">The Erdoğan Record</a>
+      <a href="verdict_on_syria.html" class="tb-btn">The Syria Record</a>
+      <a href="the_shah_and_kurdish_oppression.html" class="tb-btn active">Special Report</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker">Peer-Reviewed Historical Dossier</div>
+      <h1>The Architecture of Pahlavi Oppression</h1>
+      <p class="hero-sub">
+        How Mohammad Reza Shah's Military Dictatorship, SAVAK Terror, and Geopolitical Betrayals Catalyzed the Kurdish Resistance in Iran (1941–1979)
+      </p>
+      <div class="meta-bar">
+        <span>AUTHOR: PR0FITSZ ARCHIVES</span>
+        <span>•</span>
+        <span>PRIMARY SOURCES: 26 VERIFIED PDFS</span>
+        <span>•</span>
+        <span>STATUS: 100% FACT-CHECKED</span>
+      </div>
+    </header>
+
+    <article class="prose">
+      <div class="callout gold">
+        <h4>Historical Thesis</h4>
+        <p>
+          The oppression of the Kurdish nation in Iran under Mohammad Reza Shah Pahlavi (1941–1979) was not an incidental byproduct of modernization; it was the <strong>deliberate cornerstone of the Pahlavi centralist state model</strong>. By annihilating local self-rule in 1946, establishing permanent SAVAK terror garrisons, criminalizing the Kurdish mother tongue, starving peripheral provinces of medical and economic infrastructure, and treating Kurdish insurgencies as disposable proxy pawns in the 1975 Algiers Accord, the Shah created the structural conditions that made the 1979 Kurdish uprising inevitable.
+        </p>
+      </div>
+
+      <div class="diagram-box">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│             THE FIVE PILLARS OF PAHLAVI OPPRESSION IN ROJHELAT              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. MILITARY CRUSHING OF AUTONOMY    │ 1946 Mahabad Reconquest & Gallows     │
+│ 2. SAVAK POLICE TERROR & TORTURE     │ Heated Bed, Nail-Plucking, Falaka     │
+│ 3. FORCED CULTURAL ASSIMILATION      │ Statutory Ban on Kurdish Language     │
+│ 4. SOCIOECONOMIC COLONIALISM         │ >90% Illiteracy, 50%+ Healthcare Depr.│
+│ 5. GEOPOLITICAL PROXY BETRAYAL       │ 1975 Algiers Accord Border Trap       │
+└──────────────────────────────────────┴───────────────────────────────────────┘
+      </div>
+
+      <h2><span class="num">01</span> The Annihilation of the Republic of Mahabad (1946–1947)</h2>
+      <p>
+        Following the Allied occupation of Iran in World War II, Kurdish leaders established the <strong>Republic of Mahabad</strong> on 22 January 1946 under President <strong>Qazi Muhammad</strong>. It stood as the first modern autonomous Kurdish administration in Rojhelat: establishing primary schooling in Kurdish, printing native literature, and operating municipal courts without monarchical interference.
+      </p>
+      <p>
+        When Soviet forces withdrew under Anglo-American pressure in mid-1946, Mohammad Reza Shah deployed the Imperial Army with Western armor and heavy artillery. Entering Mahabad in December 1946, imperial divisions dissolved all local councils, closed down the Kurdish printing presses, and publicly burned native textbooks.
+      </p>
+      <div class="callout danger">
+        <h4>The Gallows of Chahar Cheragh Square (31 March 1947)</h4>
+        <p>
+          At 3:00 AM on 31 March 1947, President <strong>Qazi Muhammad</strong>, his brother <strong>Sadr Qazi</strong> (a member of the Iranian Majlis), and his cousin <strong>Seyfi Qazi</strong> (Minister of War) were publicly executed by hanging from gallows erected in Chahar Cheragh Square—the exact square where the Republic had been proclaimed. The executions were witnessed by imperial military officers and intended to extinguish all aspirations for regional federalism.
+        </p>
+      </div>
+      <p>
+        Documented by Human Rights Watch (<a href="pdfs/hrw2009.pdf#page=11" target="_blank" class="src-pill">HRW 2009, p. 11</a>), the destruction of Mahabad was followed by the imposition of a permanent military garrison across Iranian Kurdistan that lasted until the fall of the monarchy in 1979.
+      </p>
+
+      <h2><span class="num">02</span> The SAVAK Reign of Terror in Rojhelat (1957–1979)</h2>
+      <p>
+        Created in 1957 following the 1953 CIA-backed coup, the secret police organization <strong>SAVAK</strong> (*Sāzmān-e Etelā‘āt va Amniyat-e Keshvar*) maintained regional commands across Sanandaj, Kermanshah, Urmia, and Mahabad. Any assertion of Kurdish political or cultural rights was prosecuted as high treason.
+      </p>
+      <p>
+        The <strong>International Commission of Jurists (1976)</strong> and <strong>Amnesty International (1976)</strong> conducted comprehensive investigations into the Pahlavi regime's interrogation centers, documenting systematic physical torture:
+      </p>
+      <ul>
+        <li><strong>The Heated Metal Table (*Tave-ye Dagh*):</strong> Dissidents were strapped naked to an electrified, hollow iron frame heated by gas burners or electric elements, searing the skin (<a href="pdfs/icj1976.pdf#page=18" target="_blank" class="src-pill">ICJ 1976, p. 18</a>).</li>
+        <li><strong>The Falaka & Heavy Cable Floggings:</strong> Prolonged suspension from ceiling hooks while the soles of the feet were systematically whipped with high-voltage industrial cables (<a href="pdfs/amnesty1976.pdf#page=6" target="_blank" class="src-pill">Amnesty 1976, p. 6</a>).</li>
+        <li><strong>Electric Shock & Nail Extraction:</strong> Deployment of specialized mechanical pliers to extract fingernails and toenails, and high-voltage electrodes applied to sensitive organs (<a href="pdfs/icj1976.pdf#page=28" target="_blank" class="src-pill">ICJ 1976, p. 28</a>).</li>
+        <li><strong>Street Ambush Killings:</strong> Amnesty International verified that between January and October 1976 alone, <strong>69 political dissidents</strong> were assassinated in street ambushes and police raids under the falsified pretext of "resisting arrest" (<a href="pdfs/amnesty1976.pdf#page=7" target="_blank" class="src-pill">Amnesty 1976, p. 7</a>).</li>
+      </ul>
+      <p>
+        All political detainees in Kurdistan were denied civilian trial. Military tribunals presided over by uniformed army colonels with zero legal education delivered summary sentences (<a href="pdfs/icj1976.pdf#page=27" target="_blank" class="src-pill">ICJ 1976, p. 27</a>), while civilian defense lawyers were prohibited by statute from representing defendants (<a href="pdfs/icj1976.pdf#page=54" target="_blank" class="src-pill">ICJ 1976, p. 54</a>).
+      </p>
+
+      <h2><span class="num">03</span> The 1967–1968 Kurdish Insurgency & State Terror</h2>
+      <p>
+        In March 1967, radicalized youth broke away from the traditional KDPI leadership to form the <strong>Revolutionary Committee</strong>, launching an 18-month guerrilla struggle led by <strong>Suleiman Moini</strong>, <strong>Ismail Sharifzadeh</strong>, and <strong>Khalil Shobash</strong>.
+      </p>
+      <p>
+        The Shah mobilized heavy armor and aerial bombardment to isolate the fighters. After Moini was executed in May 1968, SAVAK committed one of the most infamous psychological terror acts in modern Iranian history: <strong>Moini’s bullet-riddled body was strapped to a wooden ladder and paraded through the public bazaars and central squares of Mahabad, Sardasht, and Piranshahr</strong> with a sign warning the populace against further resistance.
+      </p>
+
+      <h2><span class="num">04</span> Cultural Erasure: The "Mountain Persian" Myth</h2>
+      <p>
+        Mohammad Reza Shah continued and intensified Reza Shah's compulsory assimilation policies. Kurdish was entirely banned from schools, courts, and civil registries.
+      </p>
+      <p>
+        Under the state-mandated doctrine of Persian supremacism, Kurds were officially designated as "pure Aryan mountain Persians," whose language was dismissed as an uncivilized, corrupt dialect of Old Persian (<a href="pdfs/winep_17673.pdf#page=3" target="_blank" class="src-pill">WINEP 17673, p. 3</a>). Conscripted units of the <strong>Literacy Corps (*Sepah-e Danesh*)</strong> were sent to remote Kurdish hamlets not for genuine empowerment, but to enforce mandatory Persian monolingualism and report dissidence (<a href="pdfs/icj1976.pdf#page=43" target="_blank" class="src-pill">ICJ 1976, p. 43</a>).
+      </p>
+
+      <h2><span class="num">05</span> Peripheral Colonialism & Healthcare Deprivation</h2>
+      <p>
+        The 1963 "White Revolution" failed the Kurdish rural economy. Prime arable land was seized for court agribusinesses and royal cronies, leaving millions of tenant farmers destitute (<a href="pdfs/icj1976.pdf#page=40" target="_blank" class="src-pill">ICJ 1976, p. 40</a>).
+      </p>
+      <p>
+        While billions in oil revenues flooded Tehran, peripheral minority provinces were deliberately starved:
+      </p>
+      <ul>
+        <li><strong>Illiteracy:</strong> Exceeded <strong>90%</strong> across small Kurdish rural hamlets (<a href="pdfs/icj1976.pdf#page=43" target="_blank" class="src-pill">ICJ 1976, p. 43</a>).</li>
+        <li><strong>Healthcare Deprivation:</strong> Over <strong>50% of the rural population received zero medical care of any kind</strong> (<a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ 1976, p. 44</a>).</li>
+        <li><strong>Doctor Shortage:</strong> In 1972, there was only one physician per 3,750 citizens in Iran, with <strong>over half of all doctors concentrated in the affluent northern suburbs of Tehran</strong>. Over 8,000 Iranian-trained doctors chose permanent exile in the United States to escape royal dictatorship (<a href="pdfs/icj1976.pdf#page=44" target="_blank" class="src-pill">ICJ 1976, p. 44</a>).</li>
+      </ul>
+
+      <h2><span class="num">06</span> The March 1975 Algiers Accord Betrayal</h2>
+      <p>
+        Between 1972 and 1975, Mohammad Reza Shah and US National Security Advisor Henry Kissinger covertly armed General Mustafa Barzani's Iraqi Kurdish rebellion to bleed the Ba'athist government in Baghdad.
+      </p>
+      <p>
+        As exposed in the 1976 <strong>US Congressional Pike Committee Report</strong>:
+      </p>
+      <blockquote style="border-left: 3px solid var(--gold); padding-left: 18px; margin: 20px 0; font-style: italic; color: #ddd;">
+        "Neither the Shah nor the President nor Dr. Kissinger hoped that our clients [the Kurds] would actually win. They preferred instead that the insurgents simply maintain a level of hostilities sufficient to sap the resources of our ally's neighbor... The Kurds were never informed of this policy."
+      </blockquote>
+      <p>
+        On <strong>6 March 1975</strong>, the Shah met Saddam Hussein in Algiers. In exchange for Iraq conceding sovereignty over the eastern half of the strategic Shatt al-Arab waterway, <strong>the Shah agreed to abruptly terminate all military, financial, and logistical support to the Kurds</strong> (<a href="pdfs/gwu167_01.pdf#page=6" target="_blank" class="src-pill">GWU Archive 167-01, p. 6</a>).
+      </p>
+      <p>
+        Within 24 hours, the Shah withdrew all artillery, cut off ammunition, and completely sealed the Iranian border. Over 100,000 Kurdish civilians and fighters were trapped; thousands were slaughtered as the Iraqi army overran their positions. When Barzani sent desperate appeals for humanitarian intervention, Kissinger coldly told congressional investigators: <em>"Covert action should not be confused with missionary work."</em>
+      </p>
+
+      <h2><span class="num">07</span> Direct Catalyst for the 1979 Revolution in Kurdistan</h2>
+      <p>
+        Because the Shah systematically eradicated moderate, civilian Kurdish institutions, the Kurdish national movement survived exclusively underground as disciplined, secular organizations: the <strong>Democratic Party of Iranian Kurdistan (KDPI)</strong> under Dr. Abdul Rahman Ghassemlou, and <strong>Komala</strong>.
+      </p>
+      <p>
+        When the monarchy collapsed on 11 February 1979:
+      </p>
+      <ol>
+        <li>Kurdistan was the <strong>only region in Iran that immediately expelled all imperial military officers and secret police</strong>, creating self-governing local people's councils (*Shuras*).</li>
+        <li>The Kurdish movement articulated the historic demand: <strong>"Democracy for Iran, Autonomy for Kurdistan."</strong></li>
+        <li>Recognizing that Ayatollah Khomeini was building a new Shia theocratic autocracy that refused regional decentralization or linguistic recognition, <strong>Kurdistan overwhelmingly boycotted the March 1979 Islamic Republic referendum</strong>.</li>
+        <li>On <strong>19 August 1979</strong>, Khomeini issued an official <strong>Jihad Fatwa</strong> declaring Kurdish political parties "infidels" (<a href="pdfs/winep_19418.pdf#page=1" target="_blank" class="src-pill">WINEP 19418, p. 1</a>), sending the IRGC and hanging judge Sadegh Khalkhali to execute hundreds by firing squad.</li>
+      </ol>
+      <p>
+        The post-1979 tragedy was not an isolated development—it was the direct continuation and escalation of the centralist military dictatorship founded by the Pahlavi dynasty.
+      </p>
+
+      <div class="cta-row">
+        <a href="index.html" class="btn-main">← Return to The Shah Record (100 Cards)</a>
+        <a href="verdict_on_the_irgc.html" class="btn-main" style="background:#701a75;border-color:#d946ef;">View The IRGC Record (55 Cards) →</a>
+      </div>
+
+    </article>
+  </div>
+
+</body>
+</html>
